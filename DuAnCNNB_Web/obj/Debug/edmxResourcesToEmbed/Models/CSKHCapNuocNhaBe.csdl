@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseCSKHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Baochisonuoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NGUOIBAOCHISO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DANHBO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIENTHOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CHISONUOC" Type="Int32" />
+    <Property Name="TENHOPDONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QUAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PHUONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYBAO" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Giaytocanthiet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TenGiayTo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="LOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="APDUNG" Type="Boolean" />
+    <NavigationProperty Name="LoaiFrom_GiayTo" Relationship="Self.FK_LoaiFrom_GiayTo_Giaytocanthiet" FromRole="Giaytocanthiet" ToRole="LoaiFrom_GiayTo" />
+  </EntityType>
+  <EntityType Name="MUCLUCYEUCAUNANGDOI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TENYEUCAUNANGDOI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbGanmois" Relationship="Self.FK_tbGanmoi_MUCLUCYEUCAUNANGDOI" FromRole="MUCLUCYEUCAUNANGDOI" ToRole="tbGanmoi" />
+  </EntityType>
+  <EntityType Name="tbDiemthutien">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENDD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MOTA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MAPHUONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAQUAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="Int32" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOCATION" Type="Geography" />
+  </EntityType>
+  <EntityType Name="tbDieuchinh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MADB" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SOBN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOAIDC" Type="Int32" Nullable="false" />
+    <Property Name="NGUOINHAP" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NGAYNHAP" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GHICHU" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="KYHIEULUC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NGAYHH" Type="DateTime" Precision="3" />
+    <Property Name="DOT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAHD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MST" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DINHMUC" Type="Int32" />
+    <Property Name="GIABIEU" Type="Int32" />
+    <Property Name="HOTEN" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MAPHUONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAQUAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SODT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYLD" Type="DateTime" Precision="0" />
+    <Property Name="TONGNK" Type="Int32" />
+    <Property Name="SONK" Type="Int32" />
+    <Property Name="CODH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAQP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAHDDC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MSTDC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DINHMUCDC" Type="Int32" />
+    <Property Name="TONGNKDC" Type="Int32" />
+    <Property Name="SONKDC" Type="Int32" />
+    <Property Name="GIABIEUDC" Type="Int32" />
+    <Property Name="HOTENDC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI1DC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI2DC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MAPHUONGDC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAQUANDC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SODTDC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAILDC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CODHDC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAQPDC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GIAYTO" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbHokhaus" Relationship="Self.FK_tbHokhau_tbDieuchinh" FromRole="tbDieuchinh" ToRole="tbHokhau" />
+  </EntityType>
+  <EntityType Name="tbDot">
+    <Key>
+      <PropertyRef Name="MADOT" />
+    </Key>
+    <Property Name="MADOT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NGAYDS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYTHU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GHICHU" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbDuong">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENDUONG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MAQUAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbGanmoi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SOHS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOAIYEUCAU" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENKH" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MAQUAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAPHUONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DIENTHOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TENHD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MDSD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAILBC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TOADO" Type="Geography" />
+    <Property Name="NGAYYC" Type="DateTime" Precision="3" />
+    <Property Name="TRANGTHAI" Type="Int32" />
+    <Property Name="DANHBO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_YEUCAUNANGDOI" Type="Int32" />
+    <NavigationProperty Name="MUCLUCYEUCAUNANGDOI" Relationship="Self.FK_tbGanmoi_MUCLUCYEUCAUNANGDOI" FromRole="tbGanmoi" ToRole="MUCLUCYEUCAUNANGDOI" />
+    <NavigationProperty Name="LoaiFrom_GiayTo" Relationship="Self.FK_LoaiFrom_GiayTo_tbGanmoi" FromRole="tbGanmoi" ToRole="LoaiFrom_GiayTo" />
+    <NavigationProperty Name="tbLoaiQuitrinh" Relationship="Self.FK_tbGanmoi_tbLoaiQuitrinh" FromRole="tbGanmoi" ToRole="tbLoaiQuitrinh" />
+    <NavigationProperty Name="tbLoaiQuitrinh1" Relationship="Self.FK_tbGanmoi_tbLoaiQuitrinh1" FromRole="tbGanmoi" ToRole="tbLoaiQuitrinh" />
+  </EntityType>
+  <EntityType Name="tbHokhau">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MADB" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LOAIKH" Type="Int32" />
+    <Property Name="SOHK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LOAIGT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYCAP" Type="DateTime" Precision="0" />
+    <Property Name="HOTEN" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TONGNK" Type="Int32" />
+    <Property Name="SONK" Type="Int32" />
+    <Property Name="LOAIDM" Type="Int32" />
+    <Property Name="NGAYNHAP" Type="DateTime" Precision="0" />
+    <Property Name="NGAYKT" Type="DateTime" Precision="0" />
+    <Property Name="NHAP" Type="Int32" />
+    <Property Name="GHICHU" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DIEUCHINH" Type="Int32" />
+    <Property Name="TRANGTHAI" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbDieuchinh" Relationship="Self.FK_tbHokhau_tbDieuchinh" FromRole="tbHokhau" ToRole="tbDieuchinh" />
+  </EntityType>
+  <EntityType Name="tbLichcup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DANHBO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOT" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="NAM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYBD" Type="DateTime" Precision="3" />
+    <Property Name="NGAYKT" Type="DateTime" Precision="3" />
+    <Property Name="LYDO" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="KHUVUC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NHANVIENDS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PHONENV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbMadanhbo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MADB" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENKH" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SODT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MAPHUONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAQUAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MSTHUE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CULY" Type="Byte" />
+    <Property Name="DINHMUC" Type="Int32" />
+    <Property Name="TONGNK" Type="Int32" />
+    <Property Name="SONK" Type="Int32" />
+    <Property Name="GIABIEU" Type="Int32" />
+    <Property Name="TLSH" Type="Double" />
+    <Property Name="TLHC" Type="Double" />
+    <Property Name="TLSX" Type="Double" />
+    <Property Name="TLDV" Type="Double" />
+  </EntityType>
+  <EntityType Name="tbPhuong">
+    <Key>
+      <PropertyRef Name="MAPHUONG" />
+    </Key>
+    <Property Name="MAPHUONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MAQUAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENPHUONG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MAQP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GHICHU" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbQuan">
+    <Key>
+      <PropertyRef Name="MAQUAN" />
+    </Key>
+    <Property Name="MAQUAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENQUAN" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GHICHU" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbTiennuoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NGAYHD" Type="DateTime" Precision="0" />
+    <Property Name="MADB" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="KY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NAM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TUNGAY" Type="DateTime" Precision="0" />
+    <Property Name="DENNGAY" Type="DateTime" Precision="0" />
+    <Property Name="CSCU" Type="Int32" />
+    <Property Name="CSMOI" Type="Int32" />
+    <Property Name="TIEUTHU" Type="Int32" />
+    <Property Name="TIENNUOC" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PHIBVMT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="THUEVAT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TONGTIEN" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="GHICHU" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="TRANGTHAI" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbXulychitiet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDXULY" Type="Int32" Nullable="false" />
+    <Property Name="NGAYXULY" Type="DateTime" Precision="3" />
+    <Property Name="NVXULY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NOIDUNGXL1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NOIDUNGXL2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NOIDUNGXL3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NOIDUNGXL4" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NOIDUNGXL5" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IDQUITRINH" Type="Int32" />
+    <Property Name="TTXULY" Type="Int32" />
+    <Property Name="TIENDO" Type="Int32" />
+    <Property Name="GHICHU" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbXulyyeucau" Relationship="Self.FK_tbXulychitiet_tbXulyyeucau" FromRole="tbXulychitiet" ToRole="tbXulyyeucau" />
+  </EntityType>
+  <EntityType Name="tbXulyyeucau">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LOAIYC" Type="Int32" Nullable="false" />
+    <Property Name="MAYC" Type="Int32" Nullable="false" />
+    <Property Name="LOAIQT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NVTIEPNHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYNHAN" Type="DateTime" Precision="3" />
+    <Property Name="TRANGTHAI" Type="Int32" />
+    <Property Name="XULY" Type="Int32" />
+    <Property Name="GHICHU" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbXulychitiets" Relationship="Self.FK_tbXulychitiet_tbXulyyeucau" FromRole="tbXulyyeucau" ToRole="tbXulychitiet" />
+    <NavigationProperty Name="tbLoaiQuitrinh" Relationship="Self.FK_tbXulyyeucau_tbLoaiQuitrinh" FromRole="tbXulyyeucau" ToRole="tbLoaiQuitrinh" />
+  </EntityType>
+  <EntityType Name="LoaiFrom_GiayTo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_GiayTo" Type="Int32" />
+    <Property Name="ID_LoaiFrom" Type="Int32" />
+    <Property Name="TrangThai" Type="Int32" />
+    <NavigationProperty Name="Giaytocanthiet" Relationship="Self.FK_LoaiFrom_GiayTo_Giaytocanthiet" FromRole="LoaiFrom_GiayTo" ToRole="Giaytocanthiet" />
+    <NavigationProperty Name="tbGanmoi" Relationship="Self.FK_LoaiFrom_GiayTo_tbGanmoi" FromRole="LoaiFrom_GiayTo" ToRole="tbGanmoi" />
+  </EntityType>
+  <EntityType Name="tbBaiViet">
+    <Key>
+      <PropertyRef Name="ID_BaiViet" />
+    </Key>
+    <Property Name="ID_BaiViet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ChuyenMuc" Type="Int32" />
+    <Property Name="TieuDe" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HinhDaiDien1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HinhDaiDien2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Video" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NgayDang" Type="DateTime" Precision="3" />
+    <Property Name="TrangThai" Type="Int32" />
+    <Property Name="TinNoiBat" Type="Int32" />
+    <Property Name="TinHot" Type="Int32" />
+    <Property Name="Nguoidang" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoiduyet" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Ngayduyet" Type="DateTime" Precision="3" />
+    <Property Name="Ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbChuyenMucBaiViet" Relationship="Self.FK_tbBaiViet_tbChuyenMucBaiViet" FromRole="tbBaiViet" ToRole="tbChuyenMucBaiViet" />
+  </EntityType>
+  <EntityType Name="tbChuyenMucBaiViet">
+    <Key>
+      <PropertyRef Name="ID_ChuyenMuc" />
+    </Key>
+    <Property Name="ID_ChuyenMuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenChuyenMuc" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MoTaChuyenMuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IconChuyenMuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbBaiViets" Relationship="Self.FK_tbBaiViet_tbChuyenMucBaiViet" FromRole="tbChuyenMucBaiViet" ToRole="tbBaiViet" />
+    <Property Name="TrangThai" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbHoidap">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="MaDB" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Hoten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Dienthoai" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Noidunghoidap" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Ngayguicauhoi" Type="DateTime" Precision="3" />
+    <Property Name="Trangthaicauhoi" Type="Double" />
+    <Property Name="Noidungtraloi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitraloi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytraloi" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbLoaiQuitrinh">
+    <Key>
+      <PropertyRef Name="MALOAI" />
+    </Key>
+    <Property Name="MALOAI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENLOAI" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="THUPHI" Type="Boolean" />
+    <Property Name="SONGAY" Type="Int32" />
+    <NavigationProperty Name="tbGanmois" Relationship="Self.FK_tbGanmoi_tbLoaiQuitrinh" FromRole="tbLoaiQuitrinh" ToRole="tbGanmoi" />
+    <NavigationProperty Name="tbGanmois1" Relationship="Self.FK_tbGanmoi_tbLoaiQuitrinh1" FromRole="tbLoaiQuitrinh" ToRole="tbGanmoi" />
+    <NavigationProperty Name="tbXulyyeucaus" Relationship="Self.FK_tbXulyyeucau_tbLoaiQuitrinh" FromRole="tbLoaiQuitrinh" ToRole="tbXulyyeucau" />
+  </EntityType>
+  <Association Name="FK_LoaiFrom_GiayTo_Giaytocanthiet">
+    <End Role="Giaytocanthiet" Type="Self.Giaytocanthiet" Multiplicity="0..1" />
+    <End Role="LoaiFrom_GiayTo" Type="Self.LoaiFrom_GiayTo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Giaytocanthiet">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LoaiFrom_GiayTo">
+        <PropertyRef Name="ID_GiayTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbGanmoi_MUCLUCYEUCAUNANGDOI">
+    <End Role="MUCLUCYEUCAUNANGDOI" Type="Self.MUCLUCYEUCAUNANGDOI" Multiplicity="0..1" />
+    <End Role="tbGanmoi" Type="Self.tbGanmoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MUCLUCYEUCAUNANGDOI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbGanmoi">
+        <PropertyRef Name="ID_YEUCAUNANGDOI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbHokhau_tbDieuchinh">
+    <End Role="tbDieuchinh" Type="Self.tbDieuchinh" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbHokhau" Type="Self.tbHokhau" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbDieuchinh">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbHokhau">
+        <PropertyRef Name="DIEUCHINH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoaiFrom_GiayTo_tbGanmoi">
+    <End Role="tbGanmoi" Type="Self.tbGanmoi" Multiplicity="0..1" />
+    <End Role="LoaiFrom_GiayTo" Type="Self.LoaiFrom_GiayTo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbGanmoi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LoaiFrom_GiayTo">
+        <PropertyRef Name="ID_LoaiFrom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbGanmoi_tbLoaiQuitrinh">
+    <End Role="tbLoaiQuitrinh" Type="Self.tbLoaiQuitrinh" Multiplicity="1" />
+    <End Role="tbGanmoi" Type="Self.tbGanmoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbLoaiQuitrinh">
+        <PropertyRef Name="MALOAI" />
+      </Principal>
+      <Dependent Role="tbGanmoi">
+        <PropertyRef Name="LOAIYEUCAU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbGanmoi_tbLoaiQuitrinh1">
+    <End Role="tbLoaiQuitrinh" Type="Self.tbLoaiQuitrinh" Multiplicity="1" />
+    <End Role="tbGanmoi" Type="Self.tbGanmoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbLoaiQuitrinh">
+        <PropertyRef Name="MALOAI" />
+      </Principal>
+      <Dependent Role="tbGanmoi">
+        <PropertyRef Name="LOAIYEUCAU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbXulychitiet_tbXulyyeucau">
+    <End Role="tbXulyyeucau" Type="Self.tbXulyyeucau" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbXulychitiet" Type="Self.tbXulychitiet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbXulyyeucau">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbXulychitiet">
+        <PropertyRef Name="IDXULY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbXulyyeucau_tbLoaiQuitrinh">
+    <End Role="tbLoaiQuitrinh" Type="Self.tbLoaiQuitrinh" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbXulyyeucau" Type="Self.tbXulyyeucau" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbLoaiQuitrinh">
+        <PropertyRef Name="MALOAI" />
+      </Principal>
+      <Dependent Role="tbXulyyeucau">
+        <PropertyRef Name="LOAIQT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbBaiViet_tbChuyenMucBaiViet">
+    <End Role="tbChuyenMucBaiViet" Type="Self.tbChuyenMucBaiViet" Multiplicity="0..1" />
+    <End Role="tbBaiViet" Type="Self.tbBaiViet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbChuyenMucBaiViet">
+        <PropertyRef Name="ID_ChuyenMuc" />
+      </Principal>
+      <Dependent Role="tbBaiViet">
+        <PropertyRef Name="ID_ChuyenMuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DatabaseCSKHEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Baochisonuocs" EntityType="Self.Baochisonuoc" />
+    <EntitySet Name="Giaytocanthiets" EntityType="Self.Giaytocanthiet" />
+    <EntitySet Name="MUCLUCYEUCAUNANGDOIs" EntityType="Self.MUCLUCYEUCAUNANGDOI" />
+    <EntitySet Name="tbDiemthutiens" EntityType="Self.tbDiemthutien" />
+    <EntitySet Name="tbDieuchinhs" EntityType="Self.tbDieuchinh" />
+    <EntitySet Name="tbDots" EntityType="Self.tbDot" />
+    <EntitySet Name="tbDuongs" EntityType="Self.tbDuong" />
+    <EntitySet Name="tbGanmois" EntityType="Self.tbGanmoi" />
+    <EntitySet Name="tbHokhaus" EntityType="Self.tbHokhau" />
+    <EntitySet Name="tbLichcups" EntityType="Self.tbLichcup" />
+    <EntitySet Name="tbMadanhboes" EntityType="Self.tbMadanhbo" />
+    <EntitySet Name="tbPhuongs" EntityType="Self.tbPhuong" />
+    <EntitySet Name="tbQuans" EntityType="Self.tbQuan" />
+    <EntitySet Name="tbTiennuocs" EntityType="Self.tbTiennuoc" />
+    <EntitySet Name="tbXulychitiets" EntityType="Self.tbXulychitiet" />
+    <EntitySet Name="tbXulyyeucaus" EntityType="Self.tbXulyyeucau" />
+    <EntitySet Name="LoaiFrom_GiayTo" EntityType="Self.LoaiFrom_GiayTo" />
+    <EntitySet Name="tbBaiViets" EntityType="Self.tbBaiViet" />
+    <EntitySet Name="tbChuyenMucBaiViets" EntityType="Self.tbChuyenMucBaiViet" />
+    <EntitySet Name="tbHoidaps" EntityType="Self.tbHoidap" />
+    <EntitySet Name="tbLoaiQuitrinhs" EntityType="Self.tbLoaiQuitrinh" />
+    <AssociationSet Name="FK_LoaiFrom_GiayTo_Giaytocanthiet" Association="Self.FK_LoaiFrom_GiayTo_Giaytocanthiet">
+      <End Role="Giaytocanthiet" EntitySet="Giaytocanthiets" />
+      <End Role="LoaiFrom_GiayTo" EntitySet="LoaiFrom_GiayTo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbGanmoi_MUCLUCYEUCAUNANGDOI" Association="Self.FK_tbGanmoi_MUCLUCYEUCAUNANGDOI">
+      <End Role="MUCLUCYEUCAUNANGDOI" EntitySet="MUCLUCYEUCAUNANGDOIs" />
+      <End Role="tbGanmoi" EntitySet="tbGanmois" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbHokhau_tbDieuchinh" Association="Self.FK_tbHokhau_tbDieuchinh">
+      <End Role="tbDieuchinh" EntitySet="tbDieuchinhs" />
+      <End Role="tbHokhau" EntitySet="tbHokhaus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoaiFrom_GiayTo_tbGanmoi" Association="Self.FK_LoaiFrom_GiayTo_tbGanmoi">
+      <End Role="tbGanmoi" EntitySet="tbGanmois" />
+      <End Role="LoaiFrom_GiayTo" EntitySet="LoaiFrom_GiayTo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbGanmoi_tbLoaiQuitrinh" Association="Self.FK_tbGanmoi_tbLoaiQuitrinh">
+      <End Role="tbLoaiQuitrinh" EntitySet="tbLoaiQuitrinhs" />
+      <End Role="tbGanmoi" EntitySet="tbGanmois" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbGanmoi_tbLoaiQuitrinh1" Association="Self.FK_tbGanmoi_tbLoaiQuitrinh1">
+      <End Role="tbLoaiQuitrinh" EntitySet="tbLoaiQuitrinhs" />
+      <End Role="tbGanmoi" EntitySet="tbGanmois" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbXulychitiet_tbXulyyeucau" Association="Self.FK_tbXulychitiet_tbXulyyeucau">
+      <End Role="tbXulyyeucau" EntitySet="tbXulyyeucaus" />
+      <End Role="tbXulychitiet" EntitySet="tbXulychitiets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbXulyyeucau_tbLoaiQuitrinh" Association="Self.FK_tbXulyyeucau_tbLoaiQuitrinh">
+      <End Role="tbLoaiQuitrinh" EntitySet="tbLoaiQuitrinhs" />
+      <End Role="tbXulyyeucau" EntitySet="tbXulyyeucaus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbBaiViet_tbChuyenMucBaiViet" Association="Self.FK_tbBaiViet_tbChuyenMucBaiViet">
+      <End Role="tbChuyenMucBaiViet" EntitySet="tbChuyenMucBaiViets" />
+      <End Role="tbBaiViet" EntitySet="tbBaiViets" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

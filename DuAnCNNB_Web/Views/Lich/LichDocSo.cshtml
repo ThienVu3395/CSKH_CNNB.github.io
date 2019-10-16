@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Header = "LỊCH ĐỌC SỐ";
+    ViewBag.Title = "Lịch đọc số theo Danh Bộ";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
+}
+
+<div class="container card">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs pt-2">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">@ViewBag.Title</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content card-body">
+        <div class="tab-pane container active" id="home">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nhập Mã Danh Bộ...">
+                <div class="input-group-append">
+                    <button class="btn btn-success" type="submit">Tìm Kiếm</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="card-body" style="border:2px solid #A69C8F">
+                    <h4 class="card-title text-center">
+                        Lịch đọc số dự kiến cho Khách Hàng <span class="text-danger text-center font-weight-bolder" style="font-size:20px">NGUYỄN VĂN A</span>
+                    </h4>
+                    <p class="card-text">Danh Bộ : <span class="text-danger font-weight-bolder" style="font-size:20px">123456789</span></p>
+                    <p class="card-text">Địa chỉ : <span class="text-danger font-weight-bolder" style="font-size:20px">24/13 đường Hoàng Hoa Thám , asdas</span></p>
+                    <p class="card-text">
+                        Ngày đọc số dự kiến : <span class="text-danger font-weight-bolder" style="font-size:20px">21/12/2021</span>
+                    </p>
+                    <p class="card-text">
+                        Đợt đọc số : <span class="text-danger font-weight-bolder" style="font-size:20px">01 </span>Kỳ đọc số : <span class="text-danger font-weight-bolder" style="font-size:20px">03</span>
+                        Năm : <span class="text-danger font-weight-bolder" style="font-size:20px">2019</span>
+                    </p>
+                    <p class="card-text">Nhân viên đọc số : <span class="text-danger font-weight-bolder" style="font-size:20px">Nguyễn Văn B</span></p>
+                    <p class="card-text">Số điện thoại nhân viên : <span class="text-danger font-weight-bolder" style="font-size:20px">2324234234</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Footer{
+    <footer class="section footer-section bg-primary">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mb-5">
+                    <img src="~/Content/img/logo-footer.png" />
+                    <p>
+                        Cty cổ phần cấp nước Nhà Bè được thành lập trên cơ sở cổ phần hóa Chi nhánh cấp nước Nhà Bè trực
+                        thuộc Tổng
+                        Cty cấp nước Sài Gòn theo quyết định số 6659/QĐ-UBND ngày 30/12/2005 của Uy Ban Nhân Dân TPHCM.
+                        Cty cổ phần
+                        cấp nước Nhà Bè chính thức bắt đầu đi vào hoạt động kể từ ngày 01/02/2007
+                    </p>
+                </div>
+
+                <div class="col-md-6 mb-5 pr-md-5 contact-info">
+                    <p><span class="d-block">Địa Chỉ:</span> <span> 1179 Nguyễn Văn Linh, Tân Phong, Quận 7</span></p>
+                    <p><span class="d-block">Số Điện Thoại:</span> <span> (028) 54122499</span></p>
+                    <p><span class="d-block">Email:</span> <span> lienhe@capnuocnhabe.vn</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+}

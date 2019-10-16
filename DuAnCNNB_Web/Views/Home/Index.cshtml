@@ -1,0 +1,326 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.status = "none";
+}
+
+<section class="section visit-section" id="next-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center text-info" data-aos="fade-up">Dịch Vụ Trực Tuyến</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-up">
+                <a href="@Url.Action("BaoChiSo","Home")">
+                    <img src="https://d3jh33bzyw1wep.cloudfront.net/s3/W1siZiIsIjIwMTkvMDQvMjQvMTcvMDEvMTAvNTU0L0Jsb2cuanBnIl0sWyJwIiwidGh1bWIiLCI4MDB4NjAwIyJdXQ" width="100%" height="100%" alt="Image placeholder" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("BaoChiSo","Home")">Báo Chỉ Số Nước Online</a></h3>
+                <!-- <div class="reviews-star float-left">
+                  46 Brookflower Rd, Houston TX
+                </div> -->
+            </div>
+            <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-up" data-aos-delay="100">
+                <a href="@Url.Action("DangKyGanMoi","Home")">
+                    <img src="https://d3jh33bzyw1wep.cloudfront.net/s3/W1siZiIsIjIwMTkvMDQvMjQvMTcvMDEvMTAvNTU0L0Jsb2cuanBnIl0sWyJwIiwidGh1bWIiLCI4MDB4NjAwIyJdXQ" width="100%" height="100%" alt="Image placeholder" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("DangKyGanMoi","Home")">Đăng Ký Gắn Mới Đồng Hồ Nước</a></h3>
+            </div>
+            <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-up" data-aos-delay="200">
+                <a href="@Url.Action("DangKyNangDoi","Home")">
+                    <img src="https://d3jh33bzyw1wep.cloudfront.net/s3/W1siZiIsIjIwMTkvMDQvMjQvMTcvMDEvMTAvNTU0L0Jsb2cuanBnIl0sWyJwIiwidGh1bWIiLCI4MDB4NjAwIyJdXQ" alt="Image placeholder" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("DangKyNangDoi","Home")">Đăng Ký Nâng - Dời - Đổi Cỡ Đồng Hồ Nước</a></h3>
+            </div>
+            <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-up" data-aos-delay="300">
+                <a href="@Url.Action("DangKyHieuChinhHoSo","Home")">
+                    <img src="https://d3jh33bzyw1wep.cloudfront.net/s3/W1siZiIsIjIwMTkvMDQvMjQvMTcvMDEvMTAvNTU0L0Jsb2cuanBnIl0sWyJwIiwidGh1bWIiLCI4MDB4NjAwIyJdXQ" alt="Image placeholder" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("DangKyHieuChinhHoSo","Home")">Đăng Ký Điều Chỉnh Hồ Sơ</a></h3>
+            </div>
+
+            <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-up">
+                <a href="@Url.Action("ThanhToanTrucTuyen","ThanhToan")">
+                    <img src="https://searchengineland.com/figz/wp-content/seloads/2017/03/paid-search-442996114-ss-1920.jpg" alt="Image placeholder" width="100%" height="100%" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("ThanhToanTrucTuyen","ThanhToan")">Thanh Toán Online</a></h3>
+            </div>
+            <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://portal.capnuocnhabe.vn/SuCo_CNNB-nguoidan/">
+                    <img src="https://searchengineland.com/figz/wp-content/seloads/2017/03/paid-search-442996114-ss-1920.jpg" alt="Image placeholder" width="100%" height="100%" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="https://portal.capnuocnhabe.vn/SuCo_CNNB-nguoidan/">Báo Bể 24/7</a></h3>
+            </div>
+
+            <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-up">
+                <a href="@Url.Action("ThongTinChung","News")">
+                    <img src="https://searchengineland.com/figz/wp-content/seloads/2017/03/paid-search-442996114-ss-1920.jpg" alt="Image placeholder" width="100%" height="100%" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("ThongTinChung","News")">Tin Tức - Cẩm Nang</a></h3>
+            </div>
+            <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-up" data-aos-delay="100">
+                <a href="@Url.Action("LienHe","Home")">
+                    <img src="https://searchengineland.com/figz/wp-content/seloads/2017/03/paid-search-442996114-ss-1920.jpg" alt="Image placeholder" width="100%" height="100%" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("LienHe","Home")">Liên Hệ</a></h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section visit-section" id="next-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center text-info" data-aos="fade-up">Tra Cứu Thông Tin</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-up">
+                <a href="http://113.161.69.85:803/dang-nhap">
+                    <img src="https://searchengineland.com/figz/wp-content/seloads/2017/05/seo-organic-search-ss-1920-800x450.jpg" alt="Image placeholder" width="100%" height="100%" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="http://113.161.69.85:803/dang-nhap">Tra Cứu Hóa Đơn Điện Tử</a></h3>
+            </div>
+
+            <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-up" data-aos-delay="200">
+                <a href="@Url.Action("TraCuuDinhMuc","TraCuu")">
+                    <img src="https://searchengineland.com/figz/wp-content/seloads/2017/05/seo-organic-search-ss-1920-800x450.jpg" alt="Image placeholder" width="100%" height="100%" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("TraCuuDinhMuc","TraCuu")">Tra Cứu Định Mức</a></h3>
+            </div>
+
+            <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-up" data-aos-delay="300">
+                <a href="@Url.Action("TraCuuTienNuoc","TraCuu")">
+                    <img src="https://searchengineland.com/figz/wp-content/seloads/2017/05/seo-organic-search-ss-1920-800x450.jpg" alt="Image placeholder" width="100%" height="100%" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("TraCuuTienNuoc","TraCuu")">Tra Cứu Tiền Nước</a></h3>
+            </div>
+
+            <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-up">
+                <a href="@Url.Action("TraCuuTienDoGanMoi","TraCuu")">
+                    <img src="https://searchengineland.com/figz/wp-content/seloads/2017/05/seo-organic-search-ss-1920-800x450.jpg" alt="Image placeholder" width="100%" height="100%" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("TraCuuTienDoGanMoi","TraCuu")">Tra Cứu Gắn Mới</a></h3>
+            </div>
+
+            <div class="col-lg-4 col-md-6 visit mb-3" data-aos="fade-up" data-aos-delay="100">
+                <a href="@Url.Action("TraCuuDieuChinhHoaDon","TraCuu")">
+                    <img src="https://searchengineland.com/figz/wp-content/seloads/2017/05/seo-organic-search-ss-1920-800x450.jpg" alt="Image placeholder" width="100%" height="100%" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("TraCuuDieuChinhHoaDon","TraCuu")">Tra Cứu Điều Chỉnh Hóa Đơn</a></h3>
+            </div>
+
+            <div class="col-lg-4 col-md-6 visit mb-3" data-aos="fade-up" data-aos-delay="100">
+                <a href="@Url.Action("TraCuuTienDoNangDoiDoiCo","TraCuu")">
+                    <img src="https://searchengineland.com/figz/wp-content/seloads/2017/05/seo-organic-search-ss-1920-800x450.jpg" alt="Image placeholder" width="100%" height="100%" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("TraCuuTienDoNangDoiDoiCo","TraCuu")">Tra Cứu Nâng Dời Đổi Cỡ</a></h3>
+            </div>
+
+            <div class="col-lg-4 col-md-6 visit mb-3" data-aos="fade-up" data-aos-delay="100">
+                <a href="@Url.Action("DanhSachNganHang","ThanhToan")">
+                    <img src="https://searchengineland.com/figz/wp-content/seloads/2017/05/seo-organic-search-ss-1920-800x450.jpg " alt="Image placeholder" width="100%" height="100%" class="img-fluid rounded">
+                </a>
+                <h3 class="text-center"><a href="@Url.Action("DanhSachNganHang","ThanhToan")">Các Địa Chỉ Thu Tiền Nước</a></h3>
+                <!-- <div class="reviews-star float-left">
+                  2724 20th Ave N, Houston TX
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END section -->
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-info">Hướng Dẫn Thanh Toán Tiền Nước</h2>
+                <p class="text-center">Nhanh Chóng - Đơn giản - Tiện ích qua các hình thức thanh toán</p>
+            </div>
+        </div>
+        <div class="js-carousel-1 owl-carousel">
+
+            <div class="testimonial text-center">
+                <div class="author-image mb-3">
+                    <span class="badge badge-danger">Thanh Toán Trực Tuyến</span>
+                    <img src="https://www.widgit.com/products/widgit-online/images/mainpic.jpg" alt="Image placeholder"
+                         class="rounded-circle">
+                </div>
+                <blockquote>
+
+                    <p>
+                        Quý khách hàng còn có thể thanh toán online, chuyển khoản
+                        hoặc nộp tiền vào tài khoản tại các Ngân hàng liên kết tại Tp. HCM như: Agribank, VietCombank, Eximbank,
+                        ACB, MBbank, BIDV, Vietinbank, Sacombank, DongA Bank…
+
+                        Thanh toán trực tuyến tại trang <a href="https://www.paybill.com.vn"></a>, các
+                        app Ví điện tử như Payoo, Bankplus, Momo.
+                    </p>
+                </blockquote>
+            </div>
+
+            <div class="testimonial text-center">
+                <div class="author-image mb-3">
+                    <span class="badge badge-danger">Thanh Toán Tại Các Điểm Thu Hộ</span>
+                    <img src="data:image/jpeg;base64,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"
+                         alt="Image placeholder" class="rounded-circle">
+                </div>
+                <blockquote>
+                    <p>
+                        Khách hàng có thể thanh toán tiền mặt tại các điểm thu hộ gần nhà (thanh toán cả ngoài giờ hành chính, T7
+                        & CN) như : Viễn Thông A, Thế giới di động, FPT shop, Điện máy xanh, FamilyMart, NguyenKim, Aeon-Citimart,
+                        Circle K, Ministop, B's mart, Bách Hóa Mới, Bách Hóa Xanh,Hnam Mobile, Vinpro, Vinmart, Điện máy Chợ Lớn,
+                        Cửa hàng Bách Hóa 24, Đại Lý Mobifone …
+                    </p>
+                </blockquote>
+            </div>
+
+            <div class="testimonial text-center">
+                <div class="author-image mb-3">
+                    <span class="badge badge-danger">Thanh Toán Tại Nhà</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Go-home.svg/1024px-Go-home.svg.png"
+                         alt="Image placeholder" class="rounded-circle">
+                </div>
+                <blockquote>
+
+                    <p>
+                        Hàng tháng Thu ngân viên (TNV) có trách nhiệm mang hóa đơn đến thu tiền tại địa chỉ của khách hàng
+                        từ ngày 1 đến 20 hàng tháng (không tính ngày thứ 7, chủ nhật và những ngày lễ tết). Trường hợp khách hàng
+                        chưa thể thanh toán hoặc vắng nhà, TNV sẽ gửi giấy báo tiền nước lại.
+                    </p>
+                </blockquote>
+            </div>
+
+            <div class="testimonial text-center">
+                <div class="author-image mb-3">
+                    <span class="badge badge-danger">Thanh Toán Tại Công Ty</span>
+                    <img src="https://www.capnuocnhabe.vn/images/stories/tintuc/LogoCtyChinhSua.png" alt="Image placeholder"
+                         class="rounded-circle">
+                </div>
+                <blockquote>
+                    <p>
+                        Khách hàng có thể thanh toán tiền nước trực tiếp tại quầy thu tiền của Công ty cổ phần cấp nước Nhà Bè,
+                        địa chỉ số 1179 Nguyễn Văn Linh , phường Tân Phong , quận 7, Tp.HCM.
+                    </p>
+                </blockquote>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4 text-center">
+                <span class="ion-android-calendar display-3 text-primary"></span>
+                <h3 class="card-title">Giải Quyết Nhanh Chóng</h3>
+                <p>
+                    Saepe omnis beatae libero quisquam ex nostrum repellendus, consectetur suscipit. Velit iusto ducimus sit
+                    quos officiis nesciunt libero
+                </p>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4 text-center">
+                <span class="ion-android-create display-3 text-primary"></span>
+                <h3 class="card-title">Phản Hồi Tốt</h3>
+                <p>
+                    Saepe omnis beatae libero quisquam ex nostrum repellendus, consectetur suscipit. Velit iusto ducimus sit
+                    quos officiis nesciunt libero
+                </p>
+            </div>
+            <div class="col-md-6 mb-4 mb-lg-0 col-lg-4 text-center">
+                <span class="ion-android-hangout display-3 text-primary"></span>
+                <h3 class="card-title">Hỗ Trợ Sự Cố 24/7</h3>
+                <p>
+                    Saepe omnis beatae libero quisquam ex nostrum repellendus, consectetur suscipit. Velit iusto ducimus sit
+                    quos officiis nesciunt libero
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section bg-light">
+    <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-8">
+                <h2 class="heading" data-aos="fade-up">Thông Tin Chung</h2>
+                <p class="lead" data-aos="fade-up">
+                    Mọi thông tin mới nhất về chăm sóc khách hàng, thông tin khuyến mãi, tin
+                    tức liên
+                    quan đến dịch vụ cung cấp nước sạch , lịch cúp nước, lịch đọc số ,tất cả các chính sách giá biểu thông tin
+                    liên quan...
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-12 post" data-aos="fade-up" data-aos-delay="100">
+                <div class="media media-custom d-block mb-4">
+                    <a href="@Url.Action("LichCupNuoc","Lich")" class="mb-4 d-block">
+                        <img src="~/Content/img/084745fabf03585d0112.jpg" alt="Image placeholder"
+                             class="img-fluid">
+                    </a>
+                    <div class="media-body">
+                        <span class="meta-post">February 26, 2018</span>
+                        <h2 class="mt-0 mb-3"><a href="@Url.Action("LichCupNuoc","Lich")">Lịch Cúp Nước</a></h2>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-12 post" data-aos="fade-up" data-aos-delay="200">
+                <div class="media media-custom d-block mb-4">
+                    <a href="@Url.Action("LichDocSo","Lich")" class="mb-4 d-block">
+                        <img src="~/Content/img/084745fabf03585d0112.jpg" alt="Image placeholder"
+                             class="img-fluid">
+                    </a>
+                    <div class="media-body">
+                        <span class="meta-post">February 26, 2018</span>
+                        <h2 class="mt-0 mb-3"><a href="@Url.Action("LichDocSo","Lich")">Lịch Đọc Số</a></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12 post" data-aos="fade-up" data-aos-delay="300">
+                <div class="media media-custom d-block mb-4">
+                    <a href="@Url.Action("ThongTinChung","News")" class="mb-4 d-block">
+                        <img src="~/Content/img/084745fabf03585d0112.jpg" alt="Image placeholder"
+                             class="img-fluid">
+                    </a>
+                    <div class="media-body">
+                        <span class="meta-post">February 26, 2018</span>
+                        <h2 class="mt-0 mb-3"><a href="@Url.Action("ThongTinChung","News")">Thông Tin Chung</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Footer{
+    <footer class="section footer-section bg-primary">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mb-5">
+                    <img src="~/Content/img/logo-footer.png" />
+                    <p>
+                        Cty cổ phần cấp nước Nhà Bè được thành lập trên cơ sở cổ phần hóa Chi nhánh cấp nước Nhà Bè trực
+                        thuộc Tổng
+                        Cty cấp nước Sài Gòn theo quyết định số 6659/QĐ-UBND ngày 30/12/2005 của Uy Ban Nhân Dân TPHCM.
+                        Cty cổ phần
+                        cấp nước Nhà Bè chính thức bắt đầu đi vào hoạt động kể từ ngày 01/02/2007
+                    </p>
+                </div>
+
+                <div class="col-md-6 mb-5 pr-md-5 contact-info">
+                    <p><span class="d-block">Địa Chỉ:</span> <span> 1179 Nguyễn Văn Linh, Tân Phong, Quận 7</span></p>
+                    <p><span class="d-block">Số Điện Thoại:</span> <span> (028) 54122499</span></p>
+                    <p><span class="d-block">Email:</span> <span> lienhe@capnuocnhabe.vn</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+}

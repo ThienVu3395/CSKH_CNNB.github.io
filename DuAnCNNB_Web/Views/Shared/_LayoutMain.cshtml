@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Chăm Sóc Khách Hàng</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee:200,300,400|Playfair+Display:400,700"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Content/css/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/css/animate.css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/css/aos.css">
+
+    <link rel="stylesheet" href="~/Content/fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/Content/fonts/fontawesome/css/font-awesome.min.css">
+
+    @RenderSection("Styles", false)
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.8/angular-sanitize.js"></script>
+    <script src="~/ControllerJS/Common/Common.js"></script>
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        @Html.Action("_Menu", "patital")
+    </header>
+    <section class="site-hero overlay page-inside" style="background: url(http://getwallpapers.com/wallpaper/full/6/6/4/805429-popular-water-background-2560x1600.jpg) center center no-repeat;background-size: cover;">
+        <div class="container">
+            <div class="row site-hero-inner align-items-center">
+                <div class="col-md-7 text-left mr-auto" data-aos="fade-up">
+                    <h1 class="text-white">@ViewBag.Header</h1>
+                </div>
+            </div>
+            <a href="#next-section" class="smoothscroll scroll-down">Scroll Down</a>
+        </div>
+    </section>
+    <section class="section @ViewBag.status3" id="next-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-3 col-md-12 mb-4" style="display:@ViewBag.status">
+                    @Html.Action("_navbar", "patital")
+                </div>
+
+                <div class="@ViewBag.status2">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @RenderSection("Footer", false)
+
+    <script src="~/Content/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/js/popper.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/owl.carousel.min.js"></script>
+    <script src="~/Content/js/jquery.waypoints.min.js"></script>
+    <script src="~/Content/js/aos.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

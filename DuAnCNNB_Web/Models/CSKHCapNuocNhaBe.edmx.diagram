@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="efd9a60c7abf4bde98cd7eb85d07d9d6" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseCSKHModel.Baochisonuoc" Width="1.5" PointX="12.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.Giaytocanthiet" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.MUCLUCYEUCAUNANGDOI" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbDiemthutien" Width="1.5" PointX="12.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbDieuchinh" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbDot" Width="1.5" PointX="9.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbDuong" Width="1.5" PointX="12.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbGanmoi" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbHokhau" Width="1.5" PointX="10" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbLichcup" Width="1.5" PointX="12.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbMadanhbo" Width="1.5" PointX="14.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbPhuong" Width="1.5" PointX="14.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbQuan" Width="1.5" PointX="14.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbTiennuoc" Width="1.5" PointX="14.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbXulychitiet" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbXulyyeucau" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.LoaiFrom_GiayTo" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbBaiViet" Width="1.5" PointX="10" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbChuyenMucBaiViet" Width="1.5" PointX="7.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbHoidap" Width="1.5" PointX="0.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseCSKHModel.tbLoaiQuitrinh" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseCSKHModel.FK_LoaiFrom_GiayTo_Giaytocanthiet" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCSKHModel.FK_tbGanmoi_MUCLUCYEUCAUNANGDOI" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCSKHModel.FK_tbHokhau_tbDieuchinh" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCSKHModel.FK_LoaiFrom_GiayTo_tbGanmoi" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCSKHModel.FK_tbGanmoi_tbLoaiQuitrinh" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCSKHModel.FK_tbGanmoi_tbLoaiQuitrinh1" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCSKHModel.FK_tbXulychitiet_tbXulyyeucau" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCSKHModel.FK_tbXulyyeucau_tbLoaiQuitrinh" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseCSKHModel.FK_tbBaiViet_tbChuyenMucBaiViet" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

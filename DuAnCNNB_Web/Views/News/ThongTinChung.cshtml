@@ -1,0 +1,167 @@
+﻿@{
+    ViewBag.Header = "THÔNG TIN CHUNG";
+    ViewBag.Title = "ThongTinChung";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
+}
+
+<section class="bg-light post p-4" id="next-section" ng-app="CommonApp" ng-controller="TinTuc">
+    <div class="container">
+        <form action="#" class="sidebar-search">
+            <div class="form-group">
+                <span class="fa fa-search icon-search"></span>
+                <input type="text" class="form-control search-input" placeholder="Tìm bài viết...">
+            </div>
+        </form>
+        <div class="row">
+                    <div class="col-md-6" ng-repeat="item in dsThongTinChung">
+                        <div class="media media-custom d-block mb-4">
+                            <a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}" class="mb-4 d-block">
+                                <img src="{{item.HinhDaiDien1}}" alt="Image placeholder"
+                                     class="img-fluid" width="100%">
+                            </a>
+                            <div class="media-body">
+                                <span class="meta-post">{{item.NgayDang}}</span>
+                                <h2 class="mt-0 mb-3"><a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}">{{item.TieuDe}}</a></h2>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav role="navigation">
+                            <ul class="pagination custom-pagination pagination-lg">
+                                <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
+                                    <a class="page-link" ng-click="phanTrang(item+1)">{{item + 1}}</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            <!-- END content -->
+            @*<div class="col-md-4">
+                <div class="row">
+
+                    <div class="col-md-11 ml-auto">
+                        <form action="#" class="sidebar-search">
+                            <div class="form-group">
+                                <span class="fa fa-search icon-search"></span>
+                                <input type="text" class="form-control search-input" placeholder="Tìm bài viết...">
+                            </div>
+                        </form>
+
+                        <div class="side-box">
+                            <h2 class="heading">Bài viết nổi bật</h2>
+                            <ul class="post-list list-unstyled">
+                                <li>
+                                    <a href="@Url.Action("ChiTietBaiViet","News")" class="d-flex">
+                                        <span class="mr-3 image">
+                                            <img src="~/Content/img/img_1.jpg" alt="Image placeholder"
+                                                 class="img-fluid">
+                                        </span>
+                                        <div>
+                                            <span class="meta">February 27, 2018</span>
+                                            <h3>Five Reasons to Stay at Villa Resort</h3>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ChiTietBaiViet","News")" class="d-flex">
+                                        <span class="mr-3 image">
+                                            <img src="~/Content/img/img_2.jpg" alt="Image placeholder"
+                                                 class="img-fluid">
+                                        </span>
+                                        <div>
+                                            <span class="meta">February 27, 2018</span>
+                                            <h3>Five Reasons to Stay at Villa Resort</h3>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("ChiTietBaiViet","News")" class="d-flex">
+                                        <span class="mr-3 image">
+                                            <img src="~/Content/img/img_1.jpg" alt="Image placeholder"
+                                                 class="img-fluid">
+                                        </span>
+                                        <div>
+                                            <span class="meta">February 27, 2018</span>
+                                            <h3>Five Reasons to Stay at Villa Resort</h3>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="side-box">
+                            <h2 class="heading">Danh mục</h2>
+                            <ul class="post-categories list-unstyled">
+                                <li><a href="#">Khuyến mãi <span class="count">(12)</span></a></li>
+                                <li><a href="#">Dịch vụ khách hàng <span class="count">(4)</span></a></li>
+                                <li><a href="#">Chính sách <span class="count">(23)</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+    </div>
+</section>
+
+@section Footer{
+<footer class="section footer-section bg-primary">
+    <div class="container">
+        <div class="row mb-4">
+            <!-- <div class="col-md-3 mb-5">
+              <ul class="list-unstyled link">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Rooms</a></li>
+              </ul>
+            </div> -->
+            <div class="col-md-6 mb-5">
+                <img src="~/Content/img/logo-footer.png" />
+                <p>
+                    Cty cổ phần cấp nước Nhà Bè được thành lập trên cơ sở cổ phần hóa Chi nhánh cấp nước Nhà Bè trực
+                    thuộc Tổng
+                    Cty cấp nước Sài Gòn theo quyết định số 6659/QĐ-UBND ngày 30/12/2005 của Uy Ban Nhân Dân TPHCM.
+                    Cty cổ phần
+                    cấp nước Nhà Bè chính thức bắt đầu đi vào hoạt động kể từ ngày 01/02/2007
+                </p>
+            </div>
+
+
+            <div class="col-md-6 mb-5 pr-md-5 contact-info">
+                <p><span class="d-block">Địa Chỉ:</span> <span> 1179 Nguyễn Văn Linh, Tân Phong, Quận 7</span></p>
+                <p><span class="d-block">Số Điện Thoại:</span> <span> (028) 54122499</span></p>
+                <p><span class="d-block">Email:</span> <span> lienhe@capnuocnhabe.vn</span></p>
+            </div>
+            <!-- <div class="col-md-3 mb-5">
+              <p>Sign up for our newsletter</p>
+              <form action="#" class="footer-newsletter">
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Your email...">
+                  <button type="submit" class="btn"><span class="fa fa-paper-plane"></span></button>
+                </div>
+              </form>
+            </div> -->
+        </div>
+        <!-- <div class="row bordertop pt-5">
+          <p class="col-md-6 text-left">&copy; Copyright 2019. All Rights Reserved. Carefully crafted by <a
+              href="https://colorlib.com/">Colorlib</a></p>
+
+          <p class="col-md-6 text-right social">
+            <a href="#"><span class="fa fa-twitter"></span></a>
+            <a href="#"><span class="fa fa-linkedin"></span></a>
+            <a href="#"><span class="fa fa-facebook"></span></a>
+            <a href="#"><span class="fa fa-instagram"></span></a>
+          </p>
+        </div> -->
+    </div>
+</footer>
+}
+
+<script src="~/ControllerJS/News/News.js"></script>
+

@@ -1,0 +1,235 @@
+﻿@{
+    ViewBag.Header = "ĐĂNG KÝ GẮN MỚI ONLINE";
+    ViewBag.Title = "Phiếu Đăng Ký Gắn Mới Online";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
+}
+
+<div class="container card" ng-app="CommonApp" ng-controller="DangKyGanMoi" ng-init="layPhuongMacDinh();layQuan()">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs pt-2">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">
+                @ViewBag.Title
+            </a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content card-body">
+        <div class="card p-4" ng-hide="!trangThaiFormGanMoi">
+            <form name="FormGanMoi">
+                <div class="form-group">
+                    <label>Người đăng ký ( Bắt Buộc<span class="text-danger"> *</span> )</label>
+                    <input type="text" class="form-control" name="tenkh" ng-model="thongTinGanMoi.TENKH" required>
+                    <span style="color:red" ng-show="FormGanMoi.tenkh.$dirty && FormGanMoi.tenkh.$invalid">
+                        <span ng-show="FormGanMoi.tenkh.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label>Người đứng tên HĐ ( Bắt Buộc<span class="text-danger"> *</span> )</label>
+                    <input type="text" class="form-control" name="tenhd" ng-model="thongTinGanMoi.TENHD" required>
+                    <span style="color:red" ng-show="FormGanMoi.tenhd.$dirty && FormGanMoi.tenhd.$invalid">
+                        <span ng-show="FormGanMoi.tenhd.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                    </span>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label>Số nhà ( Bắt Buộc<span class="text-danger"> *</span> )</label>
+                        <input type="text" class="form-control" name="dc1" ng-model="thongTinGanMoi.DIACHI1" required>
+                        <span style="color:red" ng-show="FormGanMoi.dc1.$dirty && FormGanMoi.dc1.$invalid">
+                            <span ng-show="FormGanMoi.dc1.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                        </span>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label>Tên đường ( Bắt Buộc<span class="text-danger"> *</span> )</label>
+                        <input type="text" class="form-control" name="dc2" ng-model="thongTinGanMoi.DIACHI2" required>
+                        <span style="color:red" ng-show="FormGanMoi.dc2.$dirty && FormGanMoi.dc2.$invalid">
+                            <span ng-show="FormGanMoi.dc2.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label>Quận huyện</label>
+                        <select class="form-control">
+                            <option ng-repeat="item in danhSachQuan" ng-model="thongTinGanMoi.MAQUAN" value={{item.MAQUAN}} ng-click="layPhuong(item.MAQUAN)">{{item.TENQUAN}}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label>Phường xã</label>
+                        <select class="form-control">
+                            <option ng-repeat="item in danhSachPhuongTheoQuan" value={{item.MAPHUONG}} ng-click="chonPhuong(item.MAPHUONG)">{{item.TENPHUONG}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label>Email</label>
+                        <input type="text" class="form-control" name="email" ng-model="thongTinGanMoi.EMAIL" required>
+                        <span style="color:red" ng-show="FormGanMoi.email.$dirty && FormGanMoi.email.$invalid">
+                            <span ng-show="FormGanMoi.email.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                        </span>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label>Số điện thoại ( Bắt Buộc<span class="text-danger"> *</span> )</label>
+                        <input type="text" class="form-control" name="sdt" ng-model="thongTinGanMoi.DIENTHOAI" required>
+                        <span style="color:red" ng-show="FormGanMoi.sdt.$dirty && FormGanMoi.sdt.$invalid">
+                            <span ng-show="FormGanMoi.sdt.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Mục đích sử dụng nước</label>
+                    <select class="form-control">
+                        <option ng-repeat="item in danhSachMucDich" value={{item.maYeuCau}} ng-click="chonMucDich(item.maYeuCau)">{{item.tenYeuCau}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="text-danger display-3" ng-bind="captcha"></div>
+                    <input type="text" class="form-control" name="captcha" ng-model="recaptcha" placeholder="Nhập chính xác mã xác nhận bên trên , có phân biệt chữ hoa và thường" required />
+                    <span style="color:red" ng-show="FormGanMoi.captcha.$dirty && FormGanMoi.captcha.$invalid">
+                        <span ng-show="FormGanMoi.captcha.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                    </span>
+                </div>
+
+                <button 
+                        type="submit"
+                        class="btn btn-success container mt-3" 
+                        ng-click="guiDangKy()"
+                        ng-hide="FormGanMoi.tenkh.$dirty && FormGanMoi.tenkh.$invalid || !FormGanMoi.tenkh.$touched ||
+                                 FormGanMoi.tenhd.$dirty && FormGanMoi.tenhd.$invalid || !FormGanMoi.tenhd.$touched ||
+                                 FormGanMoi.dc1.$dirty && FormGanMoi.dc1.$invalid || !FormGanMoi.dc1.$touched ||
+                                 FormGanMoi.dc2.$dirty && FormGanMoi.dc2.$invalid || !FormGanMoi.dc2.$touched ||
+                                 FormGanMoi.email.$dirty && FormGanMoi.email.$invalid || !FormGanMoi.email.$touched ||
+                                 FormGanMoi.sdt.$dirty && FormGanMoi.sdt.$invalid || !FormGanMoi.sdt.$touched ||
+                                 FormGanMoi.captcha.$dirty && FormGanMoi.captcha.$invalid || !FormGanMoi.captcha.$touched"
+                        >Gửi Đăng Ký
+                </button>
+            </form>
+        </div>
+
+        @*Màn hình hiển thị khi người dùng đã submit yêu cầu gắn mới thành công*@
+        <div class="alert alert-success" ng-hide="trangThaiFormGanMoi">
+            <strong>Xác Nhận</strong> Yêu Cầu Của Bạn Đã Được Gửi Đi Thành Công , <a href="@Url.Action("Index","Home")" class="alert-link">Click vào đây để về lại trang chủ</a>!!!
+        </div>
+
+        @*<div class="card p-4 mt-3">
+            <h3 class="mb-3 text-danger text-center">HỒ SƠ ĐÍNH KÈM</h3>
+            <p>
+                Khách hàng vui lòng chọn các loại giấy tờ mà khách hàng có, nhân viên chúng tôi sẽ hổ
+                trợ cung cấp thông tin để giấy tờ Quý Khách Hàng đầy đủ trước khi lên công ty Cấp
+                nước Nhà Bè đăng ký.
+            </p>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Quyết định giao đất của
+                    cơ quan chức năng cho chủ đầu tư xây dựng công trình
+                </label>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Hộ khẩu diện KT3 còn
+                    thời hạn
+                </label>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Hộ khẩu thường trú tại
+                    địa chỉ gắn ĐHN (Photo đầy đủ nhân khẩu trong hộ để được cấp định mức)
+                </label>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Quyết định cấp số nhà
+                    của cơ quan thẩm quyền
+                </label>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Giấy phép xây dựng (có
+                    số nhà)
+                </label>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Hợp đồng thuê nhà của
+                    Nhà nước (có thời hạn lâu dài)
+                </label>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Quyết định của cơ quan
+                    có thẩm quyền hoặc bản án có hiệu lực thi hành của tòa án công nhận quyền sở
+                    hữu,sử dụng, thừa kế nhà (kèm bản photo chủ quyền nhà)
+                </label>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Hợp đồng chuyển quyền
+                    sở hữu nhà lập tại cơ quan công chứng
+                </label>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Giấy xác nhận tạm trú
+                    tại địa chỉ gắn đồng hồ nước của công an phường, xã (KT2) và xác nhận thêm
+                    “không thuộc diện nhà thuê”
+                </label>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="">Giấy tờ khác
+                </label>
+            </div>
+        </div>*@
+    </div>
+</div>
+
+
+
+@section Footer{
+<footer class="section footer-section bg-primary">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-6 mb-5">
+                <img src="~/Content/img/logo-footer.png" />
+                <p>
+                    Cty cổ phần cấp nước Nhà Bè được thành lập trên cơ sở cổ phần hóa Chi nhánh cấp nước Nhà Bè trực
+                    thuộc Tổng
+                    Cty cấp nước Sài Gòn theo quyết định số 6659/QĐ-UBND ngày 30/12/2005 của Uy Ban Nhân Dân TPHCM.
+                    Cty cổ phần
+                    cấp nước Nhà Bè chính thức bắt đầu đi vào hoạt động kể từ ngày 01/02/2007
+                </p>
+            </div>
+
+            <div class="col-md-6 mb-5 pr-md-5 contact-info">
+                <p><span class="d-block">Địa Chỉ:</span> <span> 1179 Nguyễn Văn Linh, Tân Phong, Quận 7</span></p>
+                <p><span class="d-block">Số Điện Thoại:</span> <span> (028) 54122499</span></p>
+                <p><span class="d-block">Email:</span> <span> lienhe@capnuocnhabe.vn</span></p>
+            </div>
+        </div>
+    </div>
+</footer>
+}
+
+<script src="~/ControllerJS/Home/ViDu01.js"></script>

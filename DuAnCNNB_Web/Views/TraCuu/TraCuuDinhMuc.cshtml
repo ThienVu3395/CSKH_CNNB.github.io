@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Header = "TRA CỨU ĐỊNH MỨC";
+    ViewBag.Title = "Tra Cứu Thông Tin Khách Hàng";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.status2 = "col-md-9 mb-4 mb-md-0";
+}
+
+<div class="container card" ng-app="CommonApp" ng-controller="TraCuu">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs pt-2">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">
+                @ViewBag.Title
+            </a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content card-body">
+        <div class="tab-pane container active" id="home">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" ng-model="maDanhBo" placeholder="Nhập Mã Danh Bộ...">
+                <div class="input-group-append">
+                    <button class="btn btn-success" ng-click="xemThongTin()">Tìm Kiếm</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" ng-show="trangThaiForm">
+            <div class="card-body" style="border:2px solid #A69C8F">
+                <h4 class="card-title text-center">Thông Tin Khách Hàng</h4>
+                <p class="card-text">Danh Bộ : <span class="text-danger" ng-bind="thongTinKhachHang.MADB"></span></p>
+                <p class="card-text">Họ tên : <span class="text-danger" ng-bind="thongTinKhachHang.TENKH"></span></p>
+                <p class="card-text">Địa chỉ : <span class="text-danger" ng-bind="thongTinKhachHang.DIACHI1 + ' ' + thongTinKhachHang.DIACHI2"></span></p>
+                <p class="card-text">Định Mức : <span class="text-danger" ng-bind="thongTinKhachHang.DINHMUC"></span></p>
+                <p class="card-text">Giá Biểu : <span class="text-danger" ng-bind="thongTinKhachHang.GIABIEU"></span></p>
+                <p class="card-text">Số Hợp Đồng : <span class="text-danger" ng-bind="thongTinKhachHang.MADB"></span></p>
+                <p class="card-text">Ngày Kiểm Định ĐHN : <span class="text-danger" ng-bind="thongTinKhachHang.MADB"></span></p>
+                <p class="card-text">Cỡ ĐHN : <span class="text-danger" ng-bind="thongTinKhachHang.MADB"></span></p>
+                <p class="card-text">Ngày Lắp Đặt ĐHN :  <span class="text-danger" ng-bind="thongTinKhachHang.MADB"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Footer{
+    <footer class="section footer-section bg-primary">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mb-5">
+                    <img src="~/Content/img/logo-footer.png" />
+                    <p>
+                        Cty cổ phần cấp nước Nhà Bè được thành lập trên cơ sở cổ phần hóa Chi nhánh cấp nước Nhà Bè trực
+                        thuộc Tổng
+                        Cty cấp nước Sài Gòn theo quyết định số 6659/QĐ-UBND ngày 30/12/2005 của Uy Ban Nhân Dân TPHCM.
+                        Cty cổ phần
+                        cấp nước Nhà Bè chính thức bắt đầu đi vào hoạt động kể từ ngày 01/02/2007
+                    </p>
+                </div>
+
+                <div class="col-md-6 mb-5 pr-md-5 contact-info">
+                    <p><span class="d-block">Địa Chỉ:</span> <span> 1179 Nguyễn Văn Linh, Tân Phong, Quận 7</span></p>
+                    <p><span class="d-block">Số Điện Thoại:</span> <span> (028) 54122499</span></p>
+                    <p><span class="d-block">Email:</span> <span> lienhe@capnuocnhabe.vn</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+}
+
+<script src="~/ControllerJS/TraCuu/TraCuu.js"></script>

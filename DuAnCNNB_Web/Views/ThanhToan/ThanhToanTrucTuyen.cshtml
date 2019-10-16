@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Header = "THANH TOÁN TRỰC TUYẾN";
+    ViewBag.Title = "Thanh toán online qua hệ thống ví điện tử VNPAY";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
+}
+
+<div class="container card">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs pt-2">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">
+                @ViewBag.Title
+            </a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content card-body">
+        <div class="container">
+            <div class="card p-3 mb-4">
+                <div class="form-group">
+                    <label>Nhà cung cấp : CTCP Cấp Nước Nhà Bè </label>
+                    <button type="button" class="btn btn-info container" data-toggle="modal" data-target="#ModalThanhToan">Hướng dẫn thanh toán</button>
+                </div>
+
+                <form name="FormThanhToan">
+                    <div class="form-group">
+                        <label>Mã Danh Bạ</label>
+                        <input type="text" class="form-control" placeholder="Nhập Mã Danh Bộ Của Bạn...">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Số Điện Thoại</label>
+                        <input type="password" class="form-control" placeholder="Sdt Quý Khách Hàng dùng để thanh toán">
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Tiếp Tục</button>
+                </form>
+
+                <!-- Modal Thanh Toán -->
+                <div class="modal" id="ModalThanhToan">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">
+                                    HƯỚNG DẪN THANH TOÁN HÓA ĐƠN TIỀN NƯỚC
+                                </h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <p><span class="text-danger">Bước 1:</span> Quý khách truy cập vào website và chọn “Thanh toán hóa đơn tiền nước”. Sau đó nhập Mã danh bạ, Nhà cung cấp và Số điện thoại liên hệ, sau đó bấm “Tiếp tục”.</p>
+                                <p><span class="text-danger">Bước 2:</span> Lựa chọn phương thức thanh toán:</p>
+                                <p>- Quý khách kiểm tra lại Thông tin hóa đơn. Nếu chính xác thì tiến hành Thanh toán. </p>
+                                <p>
+                                    <ul>
+                                        <li>
+                                            BIDV, Vietinbank, Sacombank, Ngân hàng Quốc Dân, NamABank, EximBank, MaritimeBank, TpBank: nhập vào thông tin chủ thẻ.
+                                        </li>
+
+                                        <li>
+                                            DongABank, TechcomBank, HDBank, Vietcombank: nhập vào thông tin tài khoản Internet Banking.
+                                        </li>
+
+                                        <li>
+                                            Oceanbank: Nhập thông tin chủ thẻ hoặc thông tin tài khoản Internet Banking
+                                        </li>
+
+                                        <li>
+                                            VnMart: nhập thông tin tài khoản ví VnMart.
+                                        </li>
+                                    </ul>
+                                </p>
+
+                                <p>Sau đó nhấn “Tiếp tục”.</p>
+                                <p><span class="text-danger">Bước 3:</span>  Xác thực thanh toán.</p>
+                                <p>Xác thực thanh toán. Quý khách lựa chọn hình thức xác thực, mật khẩu OTP sẽ được trả về theo hình thức quý khách đăng ký (SMS hoặc thiết bị token). Quý khách nhập mật khẩu OTP và nhấn “Thanh toán”. Sau khi thanh toán thành công, quý khách sẽ được chuyển về website với thông báo về kết quả cung cấp dịch vụ.</p>
+                                <p>Sau khi thanh toán thành công, quý khách sẽ được chuyển về website với thông báo về kết quả cung cấp dịch vụ</p>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="card p-3">
+                    <h2 class="text-center">CHẤP NHẬN THANH TOÁN TRỰC TUYẾN</h2>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 mb-2">
+                                <a href="">
+                                    <div class="card">
+                                        <img class="card-img-top" src="http://www.inlogo.vn/vnt_upload/File/Image/logo_VCB_828891.jpg" alt="Card image" width="100%" height="100%">
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-3 mb-2">
+                                <a href="">
+                                    <div class="card">
+                                        <img class="card-img-top" src="http://www.inlogo.vn/vnt_upload/File/Image/logo_VCB_828891.jpg" alt="Card image" width="100%" height="100%">
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-3 mb-2">
+                                <a href="">
+                                    <div class="card">
+                                        <img class="card-img-top" src="http://www.inlogo.vn/vnt_upload/File/Image/logo_VCB_828891.jpg" alt="Card image" width="100%" height="100%">
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-3 mb-2">
+                                <a href="">
+                                    <div class="card">
+                                        <img class="card-img-top" src="http://www.inlogo.vn/vnt_upload/File/Image/logo_VCB_828891.jpg" alt="Card image" width="100%" height="100%">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+@section Footer{
+    <footer class="section footer-section bg-primary">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mb-5">
+                    <img src="~/Content/img/logo-footer.png" />
+                    <p>
+                        Cty cổ phần cấp nước Nhà Bè được thành lập trên cơ sở cổ phần hóa Chi nhánh cấp nước Nhà Bè trực
+                        thuộc Tổng
+                        Cty cấp nước Sài Gòn theo quyết định số 6659/QĐ-UBND ngày 30/12/2005 của Uy Ban Nhân Dân TPHCM.
+                        Cty cổ phần
+                        cấp nước Nhà Bè chính thức bắt đầu đi vào hoạt động kể từ ngày 01/02/2007
+                    </p>
+                </div>
+
+                <div class="col-md-6 mb-5 pr-md-5 contact-info">
+                    <p><span class="d-block">Địa Chỉ:</span> <span> 1179 Nguyễn Văn Linh, Tân Phong, Quận 7</span></p>
+                    <p><span class="d-block">Số Điện Thoại:</span> <span> (028) 54122499</span></p>
+                    <p><span class="d-block">Email:</span> <span> lienhe@capnuocnhabe.vn</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+}

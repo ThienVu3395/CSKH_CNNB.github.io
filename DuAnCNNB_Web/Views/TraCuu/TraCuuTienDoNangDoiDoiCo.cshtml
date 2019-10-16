@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Header = "TRA CỨU TIẾN ĐỘ NÂNG DỜI ĐỔI CỠ";
+    ViewBag.Title = "Tra Cứu Tiến Độ Nâng Dời Đổi Cỡ ĐHN";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.status2 = "col-md-9 mb-4 mb-md-0";
+}
+
+<div class="container card">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs pt-2">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">
+                @ViewBag.Title
+            </a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content card-body">
+        <div class="tab-pane container active" id="home">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nhập Số Hồ Sơ...">
+                <div class="input-group-append">
+                    <button class="btn btn-success" id="timKiem" type="submit">Tìm Kiếm</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="thongTinDangKy">
+            <div class="row">
+                <div class="col-lg-12 mb-3">
+                    <div class="card-body" style="border:2px solid #A69C8F">
+                        <h4 class="card-title text-center">Thông Tin Khách Hàng</h4>
+                        <p class="card-text">Số hồ sơ :</p>
+                        <p class="card-text">Họ tên :</p>
+                        <p class="card-text">Địa chỉ :</p>
+                        <p class="card-text">Số điện thoại :</p>
+                        <p class="card-text">Ngày nhận hồ sơ :</p>
+                        <p class="card-text">Giấy tờ đi kèm :</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <p>
+                        <span class="text-danger" style="font-size: 30px">
+                            <u>
+                                <i>
+                                    Lưu
+                                    ý
+                                </i>
+                            </u>
+                        </span>: Hồ sơ khách hàng đang ở giai đoạn nào thì
+                        bước sẽ hiện màu đỏ
+                    </p>
+
+                    <div class="progress mb-3">
+                        <div class="progress-bar mr-2" style="width:25%">
+                            <button class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                                Giai Đoạn 1
+                            </button>
+                        </div>
+                        <div class="progress-bar mr-2" style="width:25%">
+                            <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                                Giai Đoạn 2
+                            </button>
+                        </div>
+                        <div class="progress-bar mr-2" style="width:25%">
+                            <button class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                                Giai Đoạn 3
+                            </button>
+                        </div>
+                        <div class="progress-bar" style="width:25%">
+                            <button class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                                Giai Đoạn 4
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div class="card-body" style="border:2px solid #A69C8F">
+                        <h4 class="card-title">Giai Đoạn 1 : Tiếp Nhận Hồ Sơ Thông Tin Gắn Mới</h4>
+                        <p class="card-text">Số Hồ Sơ :</p>
+                        <p class="card-text">Địa chỉ :</p>
+                        <p class="card-text">Số Điện Thoại :</p>
+                        <p class="card-text">Ngày Nhận :</p>
+                        <p class="card-text">Giấy Tờ Đi Kèm :</p>
+                    </div>
+
+
+                    <!-- The Modal -->
+                    <!-- <div class="modal" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content"> -->
+                    <!-- Modal Header -->
+                    <!-- <div class="modal-header">
+                                        <h4 class="modal-title">Giai Đoạn 1</h4>
+                                        <button type="button" class="close"
+                                            data-dismiss="modal">&times;</button>
+                                    </div> -->
+                    <!-- Modal body -->
+                    <!-- <div class="modal-body">
+                                        Modal body..
+                                    </div> -->
+                    <!-- Modal footer -->
+                    <!-- <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Footer{
+    <footer class="section footer-section bg-primary">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mb-5">
+                    <img src="~/Content/img/logo-footer.png" />
+                    <p>
+                        Cty cổ phần cấp nước Nhà Bè được thành lập trên cơ sở cổ phần hóa Chi nhánh cấp nước Nhà Bè trực
+                        thuộc Tổng
+                        Cty cấp nước Sài Gòn theo quyết định số 6659/QĐ-UBND ngày 30/12/2005 của Uy Ban Nhân Dân TPHCM.
+                        Cty cổ phần
+                        cấp nước Nhà Bè chính thức bắt đầu đi vào hoạt động kể từ ngày 01/02/2007
+                    </p>
+                </div>
+
+                <div class="col-md-6 mb-5 pr-md-5 contact-info">
+                    <p><span class="d-block">Địa Chỉ:</span> <span> 1179 Nguyễn Văn Linh, Tân Phong, Quận 7</span></p>
+                    <p><span class="d-block">Số Điện Thoại:</span> <span> (028) 54122499</span></p>
+                    <p><span class="d-block">Email:</span> <span> lienhe@capnuocnhabe.vn</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+}

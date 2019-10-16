@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Header = "CẨM NANG SỬ DỤNG NƯỚC";
+    ViewBag.Title = "CamNang";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
+}
+
+<section class="bg-light post p-4" id="next-section">
+    <div class="container">
+        <form action="#" class="sidebar-search">
+            <div class="form-group">
+                <span class="fa fa-search icon-search"></span>
+                <input type="text" class="form-control search-input" placeholder="Tìm bài viết...">
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="media media-custom d-block mb-4">
+                    <a href="@Url.Action("ChiTietBaiViet","News")" class="mb-4 d-block">
+                        <img src="~/Content/img/img_1.jpg" alt="Image placeholder"
+                             class="img-fluid">
+                    </a>
+                    <div class="media-body">
+                        <span class="meta-post">February 26, 2018</span>
+                        <h2 class="mt-0 mb-3"><a href="@Url.Action("ChiTietBaiViet","News")">How to pick right realtor?</a></h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="media media-custom d-block mb-4">
+                    <a href="@Url.Action("ChiTietBaiViet","News")" class="mb-4 d-block">
+                        <img src="~/Content/img/img_1.jpg" alt="Image placeholder"
+                             class="img-fluid">
+                    </a>
+                    <div class="media-body">
+                        <span class="meta-post">February 26, 2018</span>
+                        <h2 class="mt-0 mb-3"><a href="@Url.Action("ChiTietBaiViet","News")">How to pick right realtor?</a></h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <nav role="navigation">
+                        <ul class="pagination custom-pagination pagination-lg">
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item ">
+                                <a class="page-link " href="#">2</a>
+                            </li>
+                            <li class="page-item ">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- END content -->
+        </div>
+    </div>
+</section>
+
+@section Footer{
+    <footer class="section footer-section bg-primary">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mb-5">
+                    <img src="~/Content/img/logo-footer.png" />
+                    <p>
+                        Cty cổ phần cấp nước Nhà Bè được thành lập trên cơ sở cổ phần hóa Chi nhánh cấp nước Nhà Bè trực
+                        thuộc Tổng
+                        Cty cấp nước Sài Gòn theo quyết định số 6659/QĐ-UBND ngày 30/12/2005 của Uy Ban Nhân Dân TPHCM.
+                        Cty cổ phần
+                        cấp nước Nhà Bè chính thức bắt đầu đi vào hoạt động kể từ ngày 01/02/2007
+                    </p>
+                </div>
+
+
+                <div class="col-md-6 mb-5 pr-md-5 contact-info">
+                    <p><span class="d-block">Địa Chỉ:</span> <span> 1179 Nguyễn Văn Linh, Tân Phong, Quận 7</span></p>
+                    <p><span class="d-block">Số Điện Thoại:</span> <span> (028) 54122499</span></p>
+                    <p><span class="d-block">Email:</span> <span> lienhe@capnuocnhabe.vn</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+}
+

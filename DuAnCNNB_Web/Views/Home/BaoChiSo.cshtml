@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Header = "BÁO CHỈ SỐ NƯỚC ONLINE";
+    ViewBag.Title = "Báo Chỉ Số Nước Online";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
+}
+
+<div class="container card" ng-app="CommonApp" ng-controller="DichVuTrucTuyen">
+    <ul class="nav nav-tabs pt-2">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">@ViewBag.Title</a>
+        </li>
+    </ul>
+
+    <div class="tab-content card-body">
+        <div class="tab-pane container active" id="home">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" ng-model="maDanhBo" placeholder="Nhập Mã Danh Bộ...">
+                <div class="input-group-append">
+                    <button class="btn btn-success" ng-click="timMaDB()">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" ng-show="trangThaiHienThiForm">
+            <div class="card-body mb-3" style="border:2px solid #A69C8F">
+                <h4 class="card-title text-center">Thông Tin Khách Hàng</h4>
+                <p class="card-text">Số đứng tên hợp đồng : <span class="text-danger" ng-bind="thongTinKhachHang.TENKH"></span></p>
+                <p class="card-text">Danh bộ : <span class="text-danger" ng-bind="thongTinKhachHang.MADB"></span></p>
+                <p class="card-text">Địa chỉ đặt ĐHN : <span class="text-danger" ng-bind="thongTinKhachHang.DIACHI1 + ' ' + thongTinKhachHang.DIACHI2"></span></p>
+            </div>
+
+            <div class="card p-3">
+                <h2 class="text-center">Vui Lòng Điền Các Thông Tin Sau</h2>
+                <form name="FormBaoChiSo">
+                    <div class="form-group">
+                        <label>Họ Tên Người Báo Chỉ Số ( Bắt Buộc<span class="text-danger"> *</span> )</label>
+                        <input type="text" class="form-control mb-2" name="nguoibaochiso" ng-model="thongTinGuiDi.NGUOIBAOCHISO" placeholder="Người báo chỉ số..." required>
+                        <span style="color:red" ng-show="FormBaoChiSo.nguoibaochiso.$dirty && FormBaoChiSo.nguoibaochiso.$invalid">
+                            <span ng-show="FormBaoChiSo.nguoibaochiso.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Số Điện Thoại Liên Lạc ( Bắt Buộc<span class="text-danger"> *</span> )</label>
+                        <input type="text" class="form-control" name="sdt" ng-model="thongTinGuiDi.DIENTHOAI" placeholder="Số điện thoại..." required>
+                        <span style="color:red" ng-show="FormBaoChiSo.sdt.$dirty && FormBaoChiSo.sdt.$invalid">
+                            <span ng-show="FormBaoChiSo.sdt.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Chỉ Số Nước ( Bắt Buộc<span class="text-danger"> *</span> )</label>
+                        <input type="text" class="form-control" name="csn" ng-model="thongTinGuiDi.CHISONUOC" placeholder="Chỉ số nước..." required>
+                        <div class="invalid-feedback">Vui lòng không để trống trường này</div>
+                        <span style="color:red" ng-show="FormBaoChiSo.csn.$dirty && FormBaoChiSo.csn.$invalid">
+                            <span ng-show="FormBaoChiSo.csn.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="text-danger display-3" ng-bind="captcha"></span>
+                        <input type="text" class="form-control" name="captcha" ng-model="recaptcha" placeholder="Nhập Mã Xác Nhận Bên Trên" required>
+                        <span style="color:red" ng-show="FormBaoChiSo.captcha.$dirty && FormBaoChiSo.captcha.$invalid">
+                            <span ng-show="FormBaoChiSo.captcha.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                        </span>
+                    </div>
+
+                    <button 
+                            class="btn btn-success" 
+                            type="submit" 
+                            ng-click="dangKyBaoChiSoNuoc()" 
+                            ng-hide="FormBaoChiSo.nguoibaochiso.$dirty && FormBaoChiSo.nguoibaochiso.$invalid || !FormBaoChiSo.nguoibaochiso.$touched ||  
+                                         FormBaoChiSo.sdt.$dirty && FormBaoChiSo.sdt.$invalid || !FormBaoChiSo.sdt.$touched ||
+                                         FormBaoChiSo.csn.$dirty && FormBaoChiSo.csn.$invalid || !FormBaoChiSo.csn.$touched ||
+                                         FormBaoChiSo.captcha.$dirty && FormBaoChiSo.captcha.$invalid || !FormBaoChiSo.captcha.$touched">Gửi Đăng Ký
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Footer{
+    <footer class="section footer-section bg-primary">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mb-5">
+                    <img src="~/Content/img/logo-footer.png" />
+                    <p>
+                        Cty cổ phần cấp nước Nhà Bè được thành lập trên cơ sở cổ phần hóa Chi nhánh cấp nước Nhà Bè trực
+                        thuộc Tổng
+                        Cty cấp nước Sài Gòn theo quyết định số 6659/QĐ-UBND ngày 30/12/2005 của Uy Ban Nhân Dân TPHCM.
+                        Cty cổ phần
+                        cấp nước Nhà Bè chính thức bắt đầu đi vào hoạt động kể từ ngày 01/02/2007
+                    </p>
+                </div>
+
+                <div class="col-md-6 mb-5 pr-md-5 contact-info">
+                    <p><span class="d-block">Địa Chỉ:</span> <span> 1179 Nguyễn Văn Linh, Tân Phong, Quận 7</span></p>
+                    <p><span class="d-block">Số Điện Thoại:</span> <span> (028) 54122499</span></p>
+                    <p><span class="d-block">Email:</span> <span> lienhe@capnuocnhabe.vn</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+}
+
+<script src="~/ControllerJS/Home/ViDu01.js"></script>

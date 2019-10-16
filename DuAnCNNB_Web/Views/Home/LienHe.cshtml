@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Header = "TRANG LIÊN HỆ";
+    ViewBag.Title = "LienHe";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.status = "none";
+    ViewBag.status3 = "bg-primary contact-section";
+}
+
+    <div class="container" ng-app="CommonApp" ng-controller="LienHe">
+        <div class="row">
+            <div class="col-md-7">
+                <form name="lh" class="bg-white p-md-5 p-4 mb-5" style="margin-top: -150px;">
+                    <div class="alert alert-success" ng-show="trangThaiGuiForm">
+                        <strong>Bạn Đã Gửi Form Liên Hệ Thành Công !</strong> Click Vào <a href="@Url.Action("Index","Home")" class="alert-link">Đây</a>.
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label>Họ Tên ( Bắt Buộc<span class="text-danger"> *</span> )</label>
+                                <input type="text" class="form-control" placeholder="Họ tên người gửi" name="ht" ng-model="thongTinLienHe.Hoten" required>
+                                <span style="color:red" ng-show="lh.ht.$dirty && lh.ht.$invalid">
+                                    <span ng-show="lh.ht.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                                </span>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <label>Số Điện Thoại ( Bắt Buộc<span class="text-danger"> *</span> )</label>
+                                <input type="text" class="form-control" placeholder="Số điện thoại người gửi" name="sdt" ng-model="thongTinLienHe.Dienthoai" required>
+                                <span style="color:red" ng-show="lh.sdt.$dirty && lh.sdt.$invalid">
+                                    <span ng-show="lh.sdt.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" placeholder="Email người gửi" ng-model="thongTinLienHe.Email">
+                                <div class="invalid-feedback">Vui lòng điền đúng định dạng email vào trường này.</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label>Nội Dung Tin Nhắn ( Bắt Buộc<span class="text-danger"> *</span> )</label>
+                                <textarea name="message" class="form-control" cols="30" rows="8" ng-model="thongTinLienHe.Noidunghoidap" required></textarea>
+                                <span style="color:red" ng-show="lh.message.$dirty && lh.message.$invalid">
+                                    <span ng-show="lh.message.$error.required">Vui Lòng Không Để Trống Trường Này</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary container"
+                                type="submit"
+                                ng-click="guiThongTinLienHe()"
+                                ng-disabled="trangThaiGuiForm"
+                                ng-hide="lh.ht.$dirty && lh.ht.$invalid || !lh.ht.$touched ||
+                                     lh.sdt.$dirty && lh.sdt.$invalid || !lh.sdt.$touched ||
+                                     lh.message.$dirty && lh.message.$invalid || !lh.message.$touched">
+                            Gửi Tin Nhắn
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-10 ml-auto contact-info">
+                        <p>
+                            <span class="d-block">Địa chỉ :</span> <span> 1179 Nguyễn Văn Linh, Tân Phong, Quận 7</span>
+                        </p>
+                        <p><span class="d-block">Số điện thoại :</span> <span> (028) 54122499</span></p>
+                        <p><span class="d-block">Email:</span> <span> lienhe@capnuocnhabe.vn</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="~/ControllerJS/Home/ViDu01.js"></script>

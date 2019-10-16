@@ -1,0 +1,137 @@
+﻿@{
+    Layout = null;
+}
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" style="background-color: #007bff!important;">
+                <a class="card-link text-white" data-toggle="collapse" href="#collapseOne">
+                    DỊCH VỤ TRỰC TUYẾN
+                </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                <div class="container">
+                    <nav class="navbar">
+                        <!-- Links -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("BaoChiSo","Home")">
+                                    Báo chỉ số nước Online
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("DangKyGanMoi","Home")">Đăng ký Gắn mới Online</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("DangKyNangDoi","Home")">
+                                    Đăng ký Nâng-Dời-Đổi
+                                    cở
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("DangKyHieuChinhHoSo","Home")">
+                                    Đăng ký điều chỉnh HS
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" style="background-color: #007bff!important;">
+                <a class="collapsed card-link text-white" data-toggle="collapse" href="#collapseTwo">
+                    TRA CỨU THÔNG TIN
+                </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="container">
+                    <nav class="navbar">
+                        <!-- Links -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href="http://113.161.69.85:803/dang-nhap">
+                                    Hóa đơn điện tử
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/TraCuu/TraCuuDinhMuc">Tra cứu định mức</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/TraCuu/TraCuuTienNuoc">Tra cứu tiền nước</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/TraCuu/TraCuuDieuChinhHoaDon">
+                                    Tra cứu hồ sơ điều
+                                    chỉnh
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/TraCuu/TraCuuTienDoGanMoi">Tra cứu tiến độ gắn mới</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/TraCuu/TraCuuTienDoNangDoiDoiCo">
+                                    Tiến độ Nâng
+                                    dời đổi cỡ
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" style="background-color: #007bff!important;">
+                <a class="collapsed card-link text-white" data-toggle="collapse" href="#collapseThree">
+                    LỊCH ĐỌC SỐ - CÚP NƯỚC
+                </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                <div class="container">
+                    <nav class="navbar">
+                        <!-- Links -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("LichDocSo","Lich")">Lịch đọc số</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("LichCupNuoc","Lich")">Lịch cúp nước</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" style="background-color: #007bff!important;">
+                <a class="collapsed card-link text-white" data-toggle="collapse" href="#collapseFour">
+                    ĐIỂM THU TIỀN NƯỚC
+                </a>
+            </div>
+            <div id="collapseFour" class="collapse" data-parent="#accordion">
+                <div class="container">
+                    <nav class="navbar">
+                        <!-- Links -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/ThanhToan/DanhSachThuHo">Danh sách các điểm thu hộ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/ThanhToan/DanhSachNganHang">Danh sách ngân hàng</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/ThanhToan/ThanhToanTrucTuyen">
+                                    Thanh toán trực
+                                    tuyến
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>

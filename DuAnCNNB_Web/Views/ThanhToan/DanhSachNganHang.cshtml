@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Header = "DANH SÁCH NGÂN HÀNG";
+    ViewBag.Title = "DanhSachNganHang";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
+}
+
+<div class="container" ng-app="ThanhToan" ng-controller="DanhSachCuaHang" ng-init="layDanhSachCuaHang()">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Tìm Cửa Hàng...">
+        <div class="input-group-append">
+            <button class="btn btn-success">Tìm Kiếm</button>
+        </div>
+    </div>
+    <div class="row" id="mapInfo">
+        <div class="col-lg-4" ng-repeat="item in dsCuaHang">
+            <iframe src="https://www.google.com/maps/embed?pb=" style="border:0" allowfullscreen="" width="100%" frameborder="0"></iframe>
+            <div class="card-body">
+                <h5 class="card-title">{{item.MOTA}}</h5>
+                <p class="card-text">{{item.DIACHI}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 ">
+            <nav role="navigation">
+                <ul class="pagination custom-pagination pagination-lg">
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item ">
+                        <a class="page-link " href="#">2</a>
+                    </li>
+                    <li class="page-item ">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+@section Footer{
+    <footer class="section footer-section bg-primary">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mb-5">
+                    <img src="~/Content/img/logo-footer.png" />
+                    <p>
+                        Cty cổ phần cấp nước Nhà Bè được thành lập trên cơ sở cổ phần hóa Chi nhánh cấp nước Nhà Bè trực
+                        thuộc Tổng
+                        Cty cấp nước Sài Gòn theo quyết định số 6659/QĐ-UBND ngày 30/12/2005 của Uy Ban Nhân Dân TPHCM.
+                        Cty cổ phần
+                        cấp nước Nhà Bè chính thức bắt đầu đi vào hoạt động kể từ ngày 01/02/2007
+                    </p>
+                </div>
+
+                <div class="col-md-6 mb-5 pr-md-5 contact-info">
+                    <p><span class="d-block">Địa Chỉ:</span> <span> 1179 Nguyễn Văn Linh, Tân Phong, Quận 7</span></p>
+                    <p><span class="d-block">Số Điện Thoại:</span> <span> (028) 54122499</span></p>
+                    <p><span class="d-block">Email:</span> <span> lienhe@capnuocnhabe.vn</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+}
+
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/ControllerJS/ThanhToan/ThanhToan.js"></script>

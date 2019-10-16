@@ -1,0 +1,240 @@
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\VBCSCompiler.exe
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\csc.exe
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\System.Collections.Immutable.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\System.Reflection.Metadata.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\vbc.exe
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\VBCSCompiler.exe
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\VBCSCompiler.exe.config
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\DuAnCNNB_Web.dll.config
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\DuAnCNNB_Web.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\DuAnCNNB_Web.pdb
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\Antlr3.Runtime.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\Microsoft.Web.Infrastructure.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\Newtonsoft.Json.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Net.Http.Formatting.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Helpers.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.WebHost.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Mvc.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Optimization.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Razor.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Deployment.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Razor.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\WebGrease.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\Newtonsoft.Json.xml
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Net.Http.Formatting.xml
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Helpers.xml
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.xml
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.WebHost.xml
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Mvc.xml
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Optimization.xml
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Razor.xml
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.xml
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Deployment.xml
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Razor.xml
+D:\DuAnCNNB_Web\DuAnCNNB_Web\bin\Antlr3.Runtime.pdb
+D:\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.dll
+D:\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.pdb
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\csc.exe
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\vbc.exe
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\DuAnCNNB_Web.dll.config
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\DuAnCNNB_Web.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\DuAnCNNB_Web.pdb
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Antlr3.Runtime.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\EntityFramework.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Newtonsoft.Json.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Net.Http.Formatting.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Helpers.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.WebHost.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Mvc.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Optimization.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Razor.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\WebGrease.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\EntityFramework.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Newtonsoft.Json.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Net.Http.Formatting.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Helpers.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.WebHost.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Mvc.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Optimization.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Razor.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Antlr3.Runtime.pdb
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.dll
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.pdb
+C:\Users\Microsoft Windows\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\csc.exe
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\vbc.exe
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\DuAnCNNB_Web.dll.config
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\DuAnCNNB_Web.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\DuAnCNNB_Web.pdb
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Antlr3.Runtime.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\EntityFramework.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Newtonsoft.Json.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Net.Http.Formatting.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Helpers.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.WebHost.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Mvc.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Optimization.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Razor.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\WebGrease.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\EntityFramework.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Newtonsoft.Json.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Net.Http.Formatting.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Helpers.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.WebHost.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Mvc.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Optimization.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Razor.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Antlr3.Runtime.pdb
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.dll
+C:\Users\user\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.pdb
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\csc.exe
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\vbc.exe
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\DuAnCNNB_Web.dll.config
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\DuAnCNNB_Web.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\DuAnCNNB_Web.pdb
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Antlr3.Runtime.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\EntityFramework.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Newtonsoft.Json.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Net.Http.Formatting.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Helpers.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.WebHost.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Mvc.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Optimization.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Razor.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\WebGrease.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\EntityFramework.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Newtonsoft.Json.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Net.Http.Formatting.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Helpers.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Http.WebHost.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Mvc.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Optimization.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.Razor.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\bin\Antlr3.Runtime.pdb
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.csprojAssemblyReference.cache
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.csproj.CoreCompileInputs.cache
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.csproj.CopyComplete
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.dll
+C:\Users\VU\Desktop\DuAnCNNB_Web\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.pdb
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\roslyn\csc.exe
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\roslyn\vbc.exe
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\DuAnCNNB_Web.dll.config
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\DuAnCNNB_Web.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\DuAnCNNB_Web.pdb
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\Antlr3.Runtime.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\EntityFramework.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\Newtonsoft.Json.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Net.Http.Formatting.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.Helpers.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.Http.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.Http.WebHost.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.Mvc.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.Optimization.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.Razor.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.WebPages.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\WebGrease.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\EntityFramework.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\Newtonsoft.Json.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Net.Http.Formatting.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.Helpers.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.Http.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.Http.WebHost.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.Mvc.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.Optimization.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.Razor.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.WebPages.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\bin\Antlr3.Runtime.pdb
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.csproj.CoreCompileInputs.cache
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.csproj.CopyComplete
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.dll
+C:\Users\VU\Desktop\DuAnCNNB_WebOK\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.pdb
