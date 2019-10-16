@@ -60,17 +60,16 @@ namespace DuAnCNNB_Web.Controllers
             if (soHoSo != "")
             {
                 var ttkh = db.tbGanmois.Where(x => x.SOHS == soHoSo && x.LOAIYEUCAU == "YCM").FirstOrDefault();
-                if (ttkh != null)
+                if (ttkh !== null)
                 {
                     TraCuuGanMoi thongTin = new TraCuuGanMoi();
                     thongTin.SOHS = ttkh.SOHS;
                     thongTin.TENKH = ttkh.TENKH;
                     thongTin.DIACHI = ttkh.DIACHI1 + " " + ttkh.DIACHI2;
-                    thongTin.SODT = thongTin.SODT != null ? thongTin.SODT : "Chưa cập nhật";
+                    thongTin.SODT = ttkh.DIENTHOAI;
                     thongTin.NGAYYEUCAU = ttkh.NGAYYC.ToString();
                     return Ok(thongTin);
                 }
-                return BadRequest("Số Hồ Sơ Không Tồn Tại Hoặc Không Phải Là Hồ Sơ Gắn Mới !!!");
             }
             else return BadRequest("sai rồi ba");
         }

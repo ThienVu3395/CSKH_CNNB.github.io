@@ -80,11 +80,16 @@ function ($scope, CommonController) {
             }
         )
     }
-
-    // Tra cứu tiến độ gắn mới
-    $scope.trangThaiTienDo = 1;
-    $scope.soHoSo = "";
-    var API_TraCuuGanMoi = 'TraCuu/TienDoGanMoi?soHoSo=';
+})
+.controller("TraCuuTienDo",
+    function ($scope, CommonController) {
+        // Tra cứu tiến độ gắn mới
+        $scope.trangThaiTienDo = 1;
+        $scope.message = "";
+        $scope.trangThaiForm = false;
+        $scope.trangThaiThongBao = false;
+        $scope.soHoSo = "";
+        var API_TraCuuGanMoi = 'TraCuu/TienDoGanMoi?soHoSo=';
         $scope.gd1 = function () {
             $scope.trangThaiTienDo = 1
         }
@@ -103,23 +108,22 @@ function ($scope, CommonController) {
 
         $scope.timSoHS = function () {
             if ($scope.soHoSo === "") {
-                alert("Số Hồ Sơ Không Được Trống !!!");
+                $scope.message = "Số Hồ Sơ Không Được Trống !!";
+                $scope.trangThaiForm = false
+                $scope.trangThaiThongBao = true;
                 return;
             }
             var res = CommonController.getData(API_TraCuuGanMoi, $scope.soHoSo);
             res.then(
                 function success(response) {
-                    console.log(response.data);
-                    if (response.data !== null) {
-                        $scope.thongTinKhachHang = response.data;
-                        console.log($scope.thongTinKhachHang)
-                    }
-                    else {
-                        alert("Số Hồ Sơ Không Tồn Tại !!!");
-                    }
+                    $scope.thongTinKhachHang = response.data;
+                    $scope.trangThaiThongBao = false;
+                    $scope.trangThaiForm = true;
                 },
                 function errorCallback(response) {
-                    console.log(response.data);
+                    $scope.message = response.data.Message;
+                    $scope.trangThaiThongBao = true;
+                    $scope.trangThaiForm = false;
                 }
             )
         }

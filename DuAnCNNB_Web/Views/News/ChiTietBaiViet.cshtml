@@ -7,23 +7,12 @@
 
 <section class="bg-light post p-4" id="next-section" ng-app="CommonApp" ng-controller="TinTuc" ng-init="layID(@ViewBag.idBaiViet)">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="text-center">{{objTin.TieuDe}}</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p><img src="{{objTin.HinhDaiDien1}}" alt="Image" class="img-fluid"></p>
-                    </div>
-                    <div class="col-md-6">
-                        <p><img src="~/Content/img/img_2.jpg" alt="Image" class="img-fluid"></p>
-                    </div>
-                </div>
+            <div class="text-center">
+                <h2>{{objTin.TieuDe}}</h2>
+                <p><img src="{{objTin.HinhDaiDien1}}" alt="Image" class="img-fluid"></p>
             </div>
-            <div class="col-12">
-                <p><span ng-bind-html="objTin.NoiDung"></span></p>
-            </div>
+            <p><span ng-bind-html="objTin.NoiDung"></span></p>
             <!-- END content -->
-        </div>
     </div>
 </section>
 
