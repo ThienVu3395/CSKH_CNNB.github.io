@@ -13,17 +13,21 @@ namespace DuAnCNNB_Web.Controllers
     {
         DatabaseCSKHEntities1 db = new DatabaseCSKHEntities1();
 
-        //Tra Cứu Định Mức
+        //Tra Cứu Định Mức + Tiền Nước
         [HttpGet]
-        [Route("DinhMuc")]
-        public IHttpActionResult TraCuuDinhMuc(string maDanhBo)
+        [Route("TraCuuThongTin")]
+        public IHttpActionResult TraCuuThongTin(string maDanhBo)
         {
-            if (maDanhBo != "")
+            if (maDanhBo != null)
             {
-                var ttkh = db.tbMadanhboes.Where(x => x.MADB == maDanhBo);
-                return Ok(ttkh.FirstOrDefault());
+                var ttkh = db.tbMadanhboes.Where(x => x.MADB == maDanhBo).FirstOrDefault();
+                if(ttkh != null)
+                {
+                    return Ok(ttkh);
+                }
+                else return BadRequest("Mã Danh Bộ Không Tồn Tại");
             }
-            else return BadRequest();
+            else return BadRequest("Mã Danh Bộ Không Được Trống");
         }
 
         // Tra cứu tiền nước chưa thanh toán
@@ -52,14 +56,29 @@ namespace DuAnCNNB_Web.Controllers
             else return BadRequest();
         }
 
-        // Tra Cứu tiến độ gắn mới
+        // Tra Cứu tiến độ gắn mới + nâng dời + điều chỉnh
         [HttpGet]
-        [Route("TienDoGanMoi")]
-        public IHttpActionResult TraCuuGanMoi(string soHoSo)
+        [Route("TraCuuTienDo")]
+        public IHttpActionResult TraCuuGanMoi(string soHoSo,string trangThai)
         {
             if (soHoSo != "")
             {
-                var ttkh = db.tbGanmois.Where(x => x.SOHS == soHoSo && x.LOAIYEUCAU == "YCM").FirstOrDefault();
+                var ttkh = db.tbGanmois.Where(x => x.SOHS == soHoSo && x.LOAIYEUCAU == trangThai).FirstOrDefault();
+                var message = "";
+                if(trangThai == "YCM")
+                {
+                    message = "Gắn Mới";
+                }
+                else if(trangThai == "YCND")
+                {
+                    message = "Nâng Dời";
+                }
+
+                else if (trangThai == "YCDC")
+                {
+                    message = "Điều Chỉnh";
+                }
+
                 if (ttkh != null)
                 {
                     TraCuuGanMoi thongTin = new TraCuuGanMoi();
@@ -70,22 +89,9 @@ namespace DuAnCNNB_Web.Controllers
                     thongTin.NGAYYEUCAU = ttkh.NGAYYC.ToString();
                     return Ok(thongTin);
                 }
-                return BadRequest("Số Hồ Sơ Không Tồn Tại Hoặc Không Phải Là Hồ Sơ Gắn Mới !!!");
+                return BadRequest("Số Hồ Sơ Không Tồn Tại Hoặc Không Phải Là Hồ Sơ " + message);
             }
             else return BadRequest("sai rồi ba");
-        }
-
-        // Tra cứu Hồ Sơ Điều Chỉnh
-        [HttpGet]
-        [Route("HoSo")]
-        public IHttpActionResult TraCuuHoSo(string maDanhBo)
-        {
-            if (maDanhBo != "")
-            {
-                var ttkh = db.tbDieuchinhs.Where(x => x.MADB == maDanhBo);
-                return Ok(ttkh.FirstOrDefault());
-            }
-            else return BadRequest();
         }
     }
 }

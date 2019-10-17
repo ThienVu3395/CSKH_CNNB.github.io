@@ -13,21 +13,25 @@ namespace DuAnCNNB_Web.Controllers
     {
         DatabaseCSKHEntities1 db = new DatabaseCSKHEntities1();
 
-        //------------------------- Hàm Lấy Thông Tin Khách Hàng Theo Mã Danh Bộ
-        [HttpGet]
-        [Route("getThongTinKhachHang")]
-        public IHttpActionResult getInfoCustomer(string maDanhBo)
-        {
-            if(maDanhBo != "")
-            {
-                var thongTinKhachHang = db.tbMadanhboes.Where(x => x.MADB == maDanhBo);
-                return Ok(thongTinKhachHang.FirstOrDefault());
-            }
-            else
-            {
-                return BadRequest();
-            }
-        }
+        // Lấy Thông Tin Khách Hàng Theo Mã Danh Bộ
+        //[HttpGet]
+        //[Route("getThongTinKhachHang")]
+        //public IHttpActionResult ThongTinKhachHang(string maDanhBo)
+        //{
+        //    if(maDanhBo != null)
+        //    {
+        //        var thongTinKhachHang = db.tbMadanhboes.Where(x => x.MADB == maDanhBo).FirstOrDefault();
+        //        if (thongTinKhachHang != null)
+        //        {
+        //            return Ok(thongTinKhachHang);
+        //        }
+        //        else return BadRequest("Mã Danh Bộ Không Tồn Tại");
+        //    }
+        //    else
+        //    {
+        //        return BadRequest("Mã Danh Bộ Không Để Trống");
+        //    }
+        //}
 
         // Hàm gửi thông tin báo chỉ số nước
         [HttpPost]
@@ -36,7 +40,7 @@ namespace DuAnCNNB_Web.Controllers
         {
             db.Baochisonuocs.Add(thongTin);
             db.SaveChanges();
-            return Ok("Báo chỉ số thành công !!!");
+            return Ok("Đăng Ký Thành Công");
         }
 
         // Hàm gửi thông tin đăng ký nâng dời đổi cỡ đhn
@@ -46,7 +50,7 @@ namespace DuAnCNNB_Web.Controllers
         {
             db.tbGanmois.Add(objNangDoi);
             db.SaveChanges();
-            return Ok("Đăng Ký Thành Công !!!");
+            return Ok("Đăng Ký Thành Công");
         }
 
         // Hàm gửi thông tin đăng ký điều chỉnh hs
@@ -56,7 +60,7 @@ namespace DuAnCNNB_Web.Controllers
         {
             db.tbGanmois.Add(objDieuChinh);
             db.SaveChanges();
-            return Ok("Đăng Ký Thành Công !!!");
+            return Ok("Đăng Ký Thành Công");
         }
 
         //--------------------------- Đăng Ký Gắn Mới

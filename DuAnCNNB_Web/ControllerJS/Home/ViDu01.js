@@ -1,46 +1,45 @@
 ﻿angular.module("CommonApp")
-    // Báo Chỉ Số Nước
+    // Báo Chỉ Số Nước + Đăng ký gắn mới + đk nâng dời + đk điều chỉnh
     .controller("DichVuTrucTuyen",
     function ($scope, CommonController) {
+            // Những biến dùng chung
             $scope.maDanhBo = "";
+            $scope.guiFormThanhCong = false;
             $scope.trangThaiHienThiForm = false;
+            $scope.trangThaiThongBao = false;
+            $scope.message = "";
+            $scope.ThongBaoCaptcha = false;
+            $scope.captcha = CommonController.captcha();
+            $scope.recaptcha = "";
+            
+            // API lấy thông tin khách hàng và biến hứng kết quả từ API
+            var API_GetThongTinKhachHang = 'TraCuu/TraCuuThongTin?maDanhBo=';
             $scope.thongTinKhachHang = {};
-            var API_GetThongTinKhachHang = 'api/test/getThongTinKhachHang?maDanhBo=';
 
             // Show Thông Tin Khách Hàng
             $scope.timMaDB = function () {
-                if ($scope.maDanhBo == "") {
-                    alert("Mã Danh Bộ Không Đc Để Trống !!!");
-                    $scope.trangThaiHienThiForm = false;
-                    return;
-                }
                 var res = CommonController.getData(API_GetThongTinKhachHang, $scope.maDanhBo);
                 res.then(
                     function success(response) {
                         $scope.thongTinKhachHang = response.data;
-                        if ($scope.thongTinKhachHang !== null) {
-                            $scope.trangThaiHienThiForm = true;
-                        }
-                        else {
-                            alert("Mã Danh Bộ Không Tồn Tại !!!");
-                            $scope.trangThaiHienThiForm = false;
-                        }
+                        $scope.trangThaiHienThiForm = true;
+                        $scope.trangThaiThongBao = false;
                     },
                     function errorCallback(response) {
-                        console.log(response.data);
                         $scope.trangThaiHienThiForm = false;
+                        $scope.trangThaiThongBao = true;
+                        $scope.message = response.data.Message;
                     }
                 )
             }
-
-            // Đăng Ký Báo Chỉ Số Nước
-            $scope.thongTinGuiDi = {};
-            $scope.captcha = CommonController.captcha();
-            $scope.recaptcha = "";
+         
+            // API Đăng Ký Báo Chỉ Số Nước và biến chứa thông tin gửi đi
             var API_BaoChiSo = 'api/test/postThongTinChiSoNuoc';
+            $scope.thongTinGuiDi = {};
             $scope.dangKyBaoChiSoNuoc = function () {
                 if ($scope.recaptcha !== $scope.captcha) {
-                    alert("Mã xác nhận không đúng , vui lòng nhập lại");
+                    $scope.message = "Mã xác nhận không đúng , vui lòng nhập lại";
+                    $scope.ThongBaoCaptcha = true;
                     $scope.captcha = CommonController.captcha();
                     return;
                 }
@@ -54,8 +53,12 @@
                 var res = CommonController.postData(API_BaoChiSo, $scope.thongTinGuiDi);
                 res.then(
                     function success(response) {
-                        alert(response.data);
+                        $scope.message = response.data;
+                        $scope.guiFormThanhCong = true;
+                        $scope.ThongBaoCaptcha = false;
+                        $scope.trangThaiThongBao = false;
                         $scope.trangThaiHienThiForm = false;
+                        $scope.maDanhBo = "";
                     },
                     function errorCallback(response) {
                         console.log(response.data);

@@ -1,8 +1,11 @@
 ﻿angular.module("CommonApp")
-.controller("TraCuu",
+// Tra cứu định mức + tiền nước
+.controller("TraCuuThongTin",
 function ($scope, CommonController) {
     // Khai báo biến xài chung
     $scope.trangThaiForm = false;
+    $scope.trangThaiThongBao = false;
+    $scope.message = "";
     $scope.thongTinKhachHang;
     $scope.maDanhBo = "";
     // Biến cho Tra cứu tiền nước
@@ -10,33 +13,25 @@ function ($scope, CommonController) {
     $scope.trangThaiDanhSachHoaDon = false;
     $scope.thongTinTienNuocChuaThanhToan = [];
     $scope.danhSachHoaDon = [];
-    // Tra cứu định mức
-    var API_TienNuoc = 'TraCuu/DinhMuc?maDanhBo=';
+
+    // API dành cho tra cứu định mức + tiền nước
+    var API_TraCuuThongTin = 'TraCuu/TraCuuThongTin?maDanhBo=';
     $scope.xemThongTin = function () {
-        if ($scope.maDanhBo == "") {
-            $scope.trangThaiForm = false;
-            return alert("Mã Danh Bộ Không Được Rỗng!!!");
-        }
-        var res = CommonController.getData(API_TienNuoc, $scope.maDanhBo);
+        var res = CommonController.getData(API_TraCuuThongTin, $scope.maDanhBo);
         res.then(
             function success(response) {
                 $scope.thongTinKhachHang = response.data;
-                if ($scope.thongTinKhachHang !== null) {
-                    $scope.trangThaiForm = true;
-                    $scope.trangThaiBangChuaThanhToan = false;
-                    $scope.trangThaiDanhSachHoaDon = false;
-                }
-                else {
-                    alert("Mã Danh Bộ Không Tồn Tại !!!");
-                    $scope.trangThaiForm = false;
-                }
+                $scope.trangThaiForm = true;
+                $scope.trangThaiBangChuaThanhToan = false;
+                $scope.trangThaiDanhSachHoaDon = false;
+                $scope.trangThaiThongBao = false;
             },
             function errorCallback(response) {
-                console.log(response.data);
+                $scope.message = response.data.Message;
+                $scope.trangThaiThongBao = true;
                 $scope.trangThaiForm = false;
             }
-    )
-    }
+    )}
 
     // Tra cứu tiền nước
     //Xem chi tiết hóa đơn khách hàng chưa thanh toán
@@ -81,15 +76,18 @@ function ($scope, CommonController) {
         )
     }
 })
+
+// Tra cứu tiến độ gắn mới + nâng dời + điều chỉnh
 .controller("TraCuuTienDo",
     function ($scope, CommonController) {
-        // Tra cứu tiến độ gắn mới
+        // Các biến dùng chung
         $scope.trangThaiTienDo = 1;
         $scope.message = "";
         $scope.trangThaiForm = false;
         $scope.trangThaiThongBao = false;
+        $scope.trangThai = "";
         $scope.soHoSo = "";
-        var API_TraCuuGanMoi = 'TraCuu/TienDoGanMoi?soHoSo=';
+
         $scope.gd1 = function () {
             $scope.trangThaiTienDo = 1
         }
@@ -106,14 +104,30 @@ function ($scope, CommonController) {
             $scope.trangThaiTienDo = 4
         }
 
-        $scope.timSoHS = function () {
+        $scope.timSoHS = function (trangThai) {
             if ($scope.soHoSo === "") {
-                $scope.message = "Số Hồ Sơ Không Được Trống !!";
+                $scope.message = "Số Hồ Sơ Không Được Trống";
                 $scope.trangThaiForm = false
                 $scope.trangThaiThongBao = true;
                 return;
             }
-            var res = CommonController.getData(API_TraCuuGanMoi, $scope.soHoSo);
+
+            else if (trangThai == "gm") {
+                $scope.trangThai = "YCM"
+            }
+
+            else if (trangThai == "nd") {
+                $scope.trangThai = "YCND"
+            }
+
+            else if (trangThai == "dc") {
+                $scope.trangThai = "YCDC"
+            }
+
+            // API cho tra cứu gắn mới + điều chỉnh + nâng dời
+            var API_TraCuuTienDo = 'TraCuu/TraCuuTienDo?soHoSo=' + $scope.soHoSo + "&trangThai=" + $scope.trangThai;
+
+            var res = CommonController.getData(API_TraCuuTienDo, '');
             res.then(
                 function success(response) {
                     $scope.thongTinKhachHang = response.data;
@@ -128,35 +142,3 @@ function ($scope, CommonController) {
             )
         }
 })
-
-////Tra cứu điều chỉnh hồ sơ
-//.controller("TraCuuHoSo",
-//    function ($scope, $http) {
-//        $scope.trangThaiForm = false;
-//        $scope.maDanhBo = "";
-//        $scope.timMDB = function () {
-//            if ($scope.maDanhBo == "") {
-//                alert("Mã Danh Bộ Không Được Rỗng!!!");
-//                return;
-//            }
-//            var res = $http({
-//                url: 'http://localhost:64710/TraCuu/HoSo?maDanhBo=' + $scope.maDanhBo,
-//                method: 'GET'
-//            })
-//            res.then(
-//                function success(response) {
-//                    $scope.thongTinKhachHang = response.data;
-//                    if ($scope.thongTinKhachHang !== null) {
-//                        $scope.trangThaiForm = true;
-//                    }
-//                    else {
-//                        alert("Mã Danh Bộ Không Tồn Tại !!!");
-//                        $scope.trangThaiForm = false;
-//                    }
-//                },
-//                function errorCallback(response) {
-//                    $scope.trangThaiForm = false;
-//                }
-//            )
-//        }
-//})

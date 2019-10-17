@@ -17,9 +17,13 @@
             <div class="input-group mb-3">
                 <input type="text" class="form-control" ng-model="maDanhBo" placeholder="Nhập Mã Danh Bộ...">
                 <div class="input-group-append">
-                    <button class="btn btn-success" ng-click="timMaDB()">Search</button>
+                    <button class="btn btn-success" ng-click="timMaDB()">Tìm Kiếm</button>
                 </div>
             </div>
+
+            <div class="alert alert-danger" role="alert" ng-bind="message" ng-show="trangThaiThongBao"></div>
+
+            <div class="alert alert-success" role="alert" ng-bind="message" ng-show="guiFormThanhCong"></div>
         </div>
 
         <div class="container" ng-show="trangThaiHienThiForm">
@@ -66,14 +70,16 @@
                         </span>
                     </div>
 
-                    <button 
-                            class="btn btn-success" 
-                            type="submit" 
-                            ng-click="dangKyBaoChiSoNuoc()" 
-                            ng-hide="FormBaoChiSo.nguoibaochiso.$dirty && FormBaoChiSo.nguoibaochiso.$invalid || !FormBaoChiSo.nguoibaochiso.$touched ||  
+                    <div class="alert alert-danger" role="alert" ng-bind="message" ng-show="ThongBaoCaptcha"></div>
+
+                    <button class="btn btn-success"
+                            type="submit"
+                            ng-click="dangKyBaoChiSoNuoc()"
+                            ng-hide="FormBaoChiSo.nguoibaochiso.$dirty && FormBaoChiSo.nguoibaochiso.$invalid || !FormBaoChiSo.nguoibaochiso.$touched ||
                                          FormBaoChiSo.sdt.$dirty && FormBaoChiSo.sdt.$invalid || !FormBaoChiSo.sdt.$touched ||
                                          FormBaoChiSo.csn.$dirty && FormBaoChiSo.csn.$invalid || !FormBaoChiSo.csn.$touched ||
-                                         FormBaoChiSo.captcha.$dirty && FormBaoChiSo.captcha.$invalid || !FormBaoChiSo.captcha.$touched">Gửi Đăng Ký
+                                         FormBaoChiSo.captcha.$dirty && FormBaoChiSo.captcha.$invalid || !FormBaoChiSo.captcha.$touched">
+                        Gửi Đăng Ký
                     </button>
                 </form>
             </div>

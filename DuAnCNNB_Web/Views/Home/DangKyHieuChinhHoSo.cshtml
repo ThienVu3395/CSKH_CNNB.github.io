@@ -25,6 +25,10 @@
                     <button class="btn btn-success" ng-click="timMaDB()">Tìm Kiếm</button>
                 </div>
             </div>
+
+            <div class="alert alert-danger" role="alert" ng-bind="message" ng-show="trangThaiThongBao"></div>
+
+            <div class="alert alert-success" role="alert" ng-bind="message" ng-show="guiFormThanhCong"></div>
         </div>
 
         <div class="container" ng-show="trangThaiHienThiForm">
@@ -66,6 +70,8 @@
                             <span ng-show="FormDieuChinh.captcha.$error.required">Vui Lòng Không Để Trống Trường Này</span>
                         </span>
                     </div>
+
+                    <div class="alert alert-danger" role="alert" ng-bind="message" ng-show="ThongBaoCaptcha"></div>
 
                     <button class="btn btn-success"
                             type="submit"

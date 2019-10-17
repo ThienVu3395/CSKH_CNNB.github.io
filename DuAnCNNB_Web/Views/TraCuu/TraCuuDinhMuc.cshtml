@@ -5,7 +5,7 @@
     ViewBag.status2 = "col-md-9 mb-4 mb-md-0";
 }
 
-<div class="container card" ng-app="CommonApp" ng-controller="TraCuu">
+<div class="container card" ng-app="CommonApp" ng-controller="TraCuuThongTin">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs pt-2">
         <li class="nav-item">
@@ -24,6 +24,8 @@
                     <button class="btn btn-success" ng-click="xemThongTin()">Tìm Kiếm</button>
                 </div>
             </div>
+
+            <div class="alert alert-danger" role="alert" ng-bind="message" ng-show="trangThaiThongBao"></div>
         </div>
 
         <div class="container" ng-show="trangThaiForm">

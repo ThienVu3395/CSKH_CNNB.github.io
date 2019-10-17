@@ -5,7 +5,7 @@
     ViewBag.status2 = "col-md-9 mb-4 mb-md-0";
 }
 
-<div class="container card">
+<div class="container card" ng-app="CommonApp" ng-controller="TraCuuTienDo">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs pt-2">
         <li class="nav-item">
@@ -19,29 +19,26 @@
     <div class="tab-content card-body">
         <div class="tab-pane container active" id="home">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Nhập Số Hồ Sơ...">
+                <input type="text" class="form-control" ng-model="soHoSo" placeholder="Nhập Số Hồ Sơ...">
                 <div class="input-group-append">
-                    <button class="btn btn-success" id="timKiem" type="submit">Tìm Kiếm</button>
+                    <button class="btn btn-success" ng-click="timSoHS('nd')">Tìm Kiếm</button>
                 </div>
             </div>
+
+            <div class="alert alert-danger" role="alert" ng-bind="message" ng-show="trangThaiThongBao"></div>
         </div>
 
-        <div class="container" id="thongTinDangKy">
-            <div class="row">
-                <div class="col-lg-12 mb-3">
+        <div class="container" ng-show="trangThaiForm">
                     <div class="card-body" style="border:2px solid #A69C8F">
                         <h4 class="card-title text-center">Thông Tin Khách Hàng</h4>
-                        <p class="card-text">Số hồ sơ :</p>
-                        <p class="card-text">Họ tên :</p>
-                        <p class="card-text">Địa chỉ :</p>
-                        <p class="card-text">Số điện thoại :</p>
-                        <p class="card-text">Ngày nhận hồ sơ :</p>
-                        <p class="card-text">Giấy tờ đi kèm :</p>
+                        <p class="card-text">Số hồ sơ : <span class="text-danger" ng-bind="thongTinKhachHang.SOHS"></span></p>
+                        <p class="card-text">Họ tên : <span class="text-danger" ng-bind="thongTinKhachHang.TENKH"></span></p>
+                        <p class="card-text">Địa chỉ : <span class="text-danger" ng-bind="thongTinKhachHang.DIACHI"></span></p>
+                        <p class="card-text">Số điện thoại : <span class="text-danger" ng-bind="thongTinKhachHang.SODT"></span></p>
+                        <p class="card-text">Ngày nhận hồ sơ : <span class="text-danger" ng-bind="thongTinKhachHang.NGAYYEUCAU"></span></p>
                     </div>
-                </div>
 
-                <div class="col-lg-12">
-                    <p>
+
                         <span class="text-danger" style="font-size: 30px">
                             <u>
                                 <i>
@@ -51,66 +48,63 @@
                             </u>
                         </span>: Hồ sơ khách hàng đang ở giai đoạn nào thì
                         bước sẽ hiện màu đỏ
-                    </p>
 
-                    <div class="progress mb-3">
-                        <div class="progress-bar mr-2" style="width:25%">
-                            <button class="btn btn-info" data-toggle="modal" data-target="#myModal">
-                                Giai Đoạn 1
-                            </button>
+                    <div class="row mb-3 text-center">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <button class="btn btn-info" ng-click="gd1()">1</button>
                         </div>
-                        <div class="progress-bar mr-2" style="width:25%">
-                            <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-                                Giai Đoạn 2
-                            </button>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <button class="btn btn-danger" ng-click="gd2()">2</button>
                         </div>
-                        <div class="progress-bar mr-2" style="width:25%">
-                            <button class="btn btn-info" data-toggle="modal" data-target="#myModal">
-                                Giai Đoạn 3
-                            </button>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <button class="btn btn-info" ng-click="gd3()">3</button>
                         </div>
-                        <div class="progress-bar" style="width:25%">
-                            <button class="btn btn-info" data-toggle="modal" data-target="#myModal">
-                                Giai Đoạn 4
-                            </button>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <button class="btn btn-info" ng-click="gd4()">4</button>
                         </div>
                     </div>
 
 
-                    <div class="card-body" style="border:2px solid #A69C8F">
-                        <h4 class="card-title">Giai Đoạn 1 : Tiếp Nhận Hồ Sơ Thông Tin Gắn Mới</h4>
-                        <p class="card-text">Số Hồ Sơ :</p>
-                        <p class="card-text">Địa chỉ :</p>
-                        <p class="card-text">Số Điện Thoại :</p>
-                        <p class="card-text">Ngày Nhận :</p>
-                        <p class="card-text">Giấy Tờ Đi Kèm :</p>
-                    </div>
+                        <div class="card-body" style="border:2px solid #A69C8F" ng-show="trangThaiTienDo === 1">
+                            <h4 class="card-title text-center">Giai đoạn 1 : Tiếp nhận hồ sơ thông tin gắn mới</h4>
+                            <p class="card-text">Số Hồ Sơ : <span class="text-danger" ng-bind="thongTinKhachHang.SOHS"></span></p>
+                            <p class="card-text">Họ tên : <span class="text-danger" ng-bind="thongTinKhachHang.TENKH"></span></p>
+                            <p class="card-text">Địa chỉ : <span class="text-danger" ng-bind="thongTinKhachHang.DIACHI"></span></p>
+                            <p class="card-text">Số Điện Thoại : <span class="text-danger" ng-bind="thongTinKhachHang.SODT"></span></p>
+                            <p class="card-text">Ngày Nhận : <span class="text-danger" ng-bind="thongTinKhachHang.NGAYYEUCAU"></span></p>
+                            <p class="card-text">Giấy Tờ Đi Kèm : <span class="text-danger">ABC</span></p>
+                        </div>
 
+                        <div class="card-body" style="border:2px solid #A69C8F" ng-show="trangThaiTienDo === 2">
+                            <h4 class="card-title text-center">Giai đoạn 2 : Chuyển Khảo sát thiết kế - Xin phép đào đường</h4>
+                            <p class="card-text">Số Hồ Sơ : <span class="text-danger" ng-bind="thongTinKhachHang.SOHS"></span></p>
+                            <p class="card-text">Lần chuyển khảo sát thiết kế : <span class="text-danger" ng-bind="thongTinKhachHang.TENKH"></span></p>
+                            <p class="card-text">Ngày dự kiến khảo sát : <span class="text-danger" ng-bind="thongTinKhachHang.NGAYYEUCAU"></span></p>
+                            <p class="card-text">Lý do chuyển khảo sát thiết kế : <span class="text-danger" ng-bind="thongTinKhachHang.DINHMUC"></span></p>
+                            <p class="card-text">Lý do bị trở ngại : <span class="text-danger" ng-bind="thongTinKhachHang.GIABIEU"></span></p>
+                        </div>
 
-                    <!-- The Modal -->
-                    <!-- <div class="modal" id="myModal">
-                            <div class="modal-dialog">
-                                <div class="modal-content"> -->
-                    <!-- Modal Header -->
-                    <!-- <div class="modal-header">
-                                        <h4 class="modal-title">Giai Đoạn 1</h4>
-                                        <button type="button" class="close"
-                                            data-dismiss="modal">&times;</button>
-                                    </div> -->
-                    <!-- Modal body -->
-                    <!-- <div class="modal-body">
-                                        Modal body..
-                                    </div> -->
-                    <!-- Modal footer -->
-                    <!-- <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger"
-                                            data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                </div>
-            </div>
+                        <div class="card-body" style="border:2px solid #A69C8F" ng-show="trangThaiTienDo === 3">
+                            <h4 class="card-title text-center">Giai đoạn 3 : Lên đợt thi công - Lắp đặt ĐHN</h4>
+                            <p class="card-text">Họ tên : <span class="text-danger" ng-bind="thongTinKhachHang.TENKH"></span></p>
+                            <p class="card-text">Địa chỉ : <span class="text-danger" ng-bind="thongTinKhachHang.DIACHI"></span></p>
+                            <p class="card-text">Số Điện Thoại : <span class="text-danger" ng-bind="thongTinKhachHang.SODT"></span></p>
+                            <p class="card-text">Ngày Đóng Tiền : <span class="text-danger" ng-bind="thongTinKhachHang.NGAYYEUCAU"></span></p>
+                            <p class="card-text">Số phiếu thu : <span class="text-danger" ng-bind="thongTinKhachHang.MADB"></span></p>
+                            <p class="card-text">Tổng chi phí : <span class="text-danger" ng-bind="thongTinKhachHang.GIABIEU"></span></p>
+                            <p class="card-text">Cở ĐHN : <span class="text-danger" ng-bind="thongTinKhachHang.MADB"></span></p>
+                        </div>
+
+                        <div class="card-body" style="border:2px solid #A69C8F" ng-show="trangThaiTienDo === 4">
+                            <h4 class="card-title text-center">Giai đoạn 4 : Hoàn công hồ sơ</h4>
+                            <p class="card-text">Số Hồ Sơ : <span class="text-danger" ng-bind="thongTinKhachHang.SOHS"></span></p>
+                            <p class="card-text">Họ tên : <span class="text-danger" ng-bind="thongTinKhachHang.TENKH"></span></p>
+                            <p class="card-text">Địa chỉ : <span class="text-danger" ng-bind="thongTinKhachHang.DIACHI"></span></p>
+                            <p class="card-text">Số Điện Thoại : <span class="text-danger" ng-bind="thongTinKhachHang.SODT"></span></p>
+                            <p class="card-text">Ngày gắn ĐHN : <span class="text-danger" ng-bind="thongTinKhachHang.GIABIEU"></span></p>
+                            <p class="card-text">Chỉ số gắn ĐHN : <span class="text-danger" ng-bind="thongTinKhachHang.MADB"></span></p>
+                            <p class="card-text">Ngày hoàn công hồ sơ : <span class="text-danger" ng-bind="thongTinKhachHang.MADB"></span></p>
+                        </div>
         </div>
     </div>
 </div>
@@ -139,3 +133,5 @@
         </div>
     </footer>
 }
+
+<script src="~/ControllerJS/TraCuu/TraCuu.js"></script>
