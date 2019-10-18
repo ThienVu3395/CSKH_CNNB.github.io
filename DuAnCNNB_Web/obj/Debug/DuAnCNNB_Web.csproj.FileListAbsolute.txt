@@ -330,7 +330,6 @@ C:\Users\VU\Desktop\CSKH_CNNB\DuAnCNNB_Web\bin\System.Web.WebPages.xml
 C:\Users\VU\Desktop\CSKH_CNNB\DuAnCNNB_Web\bin\System.Web.WebPages.Deployment.xml
 C:\Users\VU\Desktop\CSKH_CNNB\DuAnCNNB_Web\bin\System.Web.WebPages.Razor.xml
 C:\Users\VU\Desktop\CSKH_CNNB\DuAnCNNB_Web\bin\Antlr3.Runtime.pdb
-C:\Users\VU\Desktop\CSKH_CNNB\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.csprojAssemblyReference.cache
 C:\Users\VU\Desktop\CSKH_CNNB\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.csproj.CoreCompileInputs.cache
 C:\Users\VU\Desktop\CSKH_CNNB\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.csproj.CopyComplete
 C:\Users\VU\Desktop\CSKH_CNNB\DuAnCNNB_Web\obj\Debug\DuAnCNNB_Web.dll

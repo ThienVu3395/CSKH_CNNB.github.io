@@ -38,7 +38,11 @@ namespace DuAnCNNB_Web.Controllers
             if (maDanhBo != "")
             {
                 var tienNuoc = db.tbTiennuocs.Where(x => x.MADB == maDanhBo && x.TRANGTHAI == null).ToArray();
-                return Ok(tienNuoc);
+                if(tienNuoc.Length != 0)
+                {
+                    return Ok(tienNuoc);
+                }
+                return BadRequest("Khách Hàng Này Đã Thanh Toán Hết Hóa Đơn");
             }
             else return BadRequest();
         }
@@ -51,7 +55,11 @@ namespace DuAnCNNB_Web.Controllers
             if (maDanhBo != "")
             {
                 var tienNuoc = db.tbTiennuocs.Where(x => x.MADB == maDanhBo).ToArray();
-                return Ok(tienNuoc);
+                if (tienNuoc.Length != 0)
+                {
+                    return Ok(tienNuoc);
+                }
+                return BadRequest("Khách Hàng Này Đã Thanh Toán Hết Hóa Đơn");
             }
             else return BadRequest();
         }

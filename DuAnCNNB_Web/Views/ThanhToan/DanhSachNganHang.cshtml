@@ -5,34 +5,47 @@
     ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
 }
 
-<div class="container" ng-app="ThanhToan" ng-controller="DanhSachCuaHang" ng-init="layDanhSachCuaHang()">
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Tìm Cửa Hàng...">
-        <div class="input-group-append">
-            <button class="btn btn-success">Tìm Kiếm</button>
+<div class="container" ng-app="CommonApp" ng-controller="DanhSachCuaHang">
+    <h2 class="text-center">Tìm Cửa Hàng</h2>
+    <div class="form-inline" action="/action_page.php">
+        <label for="email" class="mr-sm-2">Email address:</label>
+        <div class="form-group">
+            <select class="form-control" id="sel1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
         </div>
+        <label for="pwd" class="mr-sm-2">Password:</label>
+        <div class="form-group">
+            <select class="form-control" id="sel1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Tìm</button>
     </div>
     <div class="row" id="mapInfo">
-        <div class="col-lg-4" ng-repeat="item in dsCuaHang">
-            <iframe src="https://www.google.com/maps/embed?pb=" style="border:0" allowfullscreen="" width="100%" frameborder="0"></iframe>
-            <div class="card-body">
-                <h5 class="card-title">{{item.MOTA}}</h5>
-                <p class="card-text">{{item.DIACHI}}</p>
+        <div class="col-lg-4 mb-4" ng-repeat="item in dsCuaHang">
+            <div class="card">
+                <img src="https://media.wired.com/photos/59269e297034dc5f91bec142/191:100/pass/world-song-map-largeHP.jpg" width="100%" />
+                <div class="card-body">
+                    <h5 class="card-title">{{item.MOTA}}</h5>
+                    <p class="card-text">{{item.DIACHI}}</p>
+                </div>
             </div>
         </div>
     </div>
+
     <div class="row">
-        <div class="col-md-12 ">
+        <div class="col-md-12">
             <nav role="navigation">
                 <ul class="pagination custom-pagination pagination-lg">
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item ">
-                        <a class="page-link " href="#">2</a>
-                    </li>
-                    <li class="page-item ">
-                        <a class="page-link" href="#">3</a>
+                    <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
+                        <a class="page-link" ng-click="phanTrang(item + 1)">{{item + 1}}</a>
                     </li>
                 </ul>
             </nav>
@@ -66,5 +79,4 @@
     </footer>
 }
 
-<script src="~/Scripts/angular.min.js"></script>
 <script src="~/ControllerJS/ThanhToan/ThanhToan.js"></script>

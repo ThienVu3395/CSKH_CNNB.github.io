@@ -13,59 +13,29 @@ namespace DuAnCNNB_Web.Controllers
     {
         DatabaseCSKHEntities1 db = new DatabaseCSKHEntities1();
 
-        // Lấy Thông Tin Khách Hàng Theo Mã Danh Bộ
-        //[HttpGet]
-        //[Route("getThongTinKhachHang")]
-        //public IHttpActionResult ThongTinKhachHang(string maDanhBo)
-        //{
-        //    if(maDanhBo != null)
-        //    {
-        //        var thongTinKhachHang = db.tbMadanhboes.Where(x => x.MADB == maDanhBo).FirstOrDefault();
-        //        if (thongTinKhachHang != null)
-        //        {
-        //            return Ok(thongTinKhachHang);
-        //        }
-        //        else return BadRequest("Mã Danh Bộ Không Tồn Tại");
-        //    }
-        //    else
-        //    {
-        //        return BadRequest("Mã Danh Bộ Không Để Trống");
-        //    }
-        //}
+        // Hàm đăng ký báo csn + đk nâng dời + đk hiệu chỉnh + đk gắn mới
+        [HttpPost]
+        [Route("DangKyGMDCND")]
+        public IHttpActionResult DangKyGMDCND(tbGanmoi objDangKy)
+        {
+            db.tbGanmois.Add(objDangKy);
+            db.SaveChanges();
+            return Ok("Đăng Ký Thành Công");
+        }
 
         // Hàm gửi thông tin báo chỉ số nước
         [HttpPost]
-        [Route("postThongTinChiSoNuoc")]
-        public IHttpActionResult postInfo(Baochisonuoc thongTin)
+        [Route("DangKyBaoChiSoNuoc")]
+        public IHttpActionResult BaoChiSoNuoc(Baochisonuoc thongTin)
         {
             db.Baochisonuocs.Add(thongTin);
             db.SaveChanges();
             return Ok("Đăng Ký Thành Công");
         }
 
-        // Hàm gửi thông tin đăng ký nâng dời đổi cỡ đhn
-        [HttpPost]
-        [Route("dangKyNangDoi")]
-        public IHttpActionResult dangKyNangDoi(tbGanmoi objNangDoi)
-        {
-            db.tbGanmois.Add(objNangDoi);
-            db.SaveChanges();
-            return Ok("Đăng Ký Thành Công");
-        }
+        // Các hàm cho Đăng Ký Gắn Mới
 
-        // Hàm gửi thông tin đăng ký điều chỉnh hs
-        [HttpPost]
-        [Route("dangKyDieuChinh")]
-        public IHttpActionResult dangKyDieuChinh(tbGanmoi objDieuChinh)
-        {
-            db.tbGanmois.Add(objDieuChinh);
-            db.SaveChanges();
-            return Ok("Đăng Ký Thành Công");
-        }
-
-        //--------------------------- Đăng Ký Gắn Mới
-
-        // Lấy Quận Mặc định
+        // -------- Lấy danh sách quận
         [HttpGet]
         [Route("layQuan")]
         public IHttpActionResult layQuan()
@@ -74,7 +44,7 @@ namespace DuAnCNNB_Web.Controllers
             return Ok(Quan);
         }
 
-        // Lấy Phường Theo Quận Mặc Định
+        // Lấy ds phường Theo Quận Mặc Định
         [HttpGet]
         [Route("layPhuongTheoQuanMacDinh")]
         public IHttpActionResult layPhuongTheoQuanMacDinh()
@@ -83,23 +53,13 @@ namespace DuAnCNNB_Web.Controllers
             return Ok(Quan);
         }
 
-        // Lấy Phường Theo Quận Đã Chọn
+        // Lấy ds Phường Theo Quận Đã Chọn
         [HttpGet]
         [Route("layPhuongTheoQuan")]
         public IHttpActionResult layPhuongTheoQuan(string maQuan)
         {
             var Quan = db.tbPhuongs.Where(x => x.MAQUAN == maQuan).ToArray();
             return Ok(Quan);
-        }
-
-        // Gửi Form Gắn Mới
-        [HttpPost]
-        [Route("dangKyGanMoi")]
-        public IHttpActionResult dangKyGanMoi(tbGanmoi objGanMoi)
-        {
-            db.tbGanmois.Add(objGanMoi);
-            db.SaveChanges();
-            return Ok("Đăng Ký Gắn Mới Thành Công");
         }
 
         // Gửi Form Liên Hệ

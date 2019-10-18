@@ -43,7 +43,7 @@
                 <form name="FormNangDoi">
                     <div class="form-group">
                         <label>Người Đăng Ký ( Bắt Buộc<span class="text-danger"> *</span> )</label>
-                        <input type="text" class="form-control mb-2" name="tenhd" ng-model="thongTinNangDoi.TENHD" placeholder="Người báo chỉ số..." required>
+                        <input type="text" class="form-control mb-2" name="tenhd" ng-model="thongTinGuiDi.TENHD" placeholder="Người báo chỉ số..." required>
                         <span style="color:red" ng-show="FormNangDoi.tenhd.$dirty && FormNangDoi.tenhd.$invalid">
                             <span ng-show="FormNangDoi.tenhd.$error.required">Vui Lòng Không Để Trống Trường Này</span>
                         </span>
@@ -51,7 +51,7 @@
 
                     <div class="form-group">
                         <label>Số Điện Thoại Liên Lạc ( Bắt Buộc<span class="text-danger"> *</span> )</label>
-                        <input type="text" class="form-control" name="sdt" ng-model="thongTinNangDoi.DIENTHOAI" placeholder="Số điện thoại..." required>
+                        <input type="text" class="form-control" name="sdt" ng-model="thongTinGuiDi.DIENTHOAI" placeholder="Số điện thoại..." required>
                         <span style="color:red" ng-show="FormNangDoi.sdt.$dirty && FormNangDoi.sdt.$invalid">
                             <span ng-show="FormNangDoi.sdt.$error.required">Vui Lòng Không Để Trống Trường Này</span>
                         </span>
@@ -59,7 +59,7 @@
 
                     <div class="form-group">
                         <label>Nội Dung Yêu Cầu</label>
-                        <textarea class="form-control" rows="5" name="ghichu" ng-model="thongTinNangDoi.GHICHU" placeholder="Nhập nội dung yêu cầu của bạn vào đây"></textarea>
+                        <textarea class="form-control" rows="5" name="ghichu" ng-model="thongTinGuiDi.GHICHU" placeholder="Nhập nội dung yêu cầu của bạn vào đây"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -74,7 +74,7 @@
 
                     <button class="btn btn-success"
                             type="submit"
-                            ng-click="dangKyNangDoi()"
+                            ng-click="DangKy('nd')"
                             ng-hide="FormNangDoi.tenhd.$dirty && FormNangDoi.tenhd.$invalid || !FormNangDoi.tenhd.$touched ||
                                          FormNangDoi.sdt.$dirty && FormNangDoi.sdt.$invalid || !FormNangDoi.sdt.$touched ||
                                          FormNangDoi.captcha.$dirty && FormNangDoi.captcha.$invalid || !FormNangDoi.captcha.$touched">

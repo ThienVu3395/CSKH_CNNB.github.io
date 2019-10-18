@@ -71,10 +71,11 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" id="navbardrop" href="#">Tin Tức</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="@Url.Action("ThongTinChung","News")">Thông Tin Chung</a>
-                                <a class="dropdown-item" href="@Url.Action("CamNang","News")">Cẩm Nang Sử Dụng Nước</a>
-                                <a class="dropdown-item" href="@Url.Action("ThuTuc","News")">Các Thủ Tục-Biểu Mẫu</a>
-                                <a class="dropdown-item" href="@Url.Action("CauHoi","News")">Các Câu Hỏi Thường Gặp</a>
+                                @*<a class="dropdown-item" href="@Url.Action("ThongTinChung","News")" ng-repeat="item in danhSachDanhMuc">{{item.TenChuyenMuc}}</a>*@
+                                <a class="dropdown-item" href="@Url.Action("ThongTinChung","News")" ng-click="haha()">Thông Tin Chung</a>
+                                <a class="dropdown-item" href="@Url.Action("CamNang","News")" ng-click="haha()">Cẩm Nang Sử Dụng Nước</a>
+                                <a class="dropdown-item" href="@Url.Action("ThuTuc","News")" ng-click="haha()">Các Thủ Tục-Biểu Mẫu</a>
+                                <a class="dropdown-item" href="@Url.Action("CauHoi","News")" ng-click="haha()">Các Câu Hỏi Thường Gặp</a>
                             </div>
                         </li>
                         <li class="nav-item">

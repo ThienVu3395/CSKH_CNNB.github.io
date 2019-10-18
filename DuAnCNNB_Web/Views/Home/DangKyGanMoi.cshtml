@@ -5,7 +5,7 @@
     ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
 }
 
-<div class="container card" ng-app="CommonApp" ng-controller="DangKyGanMoi" ng-init="layPhuongMacDinh();layQuan()">
+<div class="container card" ng-app="CommonApp" ng-controller="DichVuTrucTuyen" ng-init="layPhuongMacDinh();layQuan()">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs pt-2">
         <li class="nav-item">
@@ -17,11 +17,11 @@
 
     <!-- Tab panes -->
     <div class="tab-content card-body">
-        <div class="card p-4" ng-hide="!trangThaiFormGanMoi">
+        <div class="card p-4" ng-show="trangThaiFormGanMoi">
             <form name="FormGanMoi">
                 <div class="form-group">
                     <label>Người đăng ký ( Bắt Buộc<span class="text-danger"> *</span> )</label>
-                    <input type="text" class="form-control" name="tenkh" ng-model="thongTinGanMoi.TENKH" required>
+                    <input type="text" class="form-control" name="tenkh" ng-model="thongTinGuiDi.TENKH" required>
                     <span style="color:red" ng-show="FormGanMoi.tenkh.$dirty && FormGanMoi.tenkh.$invalid">
                         <span ng-show="FormGanMoi.tenkh.$error.required">Vui Lòng Không Để Trống Trường Này</span>
                     </span>
@@ -29,7 +29,7 @@
 
                 <div class="form-group">
                     <label>Người đứng tên HĐ ( Bắt Buộc<span class="text-danger"> *</span> )</label>
-                    <input type="text" class="form-control" name="tenhd" ng-model="thongTinGanMoi.TENHD" required>
+                    <input type="text" class="form-control" name="tenhd" ng-model="thongTinGuiDi.TENHD" required>
                     <span style="color:red" ng-show="FormGanMoi.tenhd.$dirty && FormGanMoi.tenhd.$invalid">
                         <span ng-show="FormGanMoi.tenhd.$error.required">Vui Lòng Không Để Trống Trường Này</span>
                     </span>
@@ -38,7 +38,7 @@
                 <div class="row">
                     <div class="form-group col-lg-6">
                         <label>Số nhà ( Bắt Buộc<span class="text-danger"> *</span> )</label>
-                        <input type="text" class="form-control" name="dc1" ng-model="thongTinGanMoi.DIACHI1" required>
+                        <input type="text" class="form-control" name="dc1" ng-model="thongTinGuiDi.DIACHI1" required>
                         <span style="color:red" ng-show="FormGanMoi.dc1.$dirty && FormGanMoi.dc1.$invalid">
                             <span ng-show="FormGanMoi.dc1.$error.required">Vui Lòng Không Để Trống Trường Này</span>
                         </span>
@@ -46,7 +46,7 @@
 
                     <div class="form-group col-lg-6">
                         <label>Tên đường ( Bắt Buộc<span class="text-danger"> *</span> )</label>
-                        <input type="text" class="form-control" name="dc2" ng-model="thongTinGanMoi.DIACHI2" required>
+                        <input type="text" class="form-control" name="dc2" ng-model="thongTinGuiDi.DIACHI2" required>
                         <span style="color:red" ng-show="FormGanMoi.dc2.$dirty && FormGanMoi.dc2.$invalid">
                             <span ng-show="FormGanMoi.dc2.$error.required">Vui Lòng Không Để Trống Trường Này</span>
                         </span>
@@ -57,7 +57,7 @@
                     <div class="form-group col-lg-6">
                         <label>Quận huyện</label>
                         <select class="form-control">
-                            <option ng-repeat="item in danhSachQuan" ng-model="thongTinGanMoi.MAQUAN" value={{item.MAQUAN}} ng-click="layPhuong(item.MAQUAN)">{{item.TENQUAN}}</option>
+                            <option ng-repeat="item in danhSachQuan" ng-model="thongTinGuiDi.MAQUAN" value={{item.MAQUAN}} ng-click="layPhuong(item.MAQUAN)">{{item.TENQUAN}}</option>
                         </select>
                     </div>
 
@@ -72,7 +72,7 @@
                 <div class="row">
                     <div class="form-group col-lg-6">
                         <label>Email</label>
-                        <input type="text" class="form-control" name="email" ng-model="thongTinGanMoi.EMAIL" required>
+                        <input type="text" class="form-control" name="email" ng-model="thongTinGuiDi.EMAIL" required>
                         <span style="color:red" ng-show="FormGanMoi.email.$dirty && FormGanMoi.email.$invalid">
                             <span ng-show="FormGanMoi.email.$error.required">Vui Lòng Không Để Trống Trường Này</span>
                         </span>
@@ -80,7 +80,7 @@
 
                     <div class="form-group col-lg-6">
                         <label>Số điện thoại ( Bắt Buộc<span class="text-danger"> *</span> )</label>
-                        <input type="text" class="form-control" name="sdt" ng-model="thongTinGanMoi.DIENTHOAI" required>
+                        <input type="text" class="form-control" name="sdt" ng-model="thongTinGuiDi.DIENTHOAI" required>
                         <span style="color:red" ng-show="FormGanMoi.sdt.$dirty && FormGanMoi.sdt.$invalid">
                             <span ng-show="FormGanMoi.sdt.$error.required">Vui Lòng Không Để Trống Trường Này</span>
                         </span>
@@ -102,26 +102,25 @@
                     </span>
                 </div>
 
-                <button 
-                        type="submit"
-                        class="btn btn-success container mt-3" 
-                        ng-click="guiDangKy()"
+                <div class="alert alert-danger" role="alert" ng-bind="message" ng-show="ThongBaoCaptcha"></div>
+
+                <button type="submit"
+                        class="btn btn-success container mt-3"
+                        ng-click="DangKy('gm')"
                         ng-hide="FormGanMoi.tenkh.$dirty && FormGanMoi.tenkh.$invalid || !FormGanMoi.tenkh.$touched ||
                                  FormGanMoi.tenhd.$dirty && FormGanMoi.tenhd.$invalid || !FormGanMoi.tenhd.$touched ||
                                  FormGanMoi.dc1.$dirty && FormGanMoi.dc1.$invalid || !FormGanMoi.dc1.$touched ||
                                  FormGanMoi.dc2.$dirty && FormGanMoi.dc2.$invalid || !FormGanMoi.dc2.$touched ||
                                  FormGanMoi.email.$dirty && FormGanMoi.email.$invalid || !FormGanMoi.email.$touched ||
                                  FormGanMoi.sdt.$dirty && FormGanMoi.sdt.$invalid || !FormGanMoi.sdt.$touched ||
-                                 FormGanMoi.captcha.$dirty && FormGanMoi.captcha.$invalid || !FormGanMoi.captcha.$touched"
-                        >Gửi Đăng Ký
+                                 FormGanMoi.captcha.$dirty && FormGanMoi.captcha.$invalid || !FormGanMoi.captcha.$touched">
+                    Gửi Đăng Ký
                 </button>
             </form>
         </div>
 
         @*Màn hình hiển thị khi người dùng đã submit yêu cầu gắn mới thành công*@
-        <div class="alert alert-success" ng-hide="trangThaiFormGanMoi">
-            <strong>Xác Nhận</strong> Yêu Cầu Của Bạn Đã Được Gửi Đi Thành Công , <a href="@Url.Action("Index","Home")" class="alert-link">Click vào đây để về lại trang chủ</a>!!!
-        </div>
+        <div class="alert alert-success" ng-show="guiFormThanhCong">Đăng ký thành công , bấm vào <a href="@Url.Action("Index","Home")" class="alert-link">đây</a>.</div>
 
         @*<div class="card p-4 mt-3">
             <h3 class="mb-3 text-danger text-center">HỒ SƠ ĐÍNH KÈM</h3>

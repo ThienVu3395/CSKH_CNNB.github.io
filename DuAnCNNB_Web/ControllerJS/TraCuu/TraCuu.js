@@ -17,6 +17,7 @@ function ($scope, CommonController) {
     // API dành cho tra cứu định mức + tiền nước
     var API_TraCuuThongTin = 'TraCuu/TraCuuThongTin?maDanhBo=';
     $scope.xemThongTin = function () {
+        $scope.trangThaiThongBao = false;
         var res = CommonController.getData(API_TraCuuThongTin, $scope.maDanhBo);
         res.then(
             function success(response) {
@@ -40,17 +41,12 @@ function ($scope, CommonController) {
         var res = CommonController.getData(API_HoaDonChuaThanhToan, $scope.maDanhBo);
         res.then(
             function success(response) {
-                if (response.data.length !== 0) {
-                    $scope.trangThaiBangChuaThanhToan = !$scope.trangThaiBangChuaThanhToan;
-                    $scope.thongTinTienNuocChuaThanhToan = response.data;
-                }
-                else {
-                    $scope.trangThaiBangChuaThanhToan = false;
-                    alert("Khách Hàng Này Đã Thanh Toán Hết Hóa Đơn !!!");
-                }
+               $scope.trangThaiBangChuaThanhToan = !$scope.trangThaiBangChuaThanhToan;
+               $scope.thongTinTienNuocChuaThanhToan = response.data;
             },
             function errorCallback(response) {
-                console.log(response.data.message);
+                $scope.trangThaiBangChuaThanhToan = false;
+                alert(response.data.Message);
             }
         )
     }
@@ -61,17 +57,12 @@ function ($scope, CommonController) {
         var res = CommonController.getData(API_DanhSachHoaDonTrongNam, $scope.maDanhBo);
         res.then(
             function success(response) {
-                if (response.data.length !== 0) {
-                    $scope.trangThaiDanhSachHoaDon = !$scope.trangThaiDanhSachHoaDon;
-                    $scope.danhSachHoaDon = response.data;
-                }
-                else {
-                    $scope.trangThaiDanhSachHoaDon = false;
-                    alert("Khách Hàng Này Đã Thanh Toán Hết Hóa Đơn !!!");
-                }
+                $scope.trangThaiDanhSachHoaDon = !$scope.trangThaiDanhSachHoaDon;
+                $scope.danhSachHoaDon = response.data;
             },
             function errorCallback(response) {
-                console.log(response.data.message);
+                $scope.trangThaiDanhSachHoaDon = false;
+                alert(response.data.Message);
             }
         )
     }

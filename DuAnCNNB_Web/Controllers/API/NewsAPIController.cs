@@ -12,6 +12,43 @@ namespace DuAnCNNB_Web.Controllers.API
     {
         DatabaseCSKHEntities1 db = new DatabaseCSKHEntities1();
         [HttpGet]
+        [Route("DanhSachDanhMuc")]
+        public IHttpActionResult DanhSachDanhMuc(int idChuyenMuc)
+        {
+            if (idChuyenMuc == 0)
+            {
+                var model = (from a in db.tbChuyenMucBaiViets
+                             where a.TrangThai == 1
+                             select new
+                             {
+                                 id = a.ID_ChuyenMuc,
+                                 tenchuyenmuc = a.TenChuyenMuc,
+
+                             }).AsEnumerable().Select(x => new DanhSachDanhMuc()
+                             {
+                                 ID_ChuyenMuc = x.id,
+                                 TenChuyenMuc = x.tenchuyenmuc
+                             });
+                return Ok(model.ToList());
+            }
+            else {
+                var model = (from a in db.tbChuyenMucBaiViets
+                             where a.TrangThai == 1 && a.ID_ChuyenMuc == idChuyenMuc
+                             select new
+                             {
+                                 id = a.ID_ChuyenMuc,
+                                 tenchuyenmuc = a.TenChuyenMuc,
+
+                             }).AsEnumerable().Select(x => new DanhSachDanhMuc()
+                             {
+                                 ID_ChuyenMuc = x.id,
+                                 TenChuyenMuc = x.tenchuyenmuc
+                             });
+                return Ok(model.ToList());
+            }
+        }
+
+        [HttpGet]
         [Route("ThongTinChung")]
         public IHttpActionResult ThongTinChung()
         {

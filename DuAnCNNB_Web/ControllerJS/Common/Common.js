@@ -1,5 +1,5 @@
 ﻿(function () {
-    var app = angular.module("CommonApp", ['ngSanitize'])
+    angular.module("CommonApp", ['ngSanitize'])
         .factory("CommonController", ["$http",
             function ($http) {
                 // Tạo UrlAPI động
