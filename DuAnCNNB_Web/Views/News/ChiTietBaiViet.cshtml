@@ -8,10 +8,10 @@
 <section class="bg-light post p-4" id="next-section" ng-controller="TinTuc" ng-init="layID(@ViewBag.idBaiViet)">
     <div class="container">
             <div class="text-center">
-                <h2>{{objTin.TieuDe}}</h2>
+                <h2 ng-bind="objTin.TieuDe"></h2>
                 <p><img src="{{objTin.HinhDaiDien1}}" alt="Image" class="img-fluid"></p>
             </div>
-            <p><span ng-bind-html="objTin.NoiDung"></span></p>
+            <p ng-bind-html="objTin.NoiDung"></p>
             <!-- END content -->
     </div>
 </section>

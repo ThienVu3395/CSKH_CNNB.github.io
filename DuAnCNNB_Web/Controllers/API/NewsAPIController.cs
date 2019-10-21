@@ -13,10 +13,8 @@ namespace DuAnCNNB_Web.Controllers.API
         DatabaseCSKHEntities1 db = new DatabaseCSKHEntities1();
         [HttpGet]
         [Route("DanhSachDanhMuc")]
-        public IHttpActionResult DanhSachDanhMuc(/*int idChuyenMuc*/)
+        public IHttpActionResult DanhSachDanhMuc()
         {
-            //if (idChuyenMuc == 0)
-            //{
                 var model = (from a in db.tbChuyenMucBaiViets
                              where a.TrangThai == 1
                              select new
@@ -30,55 +28,14 @@ namespace DuAnCNNB_Web.Controllers.API
                                  TenChuyenMuc = x.tenchuyenmuc
                              });
                 return Ok(model.ToList());
-            //}
-            //else {
-            //    var model = (from a in db.tbChuyenMucBaiViets
-            //                 where a.TrangThai == 1 && a.ID_ChuyenMuc == idChuyenMuc
-            //                 select new
-            //                 {
-            //                     id = a.ID_ChuyenMuc,
-            //                     tenchuyenmuc = a.TenChuyenMuc,
-
-            //                 }).AsEnumerable().Select(x => new DanhSachDanhMuc()
-            //                 {
-            //                     ID_ChuyenMuc = x.id,
-            //                     TenChuyenMuc = x.tenchuyenmuc
-            //                 });
-            //    return Ok(model.ToList());
-            //}
         }
 
         [HttpGet]
-        [Route("ThongTinChung")]
-        public IHttpActionResult ThongTinChung()
+        [Route("BaiVietTheoDanhMuc")]
+        public IHttpActionResult DanhSachBaiVietTheoDanhMuc(int idChuyenMuc)
         {
             var model = (from a in db.tbBaiViets
-                     where a.ID_ChuyenMuc == 4
-                     select new
-                     {
-                         id = a.ID_BaiViet,
-                         hinhanh = a.HinhDaiDien1,
-                         title = a.TieuDe,
-                         ngaythang = a.NgayDang
-                      
-                     }).AsEnumerable().Select(x => new ThongTinChung()
-                     {
-                         ID_BaiViet = x.id,
-                         HinhDaiDien1 = x.hinhanh,
-                         TieuDe = x.title,
-                         NgayDang = x.ngaythang
-
-                     });
-
-            return Ok(model.ToList());
-        }
-
-        [HttpGet]
-        [Route("CamNang")]
-        public IHttpActionResult DanhSachCamNang()
-        {
-            var model = (from a in db.tbBaiViets
-                         where a.ID_ChuyenMuc == 1
+                         where a.ID_ChuyenMuc == idChuyenMuc
                          select new
                          {
                              id = a.ID_BaiViet,
@@ -98,40 +55,63 @@ namespace DuAnCNNB_Web.Controllers.API
             return Ok(model.ToList());
         }
 
+        //[HttpGet]
+        //[Route("ThongTinChung")]
+        //public IHttpActionResult ThongTinChung()
+        //{
+        //    var model = (from a in db.tbBaiViets
+        //             where a.ID_ChuyenMuc == 4
+        //             select new
+        //             {
+        //                 id = a.ID_BaiViet,
+        //                 hinhanh = a.HinhDaiDien1,
+        //                 title = a.TieuDe,
+        //                 ngaythang = a.NgayDang
+                      
+        //             }).AsEnumerable().Select(x => new ThongTinChung()
+        //             {
+        //                 ID_BaiViet = x.id,
+        //                 HinhDaiDien1 = x.hinhanh,
+        //                 TieuDe = x.title,
+        //                 NgayDang = x.ngaythang
+
+        //             });
+
+        //    return Ok(model.ToList());
+        //}
+
+        //[HttpGet]
+        //[Route("CamNang")]
+        //public IHttpActionResult DanhSachCamNang()
+        //{
+        //    var model = (from a in db.tbBaiViets
+        //                 where a.ID_ChuyenMuc == 1
+        //                 select new
+        //                 {
+        //                     id = a.ID_BaiViet,
+        //                     hinhanh = a.HinhDaiDien1,
+        //                     title = a.TieuDe,
+        //                     ngaythang = a.NgayDang
+
+        //                 }).AsEnumerable().Select(x => new ThongTinChung()
+        //                 {
+        //                     ID_BaiViet = x.id,
+        //                     HinhDaiDien1 = x.hinhanh,
+        //                     TieuDe = x.title,
+        //                     NgayDang = x.ngaythang
+
+        //                 });
+
+        //    return Ok(model.ToList());
+        //}
+
         [HttpGet]
-        [Route("ThongTinChung_PhanTrang")]
+        [Route("DanhSachBaiViet_PhanTrang")]
         public IHttpActionResult ThongTinChung_PhanTrang(int soTrang , int soBV)
         {
             var pageIndex = (soTrang - 1) * soBV;
             var model = (from a in db.tbBaiViets
                          where a.ID_ChuyenMuc == 4
-                         select new
-                         {
-                             id = a.ID_BaiViet,
-                             hinhanh = a.HinhDaiDien1,
-                             title = a.TieuDe,
-                             ngaythang = a.NgayDang
-
-                         }).AsEnumerable().Select(x => new ThongTinChung()
-                         {
-                             ID_BaiViet = x.id,
-                             HinhDaiDien1 = x.hinhanh,
-                             TieuDe = x.title,
-                             NgayDang = x.ngaythang
-
-                         }).Skip(pageIndex).Take(soBV);
-
-            return Ok(model.ToList());
-        }
-
-
-        [HttpGet]
-        [Route("CamNang_PhanTrang")]
-        public IHttpActionResult CamNang_PhanTrang(int soTrang, int soBV)
-        {
-            var pageIndex = (soTrang - 1) * soBV;
-            var model = (from a in db.tbBaiViets
-                         where a.ID_ChuyenMuc == 1
                          select new
                          {
                              id = a.ID_BaiViet,
