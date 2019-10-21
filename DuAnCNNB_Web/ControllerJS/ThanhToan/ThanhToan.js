@@ -11,7 +11,7 @@
 
         res.then(
             function success(response) {
-                $scope.dsCuaHang = response.data
+                $scope.dsCuaHang = response.data;
                 $scope.tongSoTrang = Math.round($scope.dsCuaHang.length / $scope.soCuaHangMoiTrang);
                 $scope.dsCuaHang.splice($scope.soCuaHangMoiTrang);
             },

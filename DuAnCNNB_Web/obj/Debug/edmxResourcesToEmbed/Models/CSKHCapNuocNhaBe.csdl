@@ -326,6 +326,8 @@
     <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="tbBaiViets" Relationship="Self.FK_tbBaiViet_tbChuyenMucBaiViet" FromRole="tbChuyenMucBaiViet" ToRole="tbBaiViet" />
     <Property Name="TrangThai" Type="Int32" />
+    <Property Name="Path" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Alias" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tbHoidap">
     <Key>

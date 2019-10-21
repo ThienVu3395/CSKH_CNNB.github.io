@@ -29,7 +29,6 @@ namespace DuAnCNNB_Web.Controllers
         {
             return View();
         }
-        
 
     }
 }

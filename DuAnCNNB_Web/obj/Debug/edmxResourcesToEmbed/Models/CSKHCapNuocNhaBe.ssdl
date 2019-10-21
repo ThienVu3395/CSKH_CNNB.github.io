@@ -311,6 +311,8 @@
     <Property Name="IconChuyenMuc" Type="text" />
     <Property Name="GhiChu" Type="text" />
     <Property Name="TrangThai" Type="int" />
+    <Property Name="Path" Type="nvarchar" MaxLength="250" />
+    <Property Name="Alias" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="tbHoidap">
     <Key>

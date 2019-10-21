@@ -5,8 +5,8 @@
     ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
 }
 
-<div class="container" ng-app="CommonApp" ng-controller="DanhSachCuaHang">
-    <h2 class="text-center">Tìm Cửa Hàng</h2>
+<div class="container" ng-controller="DanhSachCuaHang">
+    @*<h2 class="text-center">Tìm Cửa Hàng</h2>
     <div class="form-inline" action="/action_page.php">
         <label for="email" class="mr-sm-2">Email address:</label>
         <div class="form-group">
@@ -27,12 +27,12 @@
             </select>
         </div>
         <button type="submit" class="btn btn-primary mb-2">Tìm</button>
-    </div>
+    </div>*@
     <div class="row" id="mapInfo">
-        <div class="col-lg-4 mb-4" ng-repeat="item in dsCuaHang">
+        <div class="col-lg-4 col-md-4 col-sm-6 mb-4" ng-repeat="item in dsCuaHang">
             <div class="card">
-                <img src="https://media.wired.com/photos/59269e297034dc5f91bec142/191:100/pass/world-song-map-largeHP.jpg" width="100%" />
-                <div class="card-body">
+                <img src="https://static.mservice.io/img/logo-momo.png" width="100%" />
+                <div class="card-body text-center">
                     <h5 class="card-title">{{item.MOTA}}</h5>
                     <p class="card-text">{{item.DIACHI}}</p>
                 </div>

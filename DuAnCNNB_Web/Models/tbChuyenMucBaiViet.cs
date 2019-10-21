@@ -25,6 +25,8 @@ namespace DuAnCNNB_Web.Models
         public string IconChuyenMuc { get; set; }
         public string GhiChu { get; set; }
         public Nullable<int> TrangThai { get; set; }
+        public string Path { get; set; }
+        public string Alias { get; set; }
     
         public virtual ICollection<tbBaiViet> tbBaiViets { get; set; }
     }
