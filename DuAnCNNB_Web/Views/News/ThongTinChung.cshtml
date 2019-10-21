@@ -5,7 +5,7 @@
     ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
 }
 
-<section class="bg-light post p-4" id="next-section" ng-controller="TinTuc">
+<section class="bg-light post p-4" id="next-section" ng-controller="TinTuc" ng-init="LayBaiVietTheoDanhMuc(@ViewBag.idDanhMuc)">
     <div class="container">
         <form action="#" class="sidebar-search">
             <div class="form-group">
@@ -14,7 +14,7 @@
             </div>
         </form>
         <div class="row">
-                    <div class="col-md-6" ng-repeat="item in dsThongTinChung">
+                    <div class="col-md-6" ng-repeat="item in dsBaiVietTheoDanhMuc">
                         <div class="media media-custom d-block mb-4">
                             <a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}" class="mb-4 d-block">
                                 <img src="{{item.HinhDaiDien1}}" alt="Image placeholder"

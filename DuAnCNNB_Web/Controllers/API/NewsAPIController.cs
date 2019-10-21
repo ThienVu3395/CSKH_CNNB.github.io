@@ -55,56 +55,6 @@ namespace DuAnCNNB_Web.Controllers.API
             return Ok(model.ToList());
         }
 
-        //[HttpGet]
-        //[Route("ThongTinChung")]
-        //public IHttpActionResult ThongTinChung()
-        //{
-        //    var model = (from a in db.tbBaiViets
-        //             where a.ID_ChuyenMuc == 4
-        //             select new
-        //             {
-        //                 id = a.ID_BaiViet,
-        //                 hinhanh = a.HinhDaiDien1,
-        //                 title = a.TieuDe,
-        //                 ngaythang = a.NgayDang
-                      
-        //             }).AsEnumerable().Select(x => new ThongTinChung()
-        //             {
-        //                 ID_BaiViet = x.id,
-        //                 HinhDaiDien1 = x.hinhanh,
-        //                 TieuDe = x.title,
-        //                 NgayDang = x.ngaythang
-
-        //             });
-
-        //    return Ok(model.ToList());
-        //}
-
-        //[HttpGet]
-        //[Route("CamNang")]
-        //public IHttpActionResult DanhSachCamNang()
-        //{
-        //    var model = (from a in db.tbBaiViets
-        //                 where a.ID_ChuyenMuc == 1
-        //                 select new
-        //                 {
-        //                     id = a.ID_BaiViet,
-        //                     hinhanh = a.HinhDaiDien1,
-        //                     title = a.TieuDe,
-        //                     ngaythang = a.NgayDang
-
-        //                 }).AsEnumerable().Select(x => new ThongTinChung()
-        //                 {
-        //                     ID_BaiViet = x.id,
-        //                     HinhDaiDien1 = x.hinhanh,
-        //                     TieuDe = x.title,
-        //                     NgayDang = x.ngaythang
-
-        //                 });
-
-        //    return Ok(model.ToList());
-        //}
-
         [HttpGet]
         [Route("DanhSachBaiViet_PhanTrang")]
         public IHttpActionResult ThongTinChung_PhanTrang(int soTrang , int soBV)

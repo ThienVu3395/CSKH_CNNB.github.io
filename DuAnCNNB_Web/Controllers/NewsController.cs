@@ -9,23 +9,27 @@ namespace DuAnCNNB_Web.Controllers
     public class NewsController : Controller
     {
         // GET: News
-        public ActionResult ThongTinChung()
+        public ActionResult ThongTinChung(int idDanhMuc)
         {
+            ViewBag.idDanhMuc = idDanhMuc;
             return View();
         }
 
-        public ActionResult CamNang()
+        public ActionResult CamNang(int idDanhMuc)
         {
+            ViewBag.idDanhMuc = idDanhMuc;
             return View();
         }
 
-        public ActionResult ThuTuc()
+        public ActionResult ThuTuc(int idDanhMuc)
         {
+            ViewBag.idDanhMuc = idDanhMuc;
             return View();
         }
 
-        public ActionResult CauHoi()
+        public ActionResult CauHoi(int idDanhMuc)
         {
+            ViewBag.idDanhMuc = idDanhMuc;
             return View();
         }
 
