@@ -8,12 +8,12 @@
 <section class="bg-light post p-4" id="next-section" ng-controller="TinTuc" ng-init="LayBaiVietTheoDanhMuc(@ViewBag.idDanhMuc)">
     <div class="container">
         <h2 class="text-center">@ViewBag.Header</h2>
-        <form action="#" class="sidebar-search">
+        @*<form action="#" class="sidebar-search">
             <div class="form-group">
                 <span class="fa fa-search icon-search"></span>
                 <input type="text" class="form-control search-input" placeholder="Tìm bài viết...">
             </div>
-        </form>
+        </form>*@
         <div class="row">
             <div class="col-md-6" ng-repeat="item in dsBaiVietTheoDanhMuc">
                 <div class="media media-custom d-block mb-4">
