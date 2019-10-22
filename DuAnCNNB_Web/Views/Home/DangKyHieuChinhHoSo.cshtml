@@ -20,7 +20,7 @@
     <div class="tab-content card-body">
         <div class="tab-pane container active">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" ng-model="maDanhBo" placeholder="Nhập Mã Danh Bộ...">
+                <input type="text" class="form-control" ng-change="reset()" ng-model="maDanhBo" placeholder="Nhập Mã Danh Bộ...">
                 <div class="input-group-append">
                     <button class="btn btn-success" ng-click="timMaDB()">Tìm Kiếm</button>
                 </div>

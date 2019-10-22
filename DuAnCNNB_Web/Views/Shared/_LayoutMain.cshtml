@@ -10,20 +10,25 @@
           rel="stylesheet">
 
     <link rel="stylesheet" href="~/Content/css/bootstrap.css">
+    @*Thư viện blockUI*@
+    <link href="~/Content/angular-block-ui.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/css/animate.css">
     <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/Content/css/aos.css">
 
     <link rel="stylesheet" href="~/Content/fonts/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="~/Content/fonts/fontawesome/css/font-awesome.min.css">
+    
 
     <script src="~/Scripts/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.8/angular-sanitize.js"></script>
+    @*Thư viện js blockUI*@
+    <script src="~/Scripts/angular-block-ui.js"></script>
     <script src="~/ControllerJS/Common/Common.js"></script>
     <!-- Theme Style -->
     <link rel="stylesheet" href="~/Content/css/style.css">
 </head>
-<body>
+<body ng-app="CommonApp">
     <header class="site-header">
         @Html.Action("_Menu", "patital")
     </header>
@@ -39,12 +44,14 @@
     </section>
     <section class="section @ViewBag.status3" id="next-section">
         <div class="container">
+            <div block-ui="main"></div>
             <div class="row mb-5">
                 <div class="col-lg-3 col-md-12 mb-4" style="display:@ViewBag.status">
                     @Html.Action("_navbar", "patital")
                 </div>
 
-                <div class="@ViewBag.status2" ng-app="CommonApp">
+                <div class="@ViewBag.status2">
+                    
                     <nav aria-label="breadcrumb" style="display:@ViewBag.status">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>

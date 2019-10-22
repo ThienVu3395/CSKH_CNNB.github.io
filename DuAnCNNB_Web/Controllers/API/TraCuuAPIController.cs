@@ -13,7 +13,7 @@ namespace DuAnCNNB_Web.Controllers
     {
         DatabaseCSKHEntities1 db = new DatabaseCSKHEntities1();
 
-        //Tra Cứu Định Mức + Tiền Nước
+        //Tra Cứu Thông Tin Khách Hàng
         [HttpGet]
         [Route("TraCuuThongTin")]
         public IHttpActionResult TraCuuThongTin(string maDanhBo)
@@ -24,6 +24,35 @@ namespace DuAnCNNB_Web.Controllers
                 if(ttkh != null)
                 {
                     return Ok(ttkh);
+                }
+                else return BadRequest("Mã Danh Bộ Không Tồn Tại");
+            }
+            else return BadRequest("Mã Danh Bộ Không Được Trống");
+        }
+
+        //Tra Cứu 2 bảng để tra cứu tiền nước
+        [HttpGet]
+        [Route("TraCuuThongTinTienNuoc")]
+        public IHttpActionResult TraCuuTienNuocTest(string maDanhBo)
+        {
+            if (maDanhBo != null)
+            {
+                var thongtintiennuoc = (from a in db.tbMadanhboes
+                             join b in db.tbTiennuocs
+                             on a.MADB equals b.MADB
+                             where a.MADB == maDanhBo
+                             select new
+                             {
+                                 MaDB = a.MADB,
+                                 TenKH = a.TENKH,
+                                 DiaChi = a.DIACHI1 + " " + a.DIACHI2,
+                                 DinhMuc = a.DINHMUC,
+                                 GiaBieu = a.GIABIEU,
+                                 TongTien = b.TONGTIEN
+                             }).FirstOrDefault();
+                if (thongtintiennuoc != null)
+                {
+                    return Ok(thongtintiennuoc);
                 }
                 else return BadRequest("Mã Danh Bộ Không Tồn Tại");
             }

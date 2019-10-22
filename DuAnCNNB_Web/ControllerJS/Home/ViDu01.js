@@ -1,7 +1,7 @@
 ﻿angular.module("CommonApp")
     // Báo Chỉ Số Nước + Đăng ký gắn mới + đk nâng dời + đk điều chỉnh
     .controller("DichVuTrucTuyen",
-    function ($scope, CommonController) {
+    function ($scope, CommonController,blockUI) {
             // Những biến dùng chung cho 4 form
             $scope.maDanhBo = "";
             $scope.guiFormThanhCong = false;
@@ -82,12 +82,14 @@
 
             // Show Thông Tin Khách Hàng
             $scope.timMaDB = function () {
+                blockUI.start();
                 var res = CommonController.getData(API_GetThongTinKhachHang, $scope.maDanhBo);
                 res.then(
                     function success(response) {
                         $scope.thongTinKhachHang = response.data;
                         $scope.trangThaiHienThiForm = true;
                         $scope.trangThaiThongBao = false;
+                        $scope.guiFormThanhCong = false;
                     },
                     function errorCallback(response) {
                         $scope.trangThaiHienThiForm = false;
@@ -174,6 +176,11 @@
                         $scope.trangThaiHienThiForm = false;
                     }
                 );
+            }
+
+            $scope.reset = function () {
+                $scope.trangThaiThongBao = false;
+                $scope.guiFormThanhCong = false;
             }
     })
 .controller("LienHe",

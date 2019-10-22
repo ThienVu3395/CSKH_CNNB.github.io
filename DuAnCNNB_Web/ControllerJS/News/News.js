@@ -67,15 +67,15 @@
             }
 
             //Lấy danh sách danh mục
-            //$scope.danhSachDanhMuc = [];
-            //var API_DanhSachDanhMuc = 'TraCuu/DanhSachDanhMuc';
-            //var res = CommonController.getData(API_DanhSachDanhMuc,'');
-            //res.then(
-            //    function success(response) {
-            //        $scope.danhSachDanhMuc = response.data;
-            //    },
-            //    function errorCallback(response) {
-            //        console.log(response.data);
-            //    }
-            //)
+            $scope.danhSachDanhMuc = [];
+            var API_DanhSachDanhMuc = 'TraCuu/DanhSachDanhMuc';
+            var res = CommonController.getData(API_DanhSachDanhMuc,'');
+            res.then(
+                function success(response) {
+                    $scope.danhSachDanhMuc = response.data;
+                },
+                function errorCallback(response) {
+                    console.log(response.data);
+                }
+            )
         })
