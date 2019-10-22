@@ -5,160 +5,45 @@
     ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
 }
 
-<div id="accordion">
-    <div class="card">
-        <div class="card-header" style="background-color: green!important;">
-            <a class="card-link text-white" data-toggle="collapse" href="#ttstdhn">
-                Thủ Tục Sang Tên Đồng Hồ Nước
-            </a>
-        </div>
-        <div id="ttstdhn" class="collapse" data-parent="#accordion">
-            <div class="container">
-                Hồ sơ gồm có:
-
-                <p>
-                    1. Nếu là hộ dân cư:
-                    - Phiếu đề nghị sang tên đồng hồ nước.
-                    - Bản photo hóa đơn tiền nước kỳ mới nhất.
-                    - Bản sao hộ khẩu (photo toàn bộ sổ hộ khẩu hoặc sổ tạm trú của những người sử dụng chung).
-                    - Bản sao chủ quyền nhà hoặc hợp đồng mua bán nhà.
-                </p>
-
-                <p>
-                    2. Nếu là cơ quan:
-                    - Phiếu đề nghị sang tên đồng hồ nước.
-                    - Bản photo hóa đơn tiền nước kỳ mới nhất.
-                    - Bản sao giấy đăng ký kinh doanh, đăng ký mã số thuế.
-                    - Bản sao giấy chủ quyền nhà hoặc quyết định bàn giao trụ sở, quyết định đổi tên doanh nghiệp.
-                    - Giấy cam kết của chủ nhà cho công ty, cơ quan đứng tên đồng hồ nước có công chứng hoặc xác nhận của địa phương (trường hợp trụ sở cơ quan là nhà thuê).
-                </p>
-</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header" style="background-color: green!important;">
-            <a class="collapsed card-link text-white" data-toggle="collapse" href="#ttccdm">
-                Thủ Tục Cắt Chuyển Định Mức
-            </a>
-        </div>
-        <div id="ttccdm" class="collapse" data-parent="#accordion">
-            <div class="container">
-                / Trường hợp chưa có hộ khẩu tại nơi sử dụng nước:
-
-                (đối với hồ sơ cắt chuyển định mức nước)
-
-                - Hoá đơn tiền nước mới nhất nơi cũ (nếu có) và nơi đăng ký mới.
-
-                - Bản sao hộ khẩu TP.HCM (có địa chỉ khác với địa chỉ gắn đồng hồ nước).
-
-                - Giấy xác nhận lưu trú thực tế của Công an Phường, Xã,…. (có ký tên, đóng dấu).
-
-                - Bản sao Quyết định đổi số nhà hoặc cam kết về địa chỉ được chính quyền địa phương xác
-                nhận (nếu địa chỉ trên hoá đơn không đúng với thực tế).
-
-                - Trường hợp tạm trú cùng phường không cần làm giấy xác nhận.
-
-                *Mẫu cắt chuyển định mức: MẨU CẮT CHUYỂN ĐỊNH MỨC
+<section class="bg-light post p-4" id="next-section" ng-controller="TinTuc" ng-init="LayBaiVietTheoDanhMuc(@ViewBag.idDanhMuc)">
+    <div class="container">
+        <h2 class="text-center">@ViewBag.Header</h2>
+        <form action="#" class="sidebar-search">
+            <div class="form-group">
+                <span class="fa fa-search icon-search"></span>
+                <input type="text" class="form-control search-input" placeholder="Tìm bài viết...">
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-md-6" ng-repeat="item in dsBaiVietTheoDanhMuc">
+                <div class="media media-custom d-block mb-4">
+                    <a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}" class="mb-4 d-block">
+                        <img src="{{item.HinhDaiDien1}}" alt="Image placeholder"
+                             class="img-fluid" width="100%">
+                    </a>
+                    <div class="media-body">
+                        <span class="meta-post">{{item.NgayDang}}</span>
+                        <h2 class="mt-0 mb-3"><a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}">{{item.TieuDe}}</a></h2>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="card">
-        <div class="card-header" style="background-color: green!important;">
-            <a class="collapsed card-link text-white" data-toggle="collapse" href="#ttnddcdhn">
-                Thủ Tục Nâng - Hạ, Dời, Đổi Cỡ Đồng Hồ Nước 
-            </a>
-        </div>
-        <div id="ttnddcdhn" class="collapse" data-parent="#accordion">
-            <div class="container">
-                <p>Trường hợp nâng - hạ, dời, đổi cỡ đồng hồ nước: khách hàng đính kèm hóa đơn tiền nước kỳ mới nhất. Nếu khách hàng đổi cỡ đồng hồ nước thì đính kèm thêm bản mô tả nhu cầu sử dụng nước.</p>
 
-                <p>Sau khi hoàn chỉnh quy trình thiết kế, lập dự toán, Phòng Kế Hoạch -Vật Tư sẽ mời khách hàng đóng tiền, ký bổ sung hồ sơ để xin phép đào đường đối với khách hàng. Sau khi có phép đào đường, Công ty sẽ thi công gắn mới, nâng, dời, đổi cỡ theo yêu cầu của khách hàng.</p>
+        <div class="row">
+            <div class="col-md-12">
+                <nav role="navigation">
+                    <ul class="pagination custom-pagination pagination-lg">
+                        <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
+                            <a class="page-link" ng-click="phanTrang(item+1)">{{item + 1}}</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
+        <!-- END content -->
     </div>
-
-    <div class="card">
-        <div class="card-header" style="background-color: green!important;">
-            <a class="collapsed card-link text-white" data-toggle="collapse" href="#ttgmdhn">
-                Thủ Tục Gắn Mới Đồng Hồ Nước
-            </a>
-        </div>
-        <div id="ttgmdhn" class="collapse" data-parent="#accordion">
-            <div class="container">
-                Trường hợp gắn mới đồng hồ nước: khách hàng đính kèm một trong các giấy tờ sau (02 bản sao y chứng thực):
-
-                » Hộ khẩu thường trú (xin nộp đủ số nhân khẩu để tiện đăng ký định mức nước sinh hoạt).
-
-                » Giấy chứng nhận quyền sở hữu nhà ở.
-
-                » Hợp đồng chuyển quyền sở hữu nhà lập tại cơ quan công chứng Nhà nước hoặc Ủy Ban Nhân Dân quận, huyện, nơi có căn nhà tọa lạc, đã nộp lệ phí trước bạ và đăng ký.
-
-                » Giấy cấp nhà trong nội bộ cơ quan hoặc quyết định cấp nhà của cơ quan có thẩm quyền.
-
-                » Hợp đồng thuê nhà của Nhà nước.
-
-                » Giấy phép xây dựng.
-
-                » Giấy cấp số nhà của cơ quan có thẩm quyền các quận, huyện.
-
-                » Quyết định của cơ quan có thẩm quyền hoặc bản án có hiệu lực thi hành của Tòa án công nhận quyền sở hữu, sử dụng, thừa kế nhà.
-
-                » Giấy chứng nhận tạm trú của Công an phường, xã.
-
-                » Quyết định giao đất của cơ quan chức năng
-            </div>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header" style="background-color: green!important;">
-            <a class="collapsed card-link text-white" data-toggle="collapse" href="#hsdkmst">
-                Hồ Sơ Đăng Ký Mã Số Thuế Và Sang Tên Đồng Hồ Nước
-            </a>
-        </div>
-        <div id="hsdkmst" class="collapse" data-parent="#accordion">
-            <div class="container">
-                I. HỒ SƠ SANG TÊN ĐỒNG HỒ NƯỚC:
-
-                1) TƯ GIA :
-
-                - Hoá đơn tiền nước kỳ mới nhất
-
-                - Bản sao hộ khẩu của người đứng tên đồng hồ nước (photo toàn bộ hộ khẩu hoặc KT3 và những người sử dụng chung)
-
-                - Bản sao chủ quyền nhà hoặc hợp đồng mua bán nhà của người xin đứng tên đồng hồ nước.
-
-                2) CƠ QUAN:
-
-                - Hoá đơn tiền nước kỳ mới nhất (bản photo).
-
-                - Quyết định cấp nhà (bản photo).
-
-                - Quyết định bàn giao trụ sở.
-
-                - Hợp đồng mua bán nhà(bản photo).
-
-                - Hợp đồng thuê nhà(bản photo).
-
-                - Bản sao giấy chứng nhận đăng ký kinh doanh.
-
-                - Bản sao giấy chứng nhận đăng ký mã số thuế.
-
-                - Giấy cam kết của chủ nhà cho công ty/cơ quan đứng tên ĐHN (trường hợp thuê nhà).
-
-                II. ĐĂNG KÝ MÃ SỐ THUẾ:
-
-                - Bản sao tiền nước kỳ mới nhất.
-
-                - Bản sao giấy chứng nhận đăng ký mã số thuế.
-
-                "GIẤY ĐỀ NGHỊ CHUYỂN TÊN HỢP ĐỒNG SỬ DỤNG NƯỚC"
-            </div>
-        </div>
-    </div>
-</div>
+</section>
 
 @section Footer{
     <footer class="section footer-section bg-primary">
@@ -185,3 +70,6 @@
         </div>
     </footer>
 }
+
+<script src="~/ControllerJS/News/News.js"></script>
+

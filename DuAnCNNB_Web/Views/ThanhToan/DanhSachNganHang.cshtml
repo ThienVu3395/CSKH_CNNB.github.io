@@ -5,54 +5,54 @@
     ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
 }
 
-<div class="container" ng-controller="DanhSachCuaHang">
-    @*<h2 class="text-center">Tìm Cửa Hàng</h2>
-    <div class="form-inline" action="/action_page.php">
-        <label for="email" class="mr-sm-2">Email address:</label>
-        <div class="form-group">
-            <select class="form-control" id="sel1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
-        </div>
-        <label for="pwd" class="mr-sm-2">Password:</label>
-        <div class="form-group">
-            <select class="form-control" id="sel1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary mb-2">Tìm</button>
-    </div>*@
-    <div class="row" id="mapInfo">
-        <div class="col-lg-4 col-md-4 col-sm-6 mb-4" ng-repeat="item in dsCuaHang">
-            <div class="card">
-                <img src="https://static.mservice.io/img/logo-momo.png" width="100%" />
-                <div class="card-body text-center">
-                    <h5 class="card-title">{{item.MOTA}}</h5>
-                    <p class="card-text">{{item.DIACHI}}</p>
+<div class="bg-light post p-4" ng-controller="DanhSachCuaHang">
+    <div class="container">
+            @*<div class="form-inline" action="/action_page.php">
+                <label for="email" class="mr-sm-2">Email address:</label>
+                <div class="form-group">
+                    <select class="form-control" id="sel1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+                <label for="pwd" class="mr-sm-2">Password:</label>
+                <div class="form-group">
+                    <select class="form-control" id="sel1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Tìm</button>
+            </div>*@
+        <div class="row" id="mapInfo">
+            <div class="col-lg-4 col-md-4 col-sm-6 mb-4" ng-repeat="item in dsCuaHang">
+                <div class="card">
+                    <img src="https://static.mservice.io/img/logo-momo.png" width="100%" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{item.MOTA}}</h5>
+                        <p class="card-text">{{item.DIACHI}}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <nav role="navigation">
-                <ul class="pagination custom-pagination pagination-lg">
-                    <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
-                        <a class="page-link" ng-click="phanTrang(item + 1)">{{item + 1}}</a>
-                    </li>
-                </ul>
-            </nav>
+        <div class="row">
+            <div class="col-md-12">
+                <nav role="navigation">
+                    <ul class="pagination custom-pagination pagination-lg">
+                        <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
+                            <a class="page-link" ng-click="phanTrang(item + 1)">{{item + 1}}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
 </div>
-
 
 @section Footer{
     <footer class="section footer-section bg-primary">

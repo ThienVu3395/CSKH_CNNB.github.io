@@ -41,6 +41,7 @@ namespace DuAnCNNB_Web.Controllers.API
                              id = a.ID_BaiViet,
                              hinhanh = a.HinhDaiDien1,
                              title = a.TieuDe,
+                             mota = a.MoTa,
                              ngaythang = a.NgayDang
 
                          }).AsEnumerable().Select(x => new ThongTinChung()
@@ -48,6 +49,7 @@ namespace DuAnCNNB_Web.Controllers.API
                              ID_BaiViet = x.id,
                              HinhDaiDien1 = x.hinhanh,
                              TieuDe = x.title,
+                             MoTa = x.mota,
                              NgayDang = x.ngaythang
 
                          });
@@ -57,16 +59,17 @@ namespace DuAnCNNB_Web.Controllers.API
 
         [HttpGet]
         [Route("DanhSachBaiViet_PhanTrang")]
-        public IHttpActionResult ThongTinChung_PhanTrang(int soTrang , int soBV)
+        public IHttpActionResult ThongTinChung_PhanTrang(int idDanhMuc,int soTrang , int soBV)
         {
             var pageIndex = (soTrang - 1) * soBV;
             var model = (from a in db.tbBaiViets
-                         where a.ID_ChuyenMuc == 4
+                         where a.ID_ChuyenMuc == idDanhMuc
                          select new
                          {
                              id = a.ID_BaiViet,
                              hinhanh = a.HinhDaiDien1,
                              title = a.TieuDe,
+                             mota = a.MoTa,
                              ngaythang = a.NgayDang
 
                          }).AsEnumerable().Select(x => new ThongTinChung()
@@ -74,6 +77,7 @@ namespace DuAnCNNB_Web.Controllers.API
                              ID_BaiViet = x.id,
                              HinhDaiDien1 = x.hinhanh,
                              TieuDe = x.title,
+                             MoTa = x.mota,
                              NgayDang = x.ngaythang
 
                          }).Skip(pageIndex).Take(soBV);

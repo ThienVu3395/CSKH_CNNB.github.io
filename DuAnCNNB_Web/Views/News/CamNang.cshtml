@@ -7,6 +7,7 @@
 
 <section class="bg-light post p-4" id="next-section" ng-controller="TinTuc" ng-init="LayBaiVietTheoDanhMuc(@ViewBag.idDanhMuc)">
     <div class="container">
+        <h2 class="text-center">@ViewBag.Header</h2>
         <form action="#" class="sidebar-search">
             <div class="form-group">
                 <span class="fa fa-search icon-search"></span>
@@ -14,7 +15,7 @@
             </div>
         </form>
         <div class="row">
-            <div class="col-md-6" ng-repeat="item in dsThongTinChung">
+            <div class="col-md-6" ng-repeat="item in dsBaiVietTheoDanhMuc">
                 <div class="media media-custom d-block mb-4">
                     <a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}" class="mb-4 d-block">
                         <img src="{{item.HinhDaiDien1}}" alt="Image placeholder"
@@ -28,18 +29,18 @@
             </div>
         </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <nav role="navigation">
-                        <ul class="pagination custom-pagination pagination-lg">
-                            <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
-                                <a class="page-link" ng-click="phanTrang(item+1)">{{item + 1}}</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+        <div class="row">
+            <div class="col-md-12">
+                <nav role="navigation">
+                    <ul class="pagination custom-pagination pagination-lg">
+                        <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
+                            <a class="page-link" ng-click="phanTrang(item+1)">{{item + 1}}</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <!-- END content -->
+        </div>
+        <!-- END content -->
     </div>
 </section>
 

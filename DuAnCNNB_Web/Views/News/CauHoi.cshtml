@@ -5,64 +5,45 @@
     ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
 }
 
-<!-- Nav pills -->
-<ul class="nav nav-pills">
-    <li class="nav-item">
-        <a class="nav-link active" data-toggle="pill" href="#home">Câu Hỏi 1</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu1">Câu Hỏi 2</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="pill" href="#menu2">Câu Hỏi 3</a>
-    </li>
-</ul>
-
-<!-- Tab panes -->
-<div class="tab-content mt-2">
-    <div class="tab-pane container active" id="home">
-        <div class="card text-center p-2">
-            <h2 class="text-danger">Rửa đồ đúng cách, thay đổi thói quen khi tắm, tái sử dụng nước... giúp tiết kiệm nước trong gia đình.</h2>
-                <p class="card-text">
-                    1. Kiểm tra đường ống
-
-                    Đường ống nước dùng lâu ngày rất dễ bị nứt hoặc hở. Để kiểm tra, bạn đọc số nước trên đồng hồ, nếu sau khoảng hai giờ không sử dụng, công tơ không cho cùng một số, hệ thống cấp nước đã bị rò rỉ. Bạn nên kiểm tra như vậy thường xuyên, vì một chiếc vòi nước nhỏ giọt liên tục có thể gây lãng phí đến 20.000 lít nước mỗi năm.
-
-                    2. Rửa đồ đúng cách
-
-                    Hầu hết mọi người đều có thói quen rửa đồ trực tiếp dưới vòi nước, gây lãng phí mà không hay biết. Bạn nên xả vừa đủ nước vào bồn, chậu để thực hiện công việc của mình. Làm theo cách này, bạn sẽ tiết kiệm 50 - 250 lít nước mỗi ngày.
-                </p>
+<section class="bg-light post p-4" id="next-section" ng-controller="TinTuc" ng-init="LayBaiVietTheoDanhMuc(@ViewBag.idDanhMuc)">
+    <div class="container">
+        <h2 class="text-center">@ViewBag.Header</h2>
+        <form action="#" class="sidebar-search">
+            <div class="form-group">
+                <span class="fa fa-search icon-search"></span>
+                <input type="text" class="form-control search-input" placeholder="Tìm bài viết...">
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-md-6" ng-repeat="item in dsBaiVietTheoDanhMuc">
+                <div class="media media-custom d-block mb-4">
+                    <a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}" class="mb-4 d-block">
+                        <img src="{{item.HinhDaiDien1}}" alt="Image placeholder"
+                             class="img-fluid" width="100%">
+                    </a>
+                    <div class="media-body">
+                        <span class="meta-post">{{item.NgayDang}}</span>
+                        <h2 class="mt-0 mb-3"><a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}">{{item.MoTa}}</a></h2>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="tab-pane container fade" id="menu1">
-        <div class="card text-center p-2">
-            <h2 class="text-danger">Việt Nam là một trong 8 nước trên thế giới có nguồn nước tự nhiên dồi dào nhất. Thống kê của Bộ Y tế và Bộ Tài nguyên môi trường cho biết có khoảng 17 triệu người không được tiếp cận nguồn nước sinh hoạt an toàn đã qua xử lý. Nước và năng lượng là hai nguồn tài nguyên rất quan trọng nhưng năng lượng có thể chuyển hoá thành những dạng khác còn nước thì </h2>
-            <p class="card-text">
-                1. Kiểm tra đường ống
 
-                Đường ống nước dùng lâu ngày rất dễ bị nứt hoặc hở. Để kiểm tra, bạn đọc số nước trên đồng hồ, nếu sau khoảng hai giờ không sử dụng, công tơ không cho cùng một số, hệ thống cấp nước đã bị rò rỉ. Bạn nên kiểm tra như vậy thường xuyên, vì một chiếc vòi nước nhỏ giọt liên tục có thể gây lãng phí đến 20.000 lít nước mỗi năm.
 
-                2. Rửa đồ đúng cách
-
-                Hầu hết mọi người đều có thói quen rửa đồ trực tiếp dưới vòi nước, gây lãng phí mà không hay biết. Bạn nên xả vừa đủ nước vào bồn, chậu để thực hiện công việc của mình. Làm theo cách này, bạn sẽ tiết kiệm 50 - 250 lít nước mỗi ngày.
-            </p>
+        <div class="row">
+            <div class="col-md-12">
+                <nav role="navigation">
+                    <ul class="pagination custom-pagination pagination-lg">
+                        <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
+                            <a class="page-link" ng-click="phanTrang(item+1)">{{item + 1}}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
+        <!-- END content -->
     </div>
-    <div class="tab-pane container fade" id="menu2">
-        <div class="card text-center p-2">
-            <h2 class="text-danger">Cách phát hiện rò rỉ nước Đóng tất cả các vòi nước và các thiết bị sử dụng nước trong nhà; sau đó xem đồng hồ nước. Nếu đồng hồ không chạy thì hệ thống không bị rò rỉ. Nếu đồng hồ chạy thì hệ thống nước của gia đình bạn đang bị rò rỉ.</h2>
-            <p class="card-text">
-                1. Kiểm tra đường ống
-
-                Đường ống nước dùng lâu ngày rất dễ bị nứt hoặc hở. Để kiểm tra, bạn đọc số nước trên đồng hồ, nếu sau khoảng hai giờ không sử dụng, công tơ không cho cùng một số, hệ thống cấp nước đã bị rò rỉ. Bạn nên kiểm tra như vậy thường xuyên, vì một chiếc vòi nước nhỏ giọt liên tục có thể gây lãng phí đến 20.000 lít nước mỗi năm.
-
-                2. Rửa đồ đúng cách
-
-                Hầu hết mọi người đều có thói quen rửa đồ trực tiếp dưới vòi nước, gây lãng phí mà không hay biết. Bạn nên xả vừa đủ nước vào bồn, chậu để thực hiện công việc của mình. Làm theo cách này, bạn sẽ tiết kiệm 50 - 250 lít nước mỗi ngày.
-            </p>
-        </div>
-    </div>
-</div>
+</section>
 
 @section Footer{
     <footer class="section footer-section bg-primary">
@@ -89,3 +70,5 @@
         </div>
     </footer>
 }
+
+<script src="~/ControllerJS/News/News.js"></script>

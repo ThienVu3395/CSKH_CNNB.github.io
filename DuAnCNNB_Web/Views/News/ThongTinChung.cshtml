@@ -7,6 +7,7 @@
 
 <section class="bg-light post p-4" id="next-section" ng-controller="TinTuc" ng-init="LayBaiVietTheoDanhMuc(@ViewBag.idDanhMuc)">
     <div class="container">
+        <h2 class="text-center">@ViewBag.Header</h2>
         <form action="#" class="sidebar-search">
             <div class="form-group">
                 <span class="fa fa-search icon-search"></span>
@@ -14,98 +15,98 @@
             </div>
         </form>
         <div class="row">
-                    <div class="col-md-6" ng-repeat="item in dsBaiVietTheoDanhMuc">
-                        <div class="media media-custom d-block mb-4">
-                            <a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}" class="mb-4 d-block">
-                                <img src="{{item.HinhDaiDien1}}" alt="Image placeholder"
-                                     class="img-fluid" width="100%">
-                            </a>
-                            <div class="media-body">
-                                <span class="meta-post">{{item.NgayDang}}</span>
-                                <h2 class="mt-0 mb-3"><a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}">{{item.TieuDe}}</a></h2>
-                            </div>
-                        </div>
+            <div class="col-md-6" ng-repeat="item in dsBaiVietTheoDanhMuc">
+                <div class="media media-custom d-block mb-4">
+                    <a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}" class="mb-4 d-block">
+                        <img src="{{item.HinhDaiDien1}}" alt="Image placeholder"
+                             class="img-fluid" width="100%">
+                    </a>
+                    <div class="media-body">
+                        <span class="meta-post">{{item.NgayDang}}</span>
+                        <h2 class="mt-0 mb-3"><a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}">{{item.TieuDe}}</a></h2>
                     </div>
+                </div>
             </div>
+        </div>
 
-            
-                <div class="row">
-                    <div class="col-md-12">
-                        <nav role="navigation">
-                            <ul class="pagination custom-pagination pagination-lg">
-                                <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
-                                    <a class="page-link" ng-click="phanTrang(item+1)">{{item + 1}}</a>
-                                </li>
-                            </ul>
-                        </nav>
+
+        <div class="row">
+            <div class="col-md-12">
+                <nav role="navigation">
+                    <ul class="pagination custom-pagination pagination-lg">
+                        <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
+                            <a class="page-link" ng-click="phanTrang(item+1)">{{item + 1}}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- END content -->
+        @*<div class="col-md-4">
+            <div class="row">
+
+                <div class="col-md-11 ml-auto">
+                    <form action="#" class="sidebar-search">
+                        <div class="form-group">
+                            <span class="fa fa-search icon-search"></span>
+                            <input type="text" class="form-control search-input" placeholder="Tìm bài viết...">
+                        </div>
+                    </form>
+
+                    <div class="side-box">
+                        <h2 class="heading">Bài viết nổi bật</h2>
+                        <ul class="post-list list-unstyled">
+                            <li>
+                                <a href="@Url.Action("ChiTietBaiViet","News")" class="d-flex">
+                                    <span class="mr-3 image">
+                                        <img src="~/Content/img/img_1.jpg" alt="Image placeholder"
+                                             class="img-fluid">
+                                    </span>
+                                    <div>
+                                        <span class="meta">February 27, 2018</span>
+                                        <h3>Five Reasons to Stay at Villa Resort</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("ChiTietBaiViet","News")" class="d-flex">
+                                    <span class="mr-3 image">
+                                        <img src="~/Content/img/img_2.jpg" alt="Image placeholder"
+                                             class="img-fluid">
+                                    </span>
+                                    <div>
+                                        <span class="meta">February 27, 2018</span>
+                                        <h3>Five Reasons to Stay at Villa Resort</h3>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("ChiTietBaiViet","News")" class="d-flex">
+                                    <span class="mr-3 image">
+                                        <img src="~/Content/img/img_1.jpg" alt="Image placeholder"
+                                             class="img-fluid">
+                                    </span>
+                                    <div>
+                                        <span class="meta">February 27, 2018</span>
+                                        <h3>Five Reasons to Stay at Villa Resort</h3>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="side-box">
+                        <h2 class="heading">Danh mục</h2>
+                        <ul class="post-categories list-unstyled">
+                            <li><a href="#">Khuyến mãi <span class="count">(12)</span></a></li>
+                            <li><a href="#">Dịch vụ khách hàng <span class="count">(4)</span></a></li>
+                            <li><a href="#">Chính sách <span class="count">(23)</span></a></li>
+                        </ul>
                     </div>
                 </div>
-            <!-- END content -->
-            @*<div class="col-md-4">
-                <div class="row">
-
-                    <div class="col-md-11 ml-auto">
-                        <form action="#" class="sidebar-search">
-                            <div class="form-group">
-                                <span class="fa fa-search icon-search"></span>
-                                <input type="text" class="form-control search-input" placeholder="Tìm bài viết...">
-                            </div>
-                        </form>
-
-                        <div class="side-box">
-                            <h2 class="heading">Bài viết nổi bật</h2>
-                            <ul class="post-list list-unstyled">
-                                <li>
-                                    <a href="@Url.Action("ChiTietBaiViet","News")" class="d-flex">
-                                        <span class="mr-3 image">
-                                            <img src="~/Content/img/img_1.jpg" alt="Image placeholder"
-                                                 class="img-fluid">
-                                        </span>
-                                        <div>
-                                            <span class="meta">February 27, 2018</span>
-                                            <h3>Five Reasons to Stay at Villa Resort</h3>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("ChiTietBaiViet","News")" class="d-flex">
-                                        <span class="mr-3 image">
-                                            <img src="~/Content/img/img_2.jpg" alt="Image placeholder"
-                                                 class="img-fluid">
-                                        </span>
-                                        <div>
-                                            <span class="meta">February 27, 2018</span>
-                                            <h3>Five Reasons to Stay at Villa Resort</h3>
-                                        </div>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="@Url.Action("ChiTietBaiViet","News")" class="d-flex">
-                                        <span class="mr-3 image">
-                                            <img src="~/Content/img/img_1.jpg" alt="Image placeholder"
-                                                 class="img-fluid">
-                                        </span>
-                                        <div>
-                                            <span class="meta">February 27, 2018</span>
-                                            <h3>Five Reasons to Stay at Villa Resort</h3>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="side-box">
-                            <h2 class="heading">Danh mục</h2>
-                            <ul class="post-categories list-unstyled">
-                                <li><a href="#">Khuyến mãi <span class="count">(12)</span></a></li>
-                                <li><a href="#">Dịch vụ khách hàng <span class="count">(4)</span></a></li>
-                                <li><a href="#">Chính sách <span class="count">(23)</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
+            </div>
+        </div>*@
     </div>
 </section>
 
