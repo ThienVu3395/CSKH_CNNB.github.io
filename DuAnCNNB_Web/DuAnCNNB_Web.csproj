@@ -359,17 +359,14 @@
     <Content Include="Views\Home\LienHe.cshtml" />
     <Content Include="Views\Lich\LichCupNuoc.cshtml" />
     <Content Include="Views\Lich\LichDocSo.cshtml" />
-    <Content Include="Views\News\CamNang.cshtml" />
-    <Content Include="Views\News\CauHoi.cshtml" />
     <Content Include="Views\News\ChiTietBaiViet.cshtml" />
-    <Content Include="Views\News\ThongTinChung.cshtml" />
-    <Content Include="Views\News\ThuTuc.cshtml" />
     <Content Include="Views\patital\_Menu.cshtml" />
     <Content Include="Views\Shared\_navbar.cshtml" />
     <Content Include="Views\ThanhToan\DanhSachNganHang.cshtml" />
     <Content Include="Views\ThanhToan\DanhSachThuHo.cshtml" />
     <Content Include="Views\ThanhToan\ThanhToanTrucTuyen.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\News\BaiVietTheoDanhMuc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

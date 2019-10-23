@@ -4,17 +4,14 @@
     function ($scope, CommonController) {
             var API_LayBaiVietTheoDanhMuc = 'TraCuu/BaiVietTheoDanhMuc?idChuyenMuc=';
             $scope.dsBaiVietTheoDanhMuc = [];
-            $scope.idDanhMuc = "";
             $scope.tongSoTrang;
             $scope.t = [];
             $scope.soBaiVietMoiTrang = 2;
             $scope.LayBaiVietTheoDanhMuc = function (idDanhMuc) {
-                $scope.idDanhMuc = idDanhMuc;
-                var res = CommonController.getData(API_LayBaiVietTheoDanhMuc, $scope.idDanhMuc);
+                var res = CommonController.getData(API_LayBaiVietTheoDanhMuc, idDanhMuc);
                 res.then(
                     function success(response) {
                         $scope.dsBaiVietTheoDanhMuc = response.data;
-                        console.log($scope.dsBaiVietTheoDanhMuc);
                         $scope.tongSoTrang = Math.round($scope.dsBaiVietTheoDanhMuc.length / $scope.soBaiVietMoiTrang);
                         $scope.dsBaiVietTheoDanhMuc.splice($scope.soBaiVietMoiTrang);
                     },
@@ -33,8 +30,8 @@
             }
 
             // Tương tác với nút phân trang
-            $scope.phanTrang = function (soTrang) {
-                var API_ThongTinChung_PhanTrang = 'TraCuu/DanhSachBaiViet_PhanTrang?idDanhMuc=' + $scope.idDanhMuc + '&soTrang=' + soTrang + '&soBV=' + $scope.soBaiVietMoiTrang;
+            $scope.phanTrang = function (soTrang,idDanhMuc) {
+                var API_ThongTinChung_PhanTrang = 'TraCuu/DanhSachBaiViet_PhanTrang?idDanhMuc=' + idDanhMuc + '&soTrang=' + soTrang + '&soBV=' + $scope.soBaiVietMoiTrang;
                 var res = CommonController.getData(API_ThongTinChung_PhanTrang, '');
                 res.then(
                     function success(response) {

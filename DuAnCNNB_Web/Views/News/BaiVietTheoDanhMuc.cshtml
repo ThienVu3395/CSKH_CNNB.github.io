@@ -1,19 +1,11 @@
 ﻿@{
-    ViewBag.Header = "CÁC THỦ TỤC-BIỂU MẪU";
-    ViewBag.Title = "ThuTuc";
+    ViewBag.Title = "BaiVietTheoDanhMuc";
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
     ViewBag.status2 = "col-lg-9 col-md-12 mb-4";
 }
 
 <section class="bg-light post p-4" id="next-section" ng-controller="TinTuc" ng-init="LayBaiVietTheoDanhMuc(@ViewBag.idDanhMuc)">
     <div class="container">
-        <h2 class="text-center">@ViewBag.Header</h2>
-        @*<form action="#" class="sidebar-search">
-            <div class="form-group">
-                <span class="fa fa-search icon-search"></span>
-                <input type="text" class="form-control search-input" placeholder="Tìm bài viết...">
-            </div>
-        </form>*@
         <div class="row">
             <div class="col-md-6" ng-repeat="item in dsBaiVietTheoDanhMuc">
                 <div class="media media-custom d-block mb-4">
@@ -29,13 +21,12 @@
             </div>
         </div>
 
-
         <div class="row">
             <div class="col-md-12">
                 <nav role="navigation">
                     <ul class="pagination custom-pagination pagination-lg">
                         <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
-                            <a class="page-link" ng-click="phanTrang(item+1)">{{item + 1}}</a>
+                            <a class="page-link" ng-click="phanTrang(item+1,@ViewBag.idDanhMuc)">{{item + 1}}</a>
                         </li>
                     </ul>
                 </nav>
@@ -72,4 +63,3 @@
 }
 
 <script src="~/ControllerJS/News/News.js"></script>
-
