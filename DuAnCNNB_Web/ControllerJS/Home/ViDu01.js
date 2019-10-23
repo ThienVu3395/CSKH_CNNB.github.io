@@ -82,7 +82,8 @@
 
             // Show Thông Tin Khách Hàng
             $scope.timMaDB = function () {
-                blockUI.start();
+                //blockUI.start();
+                $scope.guiFormThanhCong = false;
                 var res = CommonController.getData(API_GetThongTinKhachHang, $scope.maDanhBo);
                 res.then(
                     function success(response) {

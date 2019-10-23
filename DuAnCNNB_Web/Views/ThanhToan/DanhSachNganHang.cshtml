@@ -9,9 +9,9 @@
     <div class="container">
         <h2 class="text-center">TÌM CỬA HÀNG</h2>
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="form-group">
-                    <label for="sel1">Chọn Phường:</label>
+                    <label for="sel1">Tên Cửa Hàng :</label>
                     <select class="form-control" id="sel1">
                         <option>1</option>
                         <option>2</option>
@@ -21,7 +21,19 @@
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="sel1">Chọn Phường :</label>
+                    <select class="form-control" id="sel1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
                 <div class="form-group">
                     <label for="sel1">Chọn Quận:</label>
                     <select class="form-control" id="sel1">
@@ -32,16 +44,8 @@
                     </select>
                 </div>
             </div>
-
-            <div class="col-lg-12">
-                <form action="#" class="sidebar-search">
-                    <div class="form-group">
-                        <span class="fa fa-search icon-search"></span>
-                        <input type="text" class="form-control search-input" placeholder="Tìm cửa hàng...">
-                    </div>
-                </form>
-            </div>
         </div>
+        <div class="btn btn-success container mb-4">Tìm Cửa Hàng</div> 
         <div class="row" id="mapInfo">
             <div class="col-lg-4 col-md-4 col-sm-6 mb-4" ng-repeat="item in dsCuaHang">
                 <div class="card">

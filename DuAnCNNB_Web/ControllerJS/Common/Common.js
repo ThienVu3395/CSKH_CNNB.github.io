@@ -1,12 +1,12 @@
 ﻿(function () {
     angular.module("CommonApp", ['ngSanitize','blockUI'])
          //Cấu hình cho blockUI
-        //.config(function(blockUIConfig){
-            //'blockUI',
-            //blockUIConfig.delay = 200;
-            //blockUIConfig.autoBlock = true;
-            //blockUIConfig.blockBrowserNavigation = false;
-       // })
+        .config(function(blockUIConfig){
+            'blockUI',
+            blockUIConfig.delay = 200;
+            blockUIConfig.autoBlock = true;
+            blockUIConfig.blockBrowserNavigation = false;
+        })
         .factory("CommonController", ["$http",
             function ($http) {
                 // Tạo UrlAPI động

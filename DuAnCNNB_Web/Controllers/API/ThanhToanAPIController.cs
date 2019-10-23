@@ -18,7 +18,7 @@ namespace DuAnCNNB_Web.Controllers.API
         public IHttpActionResult DanhSachCuaHang()
         {
             var dsCuaHang = db.tbDiemthutiens.Take(100);
-            return Ok(dsCuaHang.ToList());
+            return Ok(dsCuaHang.ToArray());
         }
 
         [HttpGet]
@@ -27,7 +27,7 @@ namespace DuAnCNNB_Web.Controllers.API
         {
             var pageIndex = (soTrang - 1) * soCuaHang;
             var model = db.tbDiemthutiens.Skip(pageIndex).Take(soCuaHang);
-            return Ok(model.ToList());
+            return Ok(model.ToArray());
         }
     }
 }

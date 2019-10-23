@@ -44,21 +44,20 @@
     </section>
     <section class="section @ViewBag.status3" id="next-section">
         <div class="container">
-            <div block-ui="main"></div>
+            @*<div block-ui="main"></div>*@
             <div class="row mb-5">
                 <div class="col-lg-3 col-md-12 mb-4" style="display:@ViewBag.status">
                     @Html.Action("_navbar", "patital")
                 </div>
 
                 <div class="@ViewBag.status2">
-                    
-                    <nav aria-label="breadcrumb" style="display:@ViewBag.status">
+                    @*<nav aria-label="breadcrumb" style="display:@ViewBag.status">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item"><a href="#">Library</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Data</li>
                             </ol>
-                        </nav>
+                    </nav>*@
                     @RenderBody()
                 </div>
             </div>

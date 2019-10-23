@@ -19,7 +19,7 @@
     <div class="tab-content card-body">
         <div class="tab-pane container active" id="home">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" ng-model="soHoSo" placeholder="Nhập Số Hồ Sơ...">
+                <input type="text" class="form-control" ng-change="reset()" ng-model="soHoSo" placeholder="Nhập Số Hồ Sơ...">
                 <div class="input-group-append">
                     <button class="btn btn-success" ng-click="timSoHS('nd')">Tìm Kiếm</button>
                 </div>

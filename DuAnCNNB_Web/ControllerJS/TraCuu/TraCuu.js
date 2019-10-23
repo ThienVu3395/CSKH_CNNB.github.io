@@ -66,6 +66,10 @@ function ($scope, CommonController) {
             }
         )
     }
+
+    $scope.reset = function () {
+        $scope.trangThaiThongBao = false
+    }
 })
 
 // Tra cứu tiến độ gắn mới + nâng dời + điều chỉnh
