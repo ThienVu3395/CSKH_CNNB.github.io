@@ -17,17 +17,24 @@ namespace DuAnCNNB_Web.Controllers.API
         [Route("DanhSachCuaHang")]
         public IHttpActionResult DanhSachCuaHang()
         {
-            var dsCuaHang = db.tbDiemthutiens.Take(100);
-            return Ok(dsCuaHang.ToArray());
+            var dsCuaHang = db.tbDiemthutiens.ToArray();
+            return Ok(dsCuaHang);
         }
 
         [HttpGet]
         [Route("DanhSachCuaHang_PhanTrang")]
         public IHttpActionResult DanhSachCuaHang_PhanTrang(int soTrang, int soCuaHang)
         {
-            var pageIndex = (soTrang - 1) * soCuaHang;
-            var model = db.tbDiemthutiens.Skip(pageIndex).Take(soCuaHang);
-            return Ok(model.ToArray());
+            try
+            {
+                var pageIndex = (soTrang - 1) * soCuaHang;
+                var model = db.tbDiemthutiens.OrderBy(x => x.ID).Skip(pageIndex).Take(soCuaHang).ToArray();
+                return Ok(model);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

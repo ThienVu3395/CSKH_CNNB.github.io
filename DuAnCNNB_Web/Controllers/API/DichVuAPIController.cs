@@ -34,7 +34,6 @@ namespace DuAnCNNB_Web.Controllers
         }
 
         // Các hàm cho Đăng Ký Gắn Mới
-
         // -------- Lấy danh sách quận
         [HttpGet]
         [Route("layQuan")]

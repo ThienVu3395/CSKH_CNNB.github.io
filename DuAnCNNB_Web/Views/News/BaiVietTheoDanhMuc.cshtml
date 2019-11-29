@@ -6,13 +6,57 @@
 
 <section class="bg-light post p-4" id="next-section" ng-controller="TinTuc" ng-init="LayBaiVietTheoDanhMuc(@ViewBag.idDanhMuc)">
     <div class="container">
+        <ul uib-pagination
+            total-items="tongSoTrang"
+            items-per-page="soBaiVietMoiTrang"
+            ng-model="bigCurrentPage"
+            previous-text="Trang Trước"
+            next-text="Trang Kế"
+            max-size="maxSize"
+            class="pagination pagination-sm"
+            boundary-link-numbers="true"
+            ng-change="PhanTrang(@ViewBag.idDanhMuc)"></ul>
         <div class="row">
             <div class="col-md-6" ng-repeat="item in dsBaiVietTheoDanhMuc">
-                <div class="media media-custom d-block mb-4">
+                <div class="col-md-12 col-sm-12 col-xs-12" nv-file-drop="" uploader="uploader" filters="docFilterexcel">
+                    <div class="form-group">
+                        <table class="table" ng-repeat="item in uploader.queue">
+                            <tbody>
+                                <tr ng-show="uploader.isHTML5">
+                                    <td>{{item.file.name}}</td>
+                                    <td ng-show="uploader.isHTML5" style="width: 70px;">Progress:</td>
+                                    <td ng-show="uploader.isHTML5">
+                                        <div class="progress" style="margin-bottom: 0;">
+                                            <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                        </div>
+                                    </td>
+
+                                    <td style="width: 70px;">
+                                        <button type="button" class="btn btn-xs btn-danger " ng-click="item.remove()">
+                                            <span class="glyphicon glyphicon-trash"></span> Xóa
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="media media-custom d-block mb-4" style="height:600px">
                     <a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}" class="mb-4 d-block">
-                        <img src="{{item.HinhDaiDien1}}" alt="Image placeholder"
-                             class="img-fluid" width="100%">
+                        <img src="~/Content/img/img-case-sudies-2.png" alt="Image placeholder" class="img-fluid" width="100%" />
                     </a>
+
+                    <div class="form-group">
+                        @*<label class="control-label col-md-2 col-sm-3 col-xs-3" style="text-align:left !important">Chọn file:</label>*@
+                        <div class="col-md-4 col-sm-9 col-xs-9">
+                            <input type="file" nv-file-select="" uploader="uploader" />
+                        </div>
+
+                        @*<div ng-show="uploader.isHTML5" class="col-md-6 col-sm-6 col-xs-12">
+                                  <div class="well my-drop-zone" nv-file-over="" uploader="uploader">Kéo thả vào đây</div>
+                          </div>*@
+                    </div>
+
                     <div class="media-body">
                         <span class="meta-post">{{item.NgayDang}}</span>
                         <h2 class="mt-0 mb-3"><a href="@Url.Action("ChiTietBaiViet","News")?idBaiViet={{item.ID_BaiViet}}">{{item.TieuDe}}</a></h2>
@@ -21,17 +65,16 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <nav role="navigation">
-                    <ul class="pagination custom-pagination pagination-lg">
-                        <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
-                            <a class="page-link" ng-click="phanTrang(item+1,@ViewBag.idDanhMuc)">{{item + 1}}</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+        <ul uib-pagination
+            total-items="tongSoTrang"
+            items-per-page="soBaiVietMoiTrang"
+            ng-model="bigCurrentPage"
+            previous-text="Trang Trước"
+            next-text="Trang Kế"
+            max-size="maxSize"
+            class="pagination pagination-sm"
+            boundary-link-numbers="true"
+            ng-change="PhanTrang(@ViewBag.idDanhMuc)"></ul>
         <!-- END content -->
     </div>
 </section>

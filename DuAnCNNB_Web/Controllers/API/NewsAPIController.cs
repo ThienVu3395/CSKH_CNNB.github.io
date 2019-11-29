@@ -5,6 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using DuAnCNNB_Web.Models;
+using System.IO;
+
 namespace DuAnCNNB_Web.Controllers.API
 {
     [RoutePrefix("TraCuu")]
@@ -15,19 +17,19 @@ namespace DuAnCNNB_Web.Controllers.API
         [Route("DanhSachDanhMuc")]
         public IHttpActionResult DanhSachDanhMuc()
         {
-                var model = (from a in db.tbChuyenMucBaiViets
-                             where a.TrangThai == 1
-                             select new
-                             {
-                                 id = a.ID_ChuyenMuc,
-                                 tenchuyenmuc = a.TenChuyenMuc,
+            var model = (from a in db.tbChuyenMucBaiViets
+                         where a.TrangThai == 1
+                         select new
+                         {
+                             id = a.ID_ChuyenMuc,
+                             tenchuyenmuc = a.TenChuyenMuc,
 
-                             }).AsEnumerable().Select(x => new DanhSachDanhMuc()
-                             {
-                                 ID_ChuyenMuc = x.id,
-                                 TenChuyenMuc = x.tenchuyenmuc
-                             });
-                return Ok(model.ToList());
+                         }).AsEnumerable().Select(x => new DanhSachDanhMuc()
+                         {
+                             ID_ChuyenMuc = x.id,
+                             TenChuyenMuc = x.tenchuyenmuc
+                         });
+            return Ok(model.ToList());
         }
 
         [HttpGet]
@@ -51,7 +53,6 @@ namespace DuAnCNNB_Web.Controllers.API
                              TieuDe = x.title,
                              MoTa = x.mota,
                              NgayDang = x.ngaythang
-
                          });
 
             return Ok(model.ToList());
@@ -59,7 +60,7 @@ namespace DuAnCNNB_Web.Controllers.API
 
         [HttpGet]
         [Route("DanhSachBaiViet_PhanTrang")]
-        public IHttpActionResult ThongTinChung_PhanTrang(int idDanhMuc,int soTrang , int soBV)
+        public IHttpActionResult ThongTinChung_PhanTrang(int idDanhMuc, int soTrang, int soBV)
         {
             var pageIndex = (soTrang - 1) * soBV;
             var model = (from a in db.tbBaiViets
@@ -79,7 +80,6 @@ namespace DuAnCNNB_Web.Controllers.API
                              TieuDe = x.title,
                              MoTa = x.mota,
                              NgayDang = x.ngaythang
-
                          }).Skip(pageIndex).Take(soBV);
 
             return Ok(model.ToList());
@@ -99,6 +99,58 @@ namespace DuAnCNNB_Web.Controllers.API
             tt.NgayDang = chitiet.NgayDang;
             tt.Nguoidang = chitiet.Nguoidang;
             return Ok(tt);
+        }
+
+        [HttpPost]
+        [Route("UploadFiles")]
+        public string UploadFiles()
+        {
+            int iUploadedCnt = 0;
+            string sPath = "";
+            sPath = System.Web.Hosting.HostingEnvironment.MapPath("~/Content/UploadTemp/");
+            string date = DateTime.Now.Year.ToString();
+            sPath = Path.Combine(sPath, date);
+            if (!Directory.Exists(sPath))
+            {
+                Directory.CreateDirectory(sPath);
+            }
+            date = DateTime.Now.Month.ToString();
+            sPath = Path.Combine(sPath, date);
+            if (!Directory.Exists(sPath))
+            {
+                Directory.CreateDirectory(sPath);
+            }
+            System.Web.HttpFileCollection hfc = System.Web.HttpContext.Current.Request.Files;
+            for (int iCnt = 0; iCnt <= hfc.Count - 1; iCnt++)
+            {
+                System.Web.HttpPostedFile hpf = hfc[iCnt];
+                if (hpf.ContentLength > 0)
+                {
+                    if (!File.Exists(sPath + Path.GetFileName(hpf.FileName)))
+                    {
+                        hpf.SaveAs(sPath + Path.GetFileName(hpf.FileName));
+                        iUploadedCnt = iUploadedCnt + 1;
+                    }
+
+                    else
+                    {
+                        FileInfo f = new FileInfo(sPath + Path.GetFileName(hpf.FileName));
+                        f.Delete();
+                        hpf.SaveAs(sPath + Path.GetFileName(hpf.FileName));
+                        iUploadedCnt = iUploadedCnt + 1;
+                    }
+                }
+            }
+
+            if (iUploadedCnt > 0)
+            {
+                return iUploadedCnt + " Files Uploaded Successfully";
+            }
+
+            else
+            {
+                return "Upload Failed";
+            }
         }
     }
 }

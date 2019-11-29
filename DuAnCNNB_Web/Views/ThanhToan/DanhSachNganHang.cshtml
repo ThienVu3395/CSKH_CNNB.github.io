@@ -46,11 +46,23 @@
             </div>
         </div>
         <div class="btn btn-success container mb-4">Tìm Cửa Hàng</div> 
+
+        <ul uib-pagination total-items="tongSoTrang"
+            items-per-page="soCuaHangMoiTrang"
+            ng-model="bigCurrentPage"
+            previous-text="Trang Trước"
+            next-text="Trang Kế"
+            max-size="maxSize"
+            class="pagination pagination-sm"
+            boundary-link-numbers="true"
+            ng-change="PhanTrang()">
+        </ul>
+
         <div class="row" id="mapInfo">
-            <div class="col-lg-4 col-md-4 col-sm-6 mb-4" ng-repeat="item in dsCuaHang">
+            <div class="col-lg-3 col-md-3 col-sm-6 mb-4" ng-repeat="item in dsCuaHang">
                 <div class="card">
                     <img src="https://static.mservice.io/img/logo-momo.png" width="100%" />
-                    <div class="card-body text-center">
+                    <div class="card-body text-center" style="min-height:250px">
                         <h5 class="card-title">{{item.MOTA}}</h5>
                         <p class="card-text">{{item.DIACHI}}</p>
                     </div>
@@ -58,17 +70,17 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <nav role="navigation">
-                    <ul class="pagination custom-pagination pagination-lg">
-                        <li class="page-item active" ng-repeat="item in hienThiDanhSachTrang()">
-                            <a class="page-link" ng-click="phanTrang(item + 1)">{{item + 1}}</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+       <ul 
+           uib-pagination total-items="tongSoTrang" 
+           items-per-page="soCuaHangMoiTrang" 
+           ng-model="bigCurrentPage" 
+           previous-text="Trang Trước" 
+           next-text="Trang Kế" 
+           max-size="maxSize" 
+           class="pagination pagination-sm" 
+           boundary-link-numbers="true" 
+           ng-change="PhanTrang()">
+       </ul>
     </div>
 </div>
 

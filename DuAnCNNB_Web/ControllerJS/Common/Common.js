@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module("CommonApp", ['ngSanitize','blockUI'])
+    angular.module("CommonApp", ['ngSanitize', 'blockUI', 'ui.bootstrap', 'ngFileUpload'])
          //Cấu hình cho blockUI
         .config(function(blockUIConfig){
             'blockUI',
